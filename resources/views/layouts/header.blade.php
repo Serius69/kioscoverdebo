@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>@yield('header')</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/css/responsive.css') }}"/>
+    {{-- scripts --}}
+    <script src="{{asset('/js/jquery.js')}}"></script>
+    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('/js/jquery.fancybox.pack.js')}}"></script>
+    <script src="{{asset('/js/jquery.fancybox-media.js')}}"></script>
+    <script src="{{asset('/js/owl.js')}}"></script>
+    <script src="{{asset('/js/wow.js')}}"></script>
+    <script src="{{asset('/js/script.js')}}"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+    	<div class="top-bar">
+        	<div class="top-container">
+            	<!--Info Outer-->
+                 <div class="info-outer">
+                 	<!--Info Box-->
+                    <ul class="info-box clearfix">
+                    	<li><span class="icon flaticon-interface"></span><a href="#">kioscoverde@cnibolivia.com</a></li>
+                    	<li><span class="icon flaticon-technology-5"></span><a href="#">(591) 63236023</a></li>
+                        <li class="social-links-one">
+                        	<a href="https://www.facebook.com/kioscoverdeCNI/" class="facebook img-circle"><span class="fa fa-facebook-f"></span></a>
+                            <!-- <a href="#" class="twitter img-circle"><span class="fa fa-twitter"></span></a> -->
+                            <!-- <a href="#" class="google-plus img-circle"><span class="fa fa-google-plus"></span></a> -->
+                            <a href="https://bo.linkedin.com/company/cnibolivia" class="linkedin img-circle"><span class="fa fa-linkedin"></span></a>
+                        </li>
+                    </ul>
+                 </div>
+            </div>
+        </div>
+    	<!-- Header Upper -->
+    	<div class="header-upper">
+        	<div class="auto-container clearfix">
+            	<!-- Logo -->
+                <div class="logo">
+                    <a href="index.html"><img {{ asset('/images/logo-1.png') }}  alt="Greenture"></a>
+                 </div>
+
+                 <!--Nav Outer-->
+                <div class="nav-outer clearfix">
+
+                    <a href="{{ url('/home') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#donate-popup">REGISTRATE</a>
+
+                    <!-- Main Menu -->
+                    <nav class="main-menu">
+
+                        <div class="navbar-header">
+                            <!-- Toggle Button -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse clearfix">
+                            <ul class="navigation">
+
+                                <li><a href="{{ url('/') }}">INICIO</a>
+                                </li>
+                                <li><a href="{{ url('/home') }}">Quienes somos </a>
+                                </li>
+                                <li class="dropdown"><a href="#">NOTICIAS</a>
+                                    <ul>
+                                        <li><a href="{{ url('/intermediaty') }}">INTERMEDIACIONES</a> </li>
+                                        <li><a href="{{ url('/agend') }}">AGENDA</a></li>
+                                        <li><a href="{{ url('/noticy') }}">NOTICIAS AMBIENTALES</a></li>
+                                        <li><a href="{{ url('/home') }}">INVESTIGACIÓN</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#">SERVICIOS</a>
+                                    <ul>
+                                        <li><a href="{{ url('/recicle') }}">GESTION DE RESIDUOS</a></li>
+                                        <li><a href="{{ url('/ofert') }}">OFERTAS </a></li>
+                                        <li><a href="{{ url('/advice') }}">ASESORAMIENTO</a></li>
+
+                                    </ul>
+                                </li>
+                                 <li class="dropdown"><a href="#">CONTACTANOS</a>
+                                    <ul>
+                                        <li><a href="{{ url('/question') }}">PREGUNTAS FRECUENTES</a></li>
+                                        <li><a href="{{ url('/contactus') }}">ESCRÍBENOS</a></li>
+                                        <li><a href="{{ url('/standars') }}">BIBLIOTECA</a>
+
+
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav><!-- Main Menu End-->
+
+                </div>
+
+            </div>
+        </div><!-- Header Top End -->
+
+    </header><!--End Main Header -->
+
+    <!--Page Title-->
+    <section class="page-title" style="background-image:url(images/background/page-title-bg.jpg);">
+    	<div class="auto-container">
+        	<div class="sec-title">
+                <h1>@yield('subtitle1')<span class="normal-font">@yield('subtitle2')</span></h1>
+
+                <div class="bread-crumb"><a href="{{ url('/') }}">inicio</a> / <a href="#" class="current">agenda</a></div>
+            </div>
+        </div>
+    </section>
+
+
+    @yield('content')
+
+
+
+
+
+
+</body>
+
+
+
+
+</html>

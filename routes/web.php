@@ -9,9 +9,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +23,7 @@ use App\Http\Controllers\ServiceController;
 Route::get('/', HomeController::class);
 
 Route::controller(AboutController::class)->group(function(){
-    Route::get('about',  'about');
+    Route::get('aboutus',  'aboutus');
 });
 
 Route::controller(ContactController::class)->group(function(){
@@ -41,16 +38,16 @@ Route::controller(FooterController::class)->group(function(){
 });
 
 Route::controller(NewsController::class)->group(function(){
-    Route::get('cursos/intermediaty',  'intermediaty');
-    Route::get('cursos/agend', 'agend');
-    Route::get('cursos/investigation',  'investigation');
-    Route::get('cursos/news',  'news');
+    Route::get('news/intermediaty',  'intermediaty');
+    Route::get('news/agend', 'agend');
+    Route::get('news/investigation',  'investigation');
+    Route::get('news/news',  'news');
 });
 
 Route::controller(ServiceController::class)->group(function(){
-    Route::get('cursos/recicle',  'recicle');
-    Route::get('cursos/ofert', 'ofert');
-    Route::get('cursos/advice',  'advice');
+    Route::get('service/recicle',  'recicle');
+    Route::get('service/ofert', 'ofert');
+    Route::get('service/advice',  'advice');
 });
 
 

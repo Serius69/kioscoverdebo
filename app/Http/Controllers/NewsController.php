@@ -18,4 +18,7 @@ class NewsController extends Controller
     public function news(){
         return view('news');
     }
+    public function newsn(){
+        return view('new-single');
+    }
 }

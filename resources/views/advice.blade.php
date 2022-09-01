@@ -1,13 +1,12 @@
 @extends('layouts.footer')
 @extends('layouts.register')
-@extends('layouts.sponsors')
-@extends('layouts.about')
+@extends('layouts.noregister')
 @extends('layouts.titlebar')
 @extends('layouts.header')
 
-@section('title', 'Quienes Somos')
-@section('subtitle1', 'Quienes')
-@section('subtitle2', ' Somos')
+@section('title', 'Gestion de Residuos')
+@section('subtitle1', 'Gestion')
+@section('subtitle2', ' de Residuos')
 
 @section('content')
 

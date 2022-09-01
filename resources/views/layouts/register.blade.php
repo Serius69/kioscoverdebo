@@ -21,7 +21,7 @@
                 <!--Column-->
                 <div class="column col-md-3 col-sm-12 col-xs-12">
                 	<div class="text-right padd-top-20">
-                		<a href="contactus.html" class="theme-btn btn-style-one">MENSAJE</a>
+                		<a href="{{url('/contactus/contactus')}}" class="theme-btn btn-style-one">MENSAJE</a>
                     </div>
                 </div>
             </div>

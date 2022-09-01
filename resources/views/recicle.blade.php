@@ -1,7 +1,6 @@
 @extends('layouts.footer')
 @extends('layouts.register')
-@extends('layouts.sponsors')
-@extends('layouts.about')
+@extends('layouts.noregister')
 @extends('layouts.titlebar')
 @extends('layouts.header')
 

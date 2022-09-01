@@ -12,13 +12,13 @@
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="recicle.html"><img src="https://scontent.flpb3-1.fna.fbcdn.net/v/t39.30808-6/283985233_1427527297686797_7759706822366468450_n.jpg?stp=dst-jpg_p526x296&_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=tzMT-nRbAE4AX91snaC&_nc_ht=scontent.flpb3-1.fna&oh=00_AT8_X1sDcUesMpTdHJnXGUAeOuMgkyCDQBHrYeDvuIWHeg&oe=6309CFF8" alt=""></a>
+                        	<a href="{{url('/service/recicle')}}"><img src="https://scontent.flpb3-1.fna.fbcdn.net/v/t39.30808-6/283985233_1427527297686797_7759706822366468450_n.jpg?stp=dst-jpg_p526x296&_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=tzMT-nRbAE4AX91snaC&_nc_ht=scontent.flpb3-1.fna&oh=00_AT8_X1sDcUesMpTdHJnXGUAeOuMgkyCDQBHrYeDvuIWHeg&oe=6309CFF8" alt=""></a>
                             <div class="post-tag">GESTION DE RESIDUOS</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="recicle.html">GESTION DE RESIDUOS</a></h3>
+                        	<h3><a href="{{url('/service/recicle')}}">GESTION DE RESIDUOS</a></h3>
                             <div class="text">El Manejo de residuos principia con la recolección de los mismos, su transporte hasta las instalaciones preparadas y su tratamiento intermedio o final. Este tratamiento puede ser el aprovechamiento del residuo o su eliminación.</div>
-                            <a href="recicle.html" class="theme-btn btn-style-three">Saber Mas</a>
+                            <a href="{{url('/service/recicle')}}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
                 </div>

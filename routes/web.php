@@ -8,6 +8,8 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,12 +44,25 @@ Route::controller(NewsController::class)->group(function(){
     Route::get('news/agend', 'agend');
     Route::get('news/investigation',  'investigation');
     Route::get('news/news',  'news');
+    Route::get('news/newsn',  'newsn');
 });
 
 Route::controller(ServiceController::class)->group(function(){
     Route::get('service/recicle',  'recicle');
     Route::get('service/ofert', 'ofert');
     Route::get('service/advice',  'advice');
+});
+
+
+Route::controller(LoginController::class)->group(function(){
+    Route::get('login/login',  'login');
+    Route::get('login/signup', 'signup');
+});
+
+
+Route::controller(ProjectController::class)->group(function(){
+    // Route::get('project/$name',  'login');
+    Route::get('project/project', 'project');
 });
 
 

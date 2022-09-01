@@ -1,8 +1,10 @@
-<!--SignUp Popup-->
-<div class="modal fade pop-box" id="donate-popup" tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        	<!--SignUp Section-->
+    <!--Default Section / Other Info-->
+    <section class="default-section other-info">
+    	<!--Login Form Main-->
+    <!-- <div class="modal fade pop-box"  tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true"> -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--SignUp Section-->
             <section class="donation-section">
                 <div class="donation-form-outer">
                     <form method="post" action="http://world5.commonsupport.com/html/greenture-new/contact.html">
@@ -35,18 +37,19 @@
                                     <div class="field-label">Direccion <span class=""></span></div>
                                     <input type="text" name="name" value="" placeholder="Direccion" required>
                                 </div>
-
-
-                                    <div class="text-left"><button type="submit" class="theme-btn btn-style-two">Registrate</button></div>
-
+                                <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Registrate</button></div>
                             </div>
                         </div>
 
                         <br>
+
                         <br>
-                              <!-- Google button -->
-                            <h3>Ingresa directamente con tu cuenta de Google</h3>
+
+
+                            <!-- Google button -->
+                            <h3>o Ingresa directamente con tu cuenta de Google</h3>
                             <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
+
 
                         </div>
                         <div>
@@ -59,10 +62,11 @@
                     </form>
                 </div>
             </section>
-        </div>
-    <!-- /.modal-content -->
+            </div>
+        <!-- /.modal-content -->
+        <!-- </div> -->
+    <!-- /.modal-dialog -->
     </div>
-<!-- /.modal-dialog -->
-</div>
 <!-- /.modal -->
 <!-- End SignUp PopUp -->
+    </section>

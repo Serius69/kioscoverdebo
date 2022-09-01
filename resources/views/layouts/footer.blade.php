@@ -41,12 +41,9 @@
                                     <h2>Nuestros Servicios</h2>
                                     <div class="footer-widget links-widget">
                                         <ul>
-                                            <li><a href="recicle.html">GESTIÓN DE RESIDUOS</a></li>
-                                            <!-- <li><a href="">CERTIFICACIÓN VERDE</a></li> -->
-                                            <li><a href="capacite.html">CAPACITACIONES</a></li>
-                                            <li><a href="investigation.html">INVESTIGACIÓN</a></li>
-                                            <li><a href="helpyou.html">ASESORAMIENTO</a></li>
-                                            <li><a href="oferts.html">OFERTAS / DEMANDAS</a></li>
+                                            <li><a href="{{asset('/service/recicle')}}">GESTIÓN DE RESIDUOS</a></li>
+                                            <li><a href="{{asset('/service/ofert')}}">OFERTAS</a></li>
+                                            <li><a href="{{asset('/service/advice')}}">ASESORAMIENTO</a></li>
                                         </ul>
 
                                     </div>

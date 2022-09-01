@@ -1,10 +1,10 @@
-    {{-- <!--Main Slider-->
+    <!--Main Slider-->
     <section class="main-slider revolution-slider">
 
         <div class="tp-banner-container" >
             <div class="tp-banner">
                 <ul>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('/images/main-slider/1.jpg')}}" data-saveperformance="off"  data-title="Awesome Title Here">
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('/images/main-slider/1.jpg')}}" data-saveperformance="off"  data-title="Kiosco Verde">
                     <img src="https://scontent.flpb3-1.fna.fbcdn.net/v/t1.6435-9/121150087_1038394086600122_3553430211870980689_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=FykBPH864ZMAX8i3BBT&_nc_ht=scontent.flpb3-1.fna&oh=00_AT9eyA8t7tL2b-jH8R8FT622HMdIHdsf2g8VoNFM6rjcmw&oe=632F0137"  alt="" width="500" height="500"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                     </li>
 
@@ -15,7 +15,7 @@
 
             </div>
         </div>
-    </section> --}}
+    </section>
 
 <!--Main Features-->
     <section class="main-features">
@@ -87,7 +87,7 @@
 
                 <div class="content-box pull-left">
                     <h2>REVITALIZACION DE <span class="theme_color">ESPACIOS VERDES</span></h2>
-                	<div class="title-text">Dale <a href="signup.html"><strong>CLICK</strong></a> para un registro rapido </div>
+                	<div class="title-text">Dale <a href="{{url('/login/signup')}}"><strong>CLICK</strong></a> para un registro rapido </div>
                     <div class="text">
                         Facilitamos la relación entre entidades que generan residuos sólidos y empresas que los reciclan, recuperan o incluso ofrecen servicio de tratamiento.
                     </div>

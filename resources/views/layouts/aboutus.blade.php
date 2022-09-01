@@ -22,7 +22,8 @@
                 		<h2> <span class="theme_color normal-font">¿Qué es el Kiosco Verde?</span></h2>
                         <div class="text">
                             <p>
-                                EL Kiosco Verde es una iniciativa de la Cámara Nacional de Industrias, anteriormente llamada Bolsa de Residuos Industriales (BRI), que tiene por objetivo la reducción del impacto ambiental que ocasiona los residuos provenientes de la producción industrial manufacturera. Esto a través del apoyo de la intermediación de la gestión eficiente, responsable e integral de los mismos.
+                                EL Kiosco Verde es una iniciativa de la Cámara Nacional de Industrias, anteriormente llamada Bolsa de Residuos Industriales (BRI), que tiene por objetivo la reducción del impacto ambiental
+                                que ocasiona los residuos provenientes de la producción industrial manufacturera. Esto a través del apoyo de la intermediación de la gestión eficiente, responsable e integral de los mismos.
 
                             </p></div>
                             <div class="row clearfix">
@@ -35,36 +36,27 @@
                                         <div class="accordion accordion-block">
                                             <div class="accord-btn"><h2>nuestra <span class="normal-font theme_color">Mision</span></h2></div>
                                             <div class="accord-content">
-
-                                                <p> Ser la mejor alternativa para facilitar la correcta disposición de residuos promoviendo su recuperación y aprovechamiento, a través del intercambio, comercialización y gestión ambientalmente responsable.
-
+                                                <p> Ser la mejor alternativa para facilitar la correcta disposición de residuos promoviendo su recuperación y aprovechamiento, a través del intercambio, comercialización y
+                                                    gestión ambientalmente responsable.
                                                     Incentivar el sector de gestión de residuos de forma eficiente e inclusiva con el propósito de promover la valorización del tratamiento de todo tipo de residuos .</p>
-
                                             </div>
                                         </div>
                                         <!-- Accordion -->
                                         <div class="accordion accordion-block">
                                             <div class="accord-btn"><h2>nuestra <span class="normal-font theme_color">vision</span></h2></div>
                                             <div class="accord-content">
-                                                <p>Ofrecemos estudios de trazabilidad de residuos, certificando la buena gestión de los mismos por procesos validados y certificados de tratamiento. Para ello se realizan inspecciones y se hace el seguimiento correspondiente.
+                                                <p>Ofrecemos estudios de trazabilidad de residuos, certificando la buena gestión de los mismos por procesos validados y certificados de tratamiento. Para ello se realizan
+                                                    inspecciones y se hace el seguimiento correspondiente.
                                                 El certificado es otorgado con el aval de la Cámara Nacional de Industrias.</p>
                                                  <h4>¿Desea certificar la responsabilidad de gestionar y disponer correctamente un lote de residuos? </h4>
                                                     <p>Entre a la página y utilice este servicio.</p>
                                             </div>
                                         </div>
-
-
-
                                     </div>
-
                                 </div>
-
-
-
                             </div>
                     </article>
                 </div>
-
             </div>
         </div>
     </section>
@@ -133,15 +125,10 @@
                                 <div class="signature"><img src="images/resource/signature-image-1.png" alt=""></div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-                <div class="clearfix"></div>
             </article>
-
         </div>
-
     </section>
 
 
@@ -153,26 +140,20 @@
                 <div class="accordion accordion-block">
                     <div class="accord-btn"><h4>Gestion de Residuos</h4></div>
                     <div class="accord-content">
-
-                        <p> El Kiosco Verde se encarga de revisar en su base de datos, opciones de operadores que puedan recibir sus residuos y tratarlos.                        </p>
+                        <p> El Kiosco Verde se encarga de revisar en su base de datos, opciones de operadores que puedan recibir sus residuos y tratarlos.</p>
                             <h4>¿Su empresa o institución genera residuos?</h4>
-
-                            Inscriba a su industria o institución a nuestra base de datos y acceda a varias opciones para realizar transacciones con un Operador o Gestor de residuos. Algunos residuos serán reutilizados, otros simplemente serán estabilizados, pero todos deben ser gestionados hasta su disposición final.
-
+                            Inscriba a su industria o institución a nuestra base de datos y acceda a varias opciones para realizar transacciones con un Operador o Gestor de residuos.
+                            Algunos residuos serán reutilizados, otros simplemente serán estabilizados, pero todos deben ser gestionados hasta su disposición final.
                             <h4>¿Es usted un operador de residuos?</h4>
-                            <p>
-                            ¿Tiene una empresa que recicla, trata, o gestiona residuos? Amplíe sus operaciones. Regístre a su empresa en nuestra plataforma
-
-                        </p>
-
+                        <p>¿Tiene una empresa que recicla, trata, o gestiona residuos? Amplíe sus operaciones. Regístre a su empresa en nuestra plataforma</p>
                     </div>
                 </div>
                 <!-- Accordion -->
                 <div class="accordion accordion-block">
                     <div class="accord-btn"><h4>Asesoramiento</h4></div>
                     <div class="accord-content">
-                        <p>Ofrecemos estudios de trazabilidad de residuos, certificando la buena gestión de los mismos por procesos validados y certificados de tratamiento. Para ello se realizan inspecciones y se hace el seguimiento correspondiente.
-
+                        <p>Ofrecemos estudios de trazabilidad de residuos, certificando la buena gestión de los mismos por procesos validados y certificados de tratamiento.
+                            Para ello se realizan inspecciones y se hace el seguimiento correspondiente.
                             El certificado es otorgado con el aval de la Cámara Nacional de Industrias.</p>
                         <h4>¿Desea certificar la responsabilidad de gestionar y disponer correctamente un lote de residuos? </h4>
                         <p>Entre a la página y utilice este servicio.</p>
@@ -182,20 +163,20 @@
         </div>
 
         <div class="col-md-6 col-sm-12 col-xs-12">
-
             <!--Accordion Box-->
             <div class="accordion-box">
                 <!-- Accordion -->
                 <div class="accordion accordion-block">
                     <div class="accord-btn"><h4>¿Qué otros servicios presta el Kiosco Verde?</h4></div>
                     <div class="accord-content">
-                        <p>Se programan jornadas técnicas de corta duración dirigidas al estudio de casos de comercialización y valorización de residuos y subproductos industrializables. También, se promueven proyectos de investigación y desarrollo tecnológico para la recuperación, el reciclaje y la reintroducción de estos materiales. Se brinda el servicio de validación de operadores autorizados, realizando la verificación de trazabilidad que tienen las empresas que gestionan residuos. Se brinda asistencia técnica para la conformación de grupos de trabajo en torno a residuos y subproductos industrializables específicos. Mediante seminarios, ferias y ruedas de negocios se promueven tecnologías para la recuperación, el reciclaje y la reintroducción de residuos y subproductos. Se brindan a solicitud, presentaciones del Kiosco Verde a interesados agrupados por áreas y sectores definidos.</p>
+                        <p>Se programan jornadas técnicas de corta duración dirigidas al estudio de casos de comercialización y valorización de residuos y subproductos industrializables.
+                            También, se promueven proyectos de investigación y desarrollo tecnológico para la recuperación, el reciclaje y la reintroducción de estos materiales. Se brinda
+                            el servicio de validación de operadores autorizados, realizando la verificación de trazabilidad que tienen las empresas que gestionan residuos. Se brinda asistencia
+                            técnica para la conformación de grupos de trabajo en torno a residuos y subproductos industrializables específicos. Mediante seminarios, ferias y ruedas de negocios
+                            se promueven tecnologías para la recuperación, el reciclaje y la reintroducción de residuos y subproductos. Se brindan a solicitud, presentaciones del Kiosco Verde a
+                            interesados agrupados por áreas y sectores definidos.</p>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
-
     </div>

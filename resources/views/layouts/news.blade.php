@@ -30,14 +30,14 @@
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="#"><img src="images/resource/featured-image-24.jpg" alt=""></a>
+                        	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
                             <div class="post-tag">Noticia N</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#">Titulo</a></h3>
+                        	<h3><a href="">Titulo</a></h3>
                             <div class="column-info">Fecha</div>
                             <div class="text">Descripcion. </div>
-                            <a href="#" class="theme-btn btn-style-three">Saber Mas</a>
+                            <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
                 </div>
@@ -46,14 +46,14 @@
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="#"><img src="images/resource/featured-image-24.jpg" alt=""></a>
+                        	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
                             <div class="post-tag">Noticia N</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#">Titulo</a></h3>
+                        	<h3><a href="{{url('/news/newsn')}}">Titulo</a></h3>
                             <div class="column-info">Fecha</div>
                             <div class="text">Descripcion. </div>
-                            <a href="#" class="theme-btn btn-style-three">Saber Mas</a>
+                            <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
                 </div>
@@ -61,14 +61,14 @@
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="#"><img src="images/resource/featured-image-24.jpg" alt=""></a>
+                        	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
                             <div class="post-tag">Noticia N</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#">Titulo</a></h3>
+                        	<h3><a href="{{url('/news/newsn')}}">Titulo</a></h3>
                             <div class="column-info">Fecha</div>
                             <div class="text">Descripcion. </div>
-                            <a href="#" class="theme-btn btn-style-three">Saber Mas</a>
+                            <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
                 </div>
@@ -80,11 +80,11 @@
             <!-- Styled Pagination -->
             <div class="styled-pagination text-center padd-top-20 margin-bott-40">
                 <ul>
-                    <li><a class="prev" href="#"><span class="fa fa-angle-left"></span>&ensp;Prev</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#" class="active">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a class="next" href="#">Next&ensp;<span class="fa fa-angle-right"></span></a></li>
+                    <li><a class="prev" href="{{url('/news/news')}}"><span class="fa fa-angle-left"></span>&ensp;Anterior</a></li>
+                    <li><a href="{{url('/news/news')}}">1</a></li>
+                    <li><a href="{{url('/news/news')}}" class="active">2</a></li>
+                    <li><a href="{{url('/news/news')}}">3</a></li>
+                    <li><a class="next" href="{{url('/news/news')}}">Siguiente&ensp;<span class="fa fa-angle-right"></span></a></li>
                 </ul>
             </div>
 

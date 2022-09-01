@@ -6,17 +6,16 @@
 
                 <!--Content Side-->
                 <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
-
                     <!--Events Section / List View-->
                     <section class="events-section list-view no-padd-bottom no-padd-top padd-right-20">
-
                         <!--Featured Column-->
                         <div class="column default-featured-column style-two">
                             <article class="inner-box">
                             	<div class="row clearfix">
                                 	<div class="col-md-5 col-sm-5 col-xs-12">
                                         <figure class="image-box">
-                                            <a href="#"><img src="images/resource/featured-image-19.jpg" alt=""></a>
+
+                                            <a href="#"><img src="{{asset('images/resource/featured-image-19.jpg')}}" alt=""></a>
                                             <div class="post-tag">Featured</div>
                                         </figure>
                                     </div>
@@ -34,8 +33,6 @@
                             </article>
                         </div>
 
-
-
                         <!-- Styled Pagination -->
                         <div class="styled-pagination padd-top-20 margin-bott-40">
                             <ul>
@@ -47,8 +44,6 @@
                             </ul>
                         </div>
                     </section>
-
-
                 </div>
                 <!--Content Side-->
 
@@ -58,16 +53,13 @@
 
                         <!-- Search Form -->
                         <div class="widget search-box">
-
                             <form method="post" action="http://world5.commonsupport.com/html/greenture-new/index.html">
                                 <div class="form-group">
                                     <input type="search" name="search-field" value="" placeholder="Enter keyword">
                                     <button type="submit"><span class="icon flaticon-tool-5"></span></button>
                                 </div>
                             </form>
-
                         </div>
-
                         <!-- Popular Categories -->
                         <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="sidebar-title"><h3>Categorias</h3></div>
@@ -77,19 +69,10 @@
                                 <li><a class="clearfix" href="#">Categoria 2</a></li>
                                 <li><a class="clearfix" href="#">Categoria 3</a></li>
                             </ul>
-
                         </div>
-
-
-
-
                     </aside>
-
-
                 </div>
                 <!--Sidebar-->
-
-
             </div>
         </div>
     </div>

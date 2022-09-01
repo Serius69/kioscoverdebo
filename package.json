@@ -12,6 +12,8 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "animate.css": "^4.1.1",
+        "type": "module",
         "i": "^0.3.7",
         "npm": "^8.19.0",
         "or": "^0.2.0"

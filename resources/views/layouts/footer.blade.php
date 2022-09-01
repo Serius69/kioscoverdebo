@@ -1,5 +1,5 @@
         <!--Main Footer-->
-@@yield('footer')
+@yield('footer')
 
         <footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">
 
@@ -13,7 +13,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-8 col-sm-6 col-xs-12 column">
                                     <div class="footer-widget about-widget">
-                                        <div class="logo"><a href="index.html"><img src="{{asset('/images/logo-4.png')}}"  class="img-responsive" alt=""></a></div>
+                                        <div class="logo"><a href="index.html"><img src="{{asset('/images/logo-1.png')}}"  class="img-responsive" alt=""></a></div>
                                         <div class="text">
                                             <p>Nuestra Dirección.</p>
                                         </div>
@@ -77,7 +77,7 @@
                 <div class="container">
                     <!--Copyright-->
                     <div class="col-lg-4 col-sm-7 col-xs-12 column">
-                        <div class="copyright text-right">Copyright 2022 &copy; Pagina creada por <a href="#">CNI-SIS</a></div>
+                        <div class="copyright text-center">Copyright 2022 &copy; Pagina creada por <a href="#">CNI-SIS</a></div>
                     </div>
                     <!-- Privacy Policy -->
                     <div class="col-lg-4 col-sm-7 col-xs-12 column">
@@ -85,7 +85,7 @@
                     </div>
                     <!-- Terms and Conditions -->
                     <div class="col-lg-4 col-sm-7 col-xs-12 column">
-                        <div class="copyright text-left">  <a href="privacy.html">Politicas de privacidad</a></div>
+                        <div class="copyright text-center">  <a href="privacy.html">Politicas de privacidad</a></div>
                     </div>
                 </div>
 

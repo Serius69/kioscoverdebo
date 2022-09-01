@@ -1,8 +1,18 @@
+@extends('layouts.footer')
+@extends('layouts.register')
+@extends('layouts.sponsors')
+@extends('layouts.about')
+@extends('layouts.titlebar')
 @extends('layouts.header')
 
-@section('title', 'Inicio')
+@section('title', 'Quienes Somos')
+@section('subtitle1', 'Quienes')
+@section('subtitle2', ' Somos')
 
 @section('content')
-    <div></div>
+
+
+
+@section('footer')
 @endsection
 

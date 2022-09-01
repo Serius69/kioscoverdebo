@@ -50,7 +50,7 @@
         	<div class="auto-container clearfix">
             	<!-- Logo -->
                 <div class="logo">
-                    <a href="index.html"><img {{ asset('/images/logo-1.png') }}  alt="Greenture"></a>
+                    <a href="index.html"><img src="{{ asset('/images/logo-1.png') }}"  alt="Greenture"></a>
                  </div>
 
                  <!--Nav Outer-->
@@ -75,29 +75,29 @@
 
                                 <li><a href="{{ url('/') }}">INICIO</a>
                                 </li>
-                                <li><a href="{{ url('/home') }}">Quienes somos </a>
+                                <li><a href="{{ url('/aboutus') }}">Quienes somos </a>
                                 </li>
                                 <li class="dropdown"><a href="#">NOTICIAS</a>
                                     <ul>
-                                        <li><a href="{{ url('/intermediaty') }}">INTERMEDIACIONES</a> </li>
-                                        <li><a href="{{ url('/agend') }}">AGENDA</a></li>
-                                        <li><a href="{{ url('/noticy') }}">NOTICIAS AMBIENTALES</a></li>
-                                        <li><a href="{{ url('/home') }}">INVESTIGACIÓN</a></li>
+                                        <li><a href="{{ url('/news/intermediaty') }}">INTERMEDIACIONES</a> </li>
+                                        <li><a href="{{ url('/news/agend') }}">AGENDA</a></li>
+                                        <li><a href="{{ url('/news/news') }}">NOTICIAS AMBIENTALES</a></li>
+                                        <li><a href="{{ url('/news/investigation') }}">INVESTIGACIÓN</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">SERVICIOS</a>
                                     <ul>
-                                        <li><a href="{{ url('/recicle') }}">GESTION DE RESIDUOS</a></li>
-                                        <li><a href="{{ url('/ofert') }}">OFERTAS </a></li>
-                                        <li><a href="{{ url('/advice') }}">ASESORAMIENTO</a></li>
+                                        <li><a href="{{ url('/service/recicle') }}">GESTION DE RESIDUOS</a></li>
+                                        <li><a href="{{ url('/service/ofert') }}">OFERTAS </a></li>
+                                        <li><a href="{{ url('/service/advice') }}">ASESORAMIENTO</a></li>
 
                                     </ul>
                                 </li>
                                  <li class="dropdown"><a href="#">CONTACTANOS</a>
                                     <ul>
-                                        <li><a href="{{ url('/question') }}">PREGUNTAS FRECUENTES</a></li>
-                                        <li><a href="{{ url('/contactus') }}">ESCRÍBENOS</a></li>
-                                        <li><a href="{{ url('/standars') }}">BIBLIOTECA</a>
+                                        <li><a href="{{ url('/contact/question') }}">PREGUNTAS FRECUENTES</a></li>
+                                        <li><a href="{{ url('/contact/contactus') }}">ESCRÍBENOS</a></li>
+                                        <li><a href="{{ url('/contact/standars') }}">BIBLIOTECA</a>
 
 
                                         </li>
@@ -114,27 +114,9 @@
 
     </header><!--End Main Header -->
 
-    <!--Page Title-->
-    <section class="page-title" style="background-image:url(images/background/page-title-bg.jpg);">
-    	<div class="auto-container">
-        	<div class="sec-title">
-                <h1>@yield('subtitle1')<span class="normal-font">@yield('subtitle2')</span></h1>
-
-                <div class="bread-crumb"><a href="{{ url('/') }}">inicio</a> / <a href="#" class="current">agenda</a></div>
-            </div>
-        </div>
-    </section>
-
-
     @yield('content')
 
-
-
-
-
-
 </body>
-
 
 
 

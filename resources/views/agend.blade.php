@@ -1,8 +1,17 @@
+@extends('layouts.footer')
+@extends('layouts.register')
+@extends('layouts.agend')
+@extends('layouts.titlebar')
 @extends('layouts.header')
 
-@section('title', 'Inicio')
+@section('title', 'Agenda')
+@section('subtitle1', 'Age')
+@section('subtitle2', 'nda')
 
 @section('content')
-    <div></div>
+
+
+
+@section('footer')
 @endsection
 

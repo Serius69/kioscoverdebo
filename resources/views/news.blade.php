@@ -1,12 +1,12 @@
 @extends('layouts.footer')
 @extends('layouts.register')
-@extends('layouts.question')
+@extends('layouts.news')
 @extends('layouts.titlebar')
 @extends('layouts.header')
 
-@section('title', 'Preguntas')
-@section('subtitle1', 'Preguntas')
-@section('subtitle2', ' Frecuentes')
+@section('title', 'Noticias Ambientales')
+@section('subtitle1', 'Noticias')
+@section('subtitle2', ' Ambientales')
 
 @section('content')
 

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Latest extends Model
 {
     use HasFactory;
+
+    protected $table = "latests";
+
 }

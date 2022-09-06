@@ -4,8 +4,8 @@
     <div class="auto-container">
         <div class="text-center">
             <h2>El mejor momento para <span class="theme_color">reciclar</span> es ahora</h2>
-            <a href="signup.html" class="theme-btn btn-style-two">Registrate Ahora</a>
-            <a href="error.html" class="theme-btn btn-style-one">Ingresa a un evento</a>
+            <a href="{{url('/login/signup')}}" class="theme-btn btn-style-two">Registrate Ahora</a>
+            <a href="{{url('/404')}}" class="theme-btn btn-style-one">Ingresa a un evento</a>
         </div>
     </div>
 </section>

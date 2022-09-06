@@ -9,7 +9,7 @@
                             <h1 class="bigger-font">@yield('number')</h1>
                             <h3>Algo anda <span class="theme_color">mal!!</span></h3>
                             <div class="text">La página que está buscando fue movida, eliminada, <br>renombrada o podría nunca existir.</div>
-                            <a href="index-2.html" class="theme-btn btn-style-three">Go Home</a>
+                            <a href="{{url('/')}}" class="theme-btn btn-style-three">Go Home</a>
                         </div>
                     </div>
                 </div>

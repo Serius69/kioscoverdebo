@@ -1,8 +1,15 @@
+@extends('layouts.footer')
+@extends('layouts.register')
+@extends('layouts.question')
+@extends('layouts.titlebar')
 @extends('layouts.header')
 
-@section('title', 'Inicio')
+@section('title', 'Preguntas')
+@section('subtitle1', 'Preguntas')
+@section('subtitle2', ' Frecuentes')
 
 @section('content')
-    <div></div>
+
+@section('footer')
 @endsection
 

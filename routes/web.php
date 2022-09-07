@@ -8,7 +8,19 @@ use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProjectController;
+// CRUD
+use App\Http\Controllers\LatestCRUDController;
+use App\Http\Controllers\EventCRUDController;
+use App\Http\Controllers\ProjectCRUDController;
 
+/*
+|--------------------------------------------------------------------------
+| Google
+|
+*/
+use App\Http\Controllers\Auth\GoogleSocialiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +54,7 @@ Route::controller(NewsController::class)->group(function(){
     Route::get('news/agend', 'agend');
     Route::get('news/investigation',  'investigation');
     Route::get('news/news',  'news');
+    Route::get('news/newsn',  'newsn');
 });
 
 Route::controller(ServiceController::class)->group(function(){
@@ -51,4 +64,34 @@ Route::controller(ServiceController::class)->group(function(){
 });
 
 
+Route::controller(LoginController::class)->group(function(){
+    Route::get('login/login',  'login');
+    Route::get('login/signup', 'signup');
+});
 
+
+Route::controller(ProjectController::class)->group(function(){
+    // Route::get('project/$name',  'login');
+    Route::get('project/project', 'project');
+});
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+// Integration with Google
+Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
+Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
+
+// CRUD
+
+Route::resource('events', LatestCRUDController::class);
+Route::resource('latests', EventCRUDController::class);
+Route::resource('projects', ProjectCRUDController::class);

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('author');
             $table->string('description');
-            $table->string('event_photo', 2048)->nullable();
+            $table->string('latest_photo', 2048)->nullable();
             $table->timestamps();
         });
     }

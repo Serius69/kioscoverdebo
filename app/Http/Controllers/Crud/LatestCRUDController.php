@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crud;
 use App\Models\Latest;
 use Illuminate\Http\Request;
 class LatestCRUDController extends Controller
@@ -12,7 +12,7 @@ class LatestCRUDController extends Controller
 public function index()
 {
 $data['latests'] = latest::orderBy('id','desc')->paginate(5);
-return view('companies.index', $data);
+return view('latests.index', $data);
 }
 /**
 * Show the form for creating a new resource.
@@ -21,7 +21,7 @@ return view('companies.index', $data);
 */
 public function create()
 {
-return view('companies.create');
+return view('latests.create');
 }
 /**
 * Store a newly created resource in storage.
@@ -33,15 +33,17 @@ public function store(Request $request)
 {
 $request->validate([
 'name' => 'required',
+'author' => 'required',
 'description' => 'required',
 'latestPhoto' => 'required'
 ]);
 $latest = new Latest;
 $latest->name = $request->name;
+$latest->author = $request->author;
 $latest->description = $request->description;
 $latest->latestPhoto = $request->latestPhoto;
 $latest->save();
-return redirect()->route('companies.index')
+return redirect()->route('latests.index')
 ->with('success','latest has been created successfully.');
 }
 /**
@@ -52,7 +54,7 @@ return redirect()->route('companies.index')
 */
 public function show(latest $latest)
 {
-return view('companies.show',compact('latest'));
+return view('latests.show',compact('latest'));
 }
 /**
 * Show the form for editing the specified resource.
@@ -62,7 +64,7 @@ return view('companies.show',compact('latest'));
 */
 public function edit(Latest $latest)
 {
-return view('companies.edit',compact('latest'));
+return view('latests.edit',compact('latest'));
 }
 /**
 * Update the specified resource in storage.
@@ -75,15 +77,17 @@ public function update(Request $request, $id)
 {
 $request->validate([
 'name' => 'required',
-'email' => 'required',
-'address' => 'required',
+'author' => 'required',
+'description' => 'required',
+// 'latest_photo' => 'required',
 ]);
 $latest = latest::find($id);
 $latest->name = $request->name;
-$latest->email = $request->email;
-$latest->address = $request->address;
+$latest->author = $request->author;
+$latest->description = $request->description;
+$latest->latest_photo = $request->latest_photo;
 $latest->save();
-return redirect()->route('companies.index')
+return redirect()->route('latests.index')
 ->with('success','latest Has Been updated successfully');
 }
 /**
@@ -95,7 +99,9 @@ return redirect()->route('companies.index')
 public function destroy(latest $latest)
 {
 $latest->delete();
-return redirect()->route('companies.index')
-->with('success','latest has been deleted successfully');
+return redirect()->route('latests.index')
+// ->with('success','latest has been deleted successfully');
+->with('success','Noticia fue eliminada correctamente');
+
 }
 }

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crud;
 use App\Models\Event;
 use Illuminate\Http\Request;
 class EventCRUDController extends Controller
@@ -12,7 +12,7 @@ class EventCRUDController extends Controller
 public function index()
 {
 $data['events'] = Event::orderBy('id','desc')->paginate(5);
-return view('companies.index', $data);
+return view('events.index', $data);
 }
 /**
 * Show the form for creating a new resource.
@@ -21,7 +21,7 @@ return view('companies.index', $data);
 */
 public function create()
 {
-return view('companies.create');
+return view('events.create');
 }
 /**
 * Store a newly created resource in storage.
@@ -33,6 +33,7 @@ public function store(Request $request)
 {
 $request->validate([
 'name' => 'required',
+'media' => 'required',
 'description' => 'required',
 'eventPhoto' => 'required'
 ]);
@@ -41,7 +42,7 @@ $event->name = $request->name;
 $event->description = $request->description;
 $event->eventPhoto = $request->eventPhoto;
 $event->save();
-return redirect()->route('companies.index')
+return redirect()->route('events.index')
 ->with('success','event has been created successfully.');
 }
 /**
@@ -52,7 +53,7 @@ return redirect()->route('companies.index')
 */
 public function show(event $event)
 {
-return view('companies.show',compact('event'));
+return view('events.show',compact('event'));
 }
 /**
 * Show the form for editing the specified resource.
@@ -62,7 +63,7 @@ return view('companies.show',compact('event'));
 */
 public function edit(event $event)
 {
-return view('companies.edit',compact('event'));
+return view('events.edit',compact('event'));
 }
 /**
 * Update the specified resource in storage.
@@ -75,15 +76,17 @@ public function update(Request $request, $id)
 {
 $request->validate([
 'name' => 'required',
-'email' => 'required',
-'address' => 'required',
+'information' => 'required',
+'description' => 'required',
+'eventPhoto' => 'required'
 ]);
 $event = event::find($id);
 $event->name = $request->name;
-$event->email = $request->email;
-$event->address = $request->address;
+$event->information = $request->information;
+$event->description = $request->description;
+$event->eventPhoto = $request->eventPhoto;
 $event->save();
-return redirect()->route('companies.index')
+return redirect()->route('events.index')
 ->with('success','event Has Been updated successfully');
 }
 /**
@@ -95,7 +98,7 @@ return redirect()->route('companies.index')
 public function destroy(Event $event)
 {
 $event->delete();
-return redirect()->route('companies.index')
+return redirect()->route('events.index')
 ->with('success','event has been deleted successfully');
 }
 }

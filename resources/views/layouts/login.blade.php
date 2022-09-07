@@ -32,7 +32,7 @@
                                 <!-- Google button -->
                                 <h5>Ingresa directamente con tu cuenta de Google</h5>
                                     <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
-                                        <button type="button" class="login-with-google-btn" >
+                                        <button type="button" class="login-with-google-btn" href="{{ url('auth/google') }}">
                                             Log in with Google
                                         </button>
                                     </div>

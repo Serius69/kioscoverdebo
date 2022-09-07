@@ -20,6 +20,6 @@ class Event extends Model
         'name',
         'information',
         'description',
-        'projectPhoto',
+        'eventPhoto',
     ];
 }

@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Routes
+|
+*/
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FooterController;
@@ -10,10 +15,16 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
-// CRUD
-use App\Http\Controllers\LatestCRUDController;
-use App\Http\Controllers\EventCRUDController;
-use App\Http\Controllers\ProjectCRUDController;
+use App\Http\Controllers\EventController;
+/*
+|--------------------------------------------------------------------------
+| CRUD
+|
+*/
+use App\Http\Controllers\Crud\LatestCRUDController;
+use App\Http\Controllers\Crud\EventCRUDController;
+use App\Http\Controllers\Crud\ProjectCRUDController;
+//
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +55,7 @@ Route::controller(ContactController::class)->group(function(){
     Route::get('contact/standars',  'standars');
 });
 
+
 Route::controller(FooterController::class)->group(function(){
     Route::get('footer/privacy',  'privacy');
     Route::get('footer/terms', 'terms');
@@ -55,6 +67,8 @@ Route::controller(NewsController::class)->group(function(){
     Route::get('news/investigation',  'investigation');
     Route::get('news/news',  'news');
     Route::get('news/newsn',  'newsn');
+    Route::get('admin/createnew',  'createnew');
+    Route::get('admin/editnew',  'editnew');
 });
 
 Route::controller(ServiceController::class)->group(function(){
@@ -73,8 +87,24 @@ Route::controller(LoginController::class)->group(function(){
 Route::controller(ProjectController::class)->group(function(){
     // Route::get('project/$name',  'login');
     Route::get('project/project', 'project');
+    Route::get('admin/createproject', 'createproject');
+    Route::get('admin/editproject', 'editproject');
 });
 
+Route::controller(EventController::class)->group(function(){
+    Route::get('admin/createevent', 'createevent');
+    Route::get('admin/editevent', 'editevent');
+});
+
+
+// Integration with Google
+Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
+Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
+
+// CRUD
+Route::resource('events', LatestCRUDController::class);
+Route::resource('latests', EventCRUDController::class);
+Route::resource('projects', ProjectCRUDController::class);
 
 Route::middleware([
     'auth:sanctum',
@@ -86,12 +116,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-// Integration with Google
-Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
-Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 
-// CRUD
-
-Route::resource('events', LatestCRUDController::class);
-Route::resource('latests', EventCRUDController::class);
-Route::resource('projects', ProjectCRUDController::class);

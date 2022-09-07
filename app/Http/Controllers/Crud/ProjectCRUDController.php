@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Crud;
 use App\Models\Project;
 use Illuminate\Http\Request;
 class ProjectCRUDController extends Controller
@@ -11,8 +11,8 @@ class ProjectCRUDController extends Controller
 */
 public function index()
 {
-$data['projects'] = project::orderBy('id','desc')->paginate(5);
-return view('companies.index', $data);
+$data['projects'] = Project::orderBy('id','desc')->paginate(5);
+return view('projects.index', $data);
 }
 /**
 * Show the form for creating a new resource.
@@ -21,7 +21,7 @@ return view('companies.index', $data);
 */
 public function create()
 {
-return view('companies.create');
+return view('projects.create');
 }
 /**
 * Store a newly created resource in storage.
@@ -33,15 +33,17 @@ public function store(Request $request)
 {
 $request->validate([
 'name' => 'required',
+'information' => 'required',
 'description' => 'required',
 'projectPhoto' => 'required'
 ]);
-$project = new project;
+$project = new Project;
 $project->name = $request->name;
+$project->information = $request->description;
 $project->description = $request->description;
 $project->projectPhoto = $request->projectPhoto;
 $project->save();
-return redirect()->route('companies.index')
+return redirect()->route('projects.index')
 ->with('success','project has been created successfully.');
 }
 /**
@@ -52,7 +54,7 @@ return redirect()->route('companies.index')
 */
 public function show(project $project)
 {
-return view('companies.show',compact('project'));
+return view('projects.show',compact('project'));
 }
 /**
 * Show the form for editing the specified resource.
@@ -62,7 +64,7 @@ return view('companies.show',compact('project'));
 */
 public function edit(project $project)
 {
-return view('companies.edit',compact('project'));
+return view('projects.edit',compact('project'));
 }
 /**
 * Update the specified resource in storage.
@@ -74,16 +76,18 @@ return view('companies.edit',compact('project'));
 public function update(Request $request, $id)
 {
 $request->validate([
-'name' => 'required',
-'email' => 'required',
-'address' => 'required',
+    'name' => 'required',
+    'information' => 'required',
+    'description' => 'required',
+    'projectPhoto' => 'required'
 ]);
-$project = project::find($id);
+$project = Project::find($id);
 $project->name = $request->name;
-$project->email = $request->email;
-$project->address = $request->address;
+$project->information = $request->description;
+$project->description = $request->description;
+$project->projectPhoto = $request->projectPhoto;
 $project->save();
-return redirect()->route('companies.index')
+return redirect()->route('projects.index')
 ->with('success','project Has Been updated successfully');
 }
 /**
@@ -95,7 +99,7 @@ return redirect()->route('companies.index')
 public function destroy(project $project)
 {
 $project->delete();
-return redirect()->route('companies.index')
+return redirect()->route('projects.index')
 ->with('success','project has been deleted successfully');
 }
 }

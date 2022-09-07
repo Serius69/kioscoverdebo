@@ -10,10 +10,10 @@
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div class="pull-left mb-2">
-<h2>Add Company</h2>
+<h2>Adicionar evento</h2>
 </div>
 <div class="pull-right">
-<a class="btn btn-primary" href="{{ route('companies.index') }}"> Back</a>
+<a class="btn btn-primary" href="{{ route('events.index') }}"> Back</a>
 </div>
 </div>
 </div>
@@ -22,12 +22,12 @@
 {{ session('status') }}
 </div>
 @endif
-<form action="{{ route('companies.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
 @csrf
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>Company Name:</strong>
+<strong>Nombre del evento</strong>
 <input type="text" name="name" class="form-control" placeholder="Company Name">
 @error('name')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>

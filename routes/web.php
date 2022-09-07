@@ -10,9 +10,14 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
+// CRUD
+use App\Http\Controllers\LatestCRUDController;
+use App\Http\Controllers\EventCRUDController;
+use App\Http\Controllers\ProjectCRUDController;
+
 /*
 |--------------------------------------------------------------------------
-| Google 
+| Google
 |
 */
 use App\Http\Controllers\Auth\GoogleSocialiteController;
@@ -81,6 +86,12 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
+// Integration with Google
 Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
+
+// CRUD
+
+Route::resource('events', LatestCRUDController::class);
+Route::resource('latests', EventCRUDController::class);
+Route::resource('projects', ProjectCRUDController::class);

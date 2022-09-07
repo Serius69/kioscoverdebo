@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('latests', function (Blueprint $table) {
-            $table->id()->unique();
-            $table->string('name');
-            $table->string('author');
-            $table->string('description');
-            $table->string('event_photo', 2048)->nullable();
-            $table->timestamps();
+        Schema::table('user', function (Blueprint $table) {
+            $table->binary('type')->default(0);
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('latests');
+        Schema::table('user', function (Blueprint $table) {
+            $table->dropColumn('type');
+        });
     }
 };

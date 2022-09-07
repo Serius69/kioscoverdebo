@@ -9,5 +9,17 @@ class Event extends Model
 {
     use HasFactory;
 
-    protected $table = "events";
+    // protected $table = "events";
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var string[]
+     */
+    protected $fillable = [
+        'name',
+        'information',
+        'description',
+        'projectPhoto',
+    ];
 }

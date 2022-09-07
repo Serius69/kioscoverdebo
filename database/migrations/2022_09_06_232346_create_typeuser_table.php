@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('latests', function (Blueprint $table) {
-            $table->id()->unique();
-            $table->string('name');
-            $table->string('author');
-            $table->string('description');
-            $table->string('event_photo', 2048)->nullable();
+        Schema::create('typeuser', function (Blueprint $table) {
+            $table->id();
+            $table->string('type');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('latests');
+        Schema::dropIfExists('typeuser');
     }
 };

@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Latest extends Model
+class Project extends Model
 {
     use HasFactory;
 
-    protected $table = "latests";
-
-
+    protected $table = "project";
     /**
      * The attributes that are mass assignable.
      *
@@ -23,5 +21,6 @@ class Latest extends Model
         'description',
         'projectPhoto',
     ];
+
 
 }

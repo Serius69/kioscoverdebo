@@ -12,7 +12,7 @@ class EventCRUDController extends Controller
 public function index()
 {
 $data['events'] = Event::orderBy('id','desc')->paginate(5);
-return view('events.index', $data);
+return view('crudEvent', $data);
 }
 /**
 * Show the form for creating a new resource.
@@ -48,10 +48,10 @@ return redirect()->route('events.index')
 /**
 * Display the specified resource.
 *
-* @param  \App\Event  $event
+* @param  \App\event  $event
 * @return \Illuminate\Http\Response
 */
-public function show(event $event)
+public function show(Event $event)
 {
 return view('events.show',compact('event'));
 }
@@ -61,7 +61,7 @@ return view('events.show',compact('event'));
 * @param  \App\Event  $event
 * @return \Illuminate\Http\Response
 */
-public function edit(event $event)
+public function edit(Event $event)
 {
 return view('events.edit',compact('event'));
 }
@@ -69,7 +69,7 @@ return view('events.edit',compact('event'));
 * Update the specified resource in storage.
 *
 * @param  \Illuminate\Http\Request  $request
-* @param  \App\Event  $event
+* @param  \App\event  $event
 * @return \Illuminate\Http\Response
 */
 public function update(Request $request, $id)
@@ -80,7 +80,7 @@ $request->validate([
 'description' => 'required',
 'eventPhoto' => 'required'
 ]);
-$event = event::find($id);
+$event = Event::find($id);
 $event->name = $request->name;
 $event->information = $request->information;
 $event->description = $request->description;

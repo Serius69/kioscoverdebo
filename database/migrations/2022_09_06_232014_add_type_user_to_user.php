@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('user', function (Blueprint $table) {
-            $table->binary('type')->default(0);
+            $table->number_format('type')->default(1);
         });
     }
 

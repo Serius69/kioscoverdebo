@@ -24,6 +24,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\Crud\LatestCRUDController;
 use App\Http\Controllers\Crud\EventCRUDController;
 use App\Http\Controllers\Crud\ProjectCRUDController;
+use App\Http\Controllers\CrudController;
 //
 
 /*
@@ -91,9 +92,10 @@ Route::controller(ProjectController::class)->group(function(){
     Route::get('admin/editproject', 'editproject');
 });
 
-Route::controller(EventController::class)->group(function(){
-    Route::get('admin/createevent', 'createevent');
-    Route::get('admin/editevent', 'editevent');
+Route::controller(CrudController::class)->group(function(){
+    Route::get('admin/event', 'eventCrud');
+    Route::get('admin/project', 'projectCrud');
+    Route::get('admin/latest', 'latestCrud');
 });
 
 
@@ -102,8 +104,8 @@ Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 
 // CRUD
-Route::resource('events', LatestCRUDController::class);
-Route::resource('latests', EventCRUDController::class);
+Route::resource('latests', LatestCRUDController::class);
+Route::resource('events', EventCRUDController::class);
 Route::resource('projects', ProjectCRUDController::class);
 
 Route::middleware([

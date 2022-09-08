@@ -5,7 +5,7 @@
 
 @section('title', 'Crear Evento')
 @section('subtitle1', 'Crear')
-@section('subtitle2', 'Evento')
+@section('subtitle2', ' Evento')
 
 @section('content')
 

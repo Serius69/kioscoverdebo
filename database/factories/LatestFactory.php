@@ -9,8 +9,12 @@ use App\Models\Latest;
  */
 class LatestFactory extends Factory
 {
-
-
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = Latest::class;
     /**
      * Define the model's default state.
      *
@@ -18,10 +22,12 @@ class LatestFactory extends Factory
      */
     public function definition()
     {
+        $url = "https://picsum.photos/800/600?random=12965";
         return [
             'name' => $this->faker->sentence(),
-            'author' => $this->faker->randomElemtn,
+            'information' => $this->faker->randomElemtn,
             'description' => $this->faker->paragraph(),
+            'latestPhoto' => $this->faker->url(800,600),
         ];
     }
 }

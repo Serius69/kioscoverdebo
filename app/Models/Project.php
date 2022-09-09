@@ -7,20 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    use HasFactory;
+    // use HasFactory;
 
     protected $table = "project";
     /**
      * The attributes that are mass assignable.
-     *
-     * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'information',
-        'description',
-        'projectPhoto',
-    ];
+     // @var string[]
+
+    // protected $fillable = [
+    //     'name',
+    //     'information',
+    //     'description',
+    //     'projectPhoto',
+    // ];
 
 
 }

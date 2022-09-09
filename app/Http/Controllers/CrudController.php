@@ -9,10 +9,10 @@ class CrudController extends Controller
         return view('crudEvent');
     }
     public function projectCrud(){
-        return view('crud_latest');
+        return view('crudProject');
     }
     public function latestCrud(){
-        return view('crud_project');
+        return view('crudLatest');
     }
 
 }

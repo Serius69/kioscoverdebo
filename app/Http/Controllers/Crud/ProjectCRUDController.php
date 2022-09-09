@@ -14,6 +14,12 @@ public function index()
 $data['projects'] = Project::orderBy('id','desc')->paginate(5);
 return view('projects.index', $data);
 }
+
+public function view($id){
+    $pro = Project::find($id);
+    $projects=DB::table('projects')->get();
+    return view('/admin/projectCrud',compact('pro','projects'));
+}
 /**
 * Show the form for creating a new resource.
 *

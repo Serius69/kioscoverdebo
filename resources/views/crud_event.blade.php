@@ -16,11 +16,11 @@
 </div>
 </div>
 </div>
-{{-- @if ($message = Session::get('success'))
+@if ($message = Session::get('success'))
 <div class="alert alert-success">
-<p>{{ $message }}</p> --}}
-{{-- </div>
-@endif --}}
+<p>{{ $message }}</p>
+</div>
+@endif
 <table class="table table-bordered">
 <tr>
 <th>ID</th>
@@ -31,7 +31,7 @@
 </tr>
 
 {{-- error Undefined variable $events --}}
-{{-- @foreach ($events as $event)
+@foreach ($events as $event)
 <tr>
     <td>{{ $event->id }}</td>
     <td>{{ $event->name }}</td>
@@ -46,9 +46,9 @@
 </form>
 </td>
 </tr>
-@endforeach --}}
+@endforeach
 </table>
-{{-- {!! $events->links() !!} --}}
+{!! $events->links() !!}
 </body>
 </html>
 

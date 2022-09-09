@@ -1,9 +1,9 @@
 {{-- @extends('layouts.footer') --}}
-@extends('crud_event')
+@extends('crud.crud_latest')
 @extends('layouts.titlebar')
 @extends('layouts.admin_header')
 
-@section('title', 'CRUD Eventos')
+@section('title', 'CRUD Noticias')
 @section('subtitle1', 'CRUD')
 @section('subtitle2', ' Eventos')
 

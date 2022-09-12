@@ -25,9 +25,9 @@ class EventFactory extends Factory
         $url = "https://picsum.photos/800/600?random=12965";
         return [
             'name' => $this->faker->name(),
-            'author' => $this->faker->unique()->safeEmail(),
-            'description' => $this->faker->author(),
-            'description' => $this->faker->author(),
+            'media' => $this->faker->name(),
+            'description' => $this->faker->sentence(),
+            'event_photo' => $this->faker->url(800,600),
         ];
     }
 }

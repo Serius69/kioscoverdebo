@@ -8,30 +8,31 @@
                 <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
                     <!--Events Section / List View-->
                     <section class="events-section list-view no-padd-bottom no-padd-top padd-right-20">
+                        @foreach ($events as $event)
                         <!--Featured Column-->
                         <div class="column default-featured-column style-two">
                             <article class="inner-box">
-                            	<div class="row clearfix">
+                                <div class="row clearfix">
                                 	<div class="col-md-5 col-sm-5 col-xs-12">
                                         <figure class="image-box">
-
                                             <a href="#"><img src="{{asset('images/resource/featured-image-19.jpg')}}" alt=""></a>
                                             <div class="post-tag">Featured</div>
                                         </figure>
                                     </div>
-
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <div class="content-box">
-                                            <h3><a href="#">Evento N</a></h3>
-                                            <div class="column-info">Fecha - Hora - Lugar</div>
-                                            <div class="text">Lorem ipsum dolor sit amet, eu qui modo expetendis refor midans, ex sit appetere sententiae aco modo set lieu vet eum in simul homero. Duo consul probatus...</div>
-                                            <a href="#" class="theme-btn btn-style-three">Read More</a>
+                                            <h3><a href="#">{{ $event->name }}</a></h3>
+                                            <div class="column-info">{{ $event->name }}</div>
+                                            <div class="text">{{ $event->name }}</div>
+                                            <a href="#" class="theme-btn btn-style-three">Saber Mas</a>
                                         </div>
                                     </div>
 
                                 </div>
                             </article>
                         </div>
+
+                        @endforeach
 
                         <!-- Styled Pagination -->
                         <div class="styled-pagination padd-top-20 margin-bott-40">

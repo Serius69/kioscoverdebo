@@ -25,6 +25,7 @@
 <tr>
 <th>ID</th>
 <th>Nombre del Evento</th>
+<th>Media</th>
 <th>Descripcion</th>
 <th>Imagen</th>
 <th width="280px">Accion</th>
@@ -35,14 +36,15 @@
 <tr>
     <td>{{ $event->id }}</td>
     <td>{{ $event->name }}</td>
-    <td>{{ $event->email }}</td>
-    <td>{{ $event->address }}</td>
+    <td>{{ $event->media }}</td>
+    <td>{{ $event->description }}</td>
+    <td>{{ $event->event_photo }}</td>
 <td>
 <form action="{{ route('events.destroy',$event->id) }}" method="Post">
-<a class="btn btn-primary" href="{{ route('events.edit',$event->id) }}">Edit</a>
+<a class="btn btn-primary" href="{{ route('events.edit',$event->id) }}">Editar</a>
 @csrf
 @method('DELETE')
-<button type="submit" class="btn btn-danger">Delete</button>
+<button type="submit" class="btn btn-danger">Eliminar</button>
 </form>
 </td>
 </tr>

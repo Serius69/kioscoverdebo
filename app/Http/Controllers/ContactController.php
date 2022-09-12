@@ -8,7 +8,7 @@ class ContactController extends Controller
     public function question(){
         return view('question');
     }
-    public function contactus(){
+    public function index(){
         return view('contactus');
     }
     public function standars(){

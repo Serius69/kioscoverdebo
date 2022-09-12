@@ -35,8 +35,9 @@
 <tr>
     <td>{{ $project->id }}</td>
     <td>{{ $project->name }}</td>
-    <td>{{ $project->email }}</td>
-    <td>{{ $project->address }}</td>
+    <td>{{ $project->information }}</td>
+    <td>{{ $project->description }}</td>
+    <td>{{ $project->project_photo }}</td>
 <td>
 <form action="{{ route('projects.destroy',$project->id) }}" method="Post">
 <a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}">Edit</a>

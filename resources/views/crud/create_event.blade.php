@@ -94,7 +94,7 @@
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Descripcion <span class="required">*</span></div>
-                                    <input type="email" name="description" value="" placeholder="Descripcion" required>
+                                    <input type="text" name="description" value="" placeholder="Descripcion" required>
                                     @error('description')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror

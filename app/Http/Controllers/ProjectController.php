@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
-    public function project(){
-        return view('project-single');
+
+    public function lastProjects(){
+        $data['projects'] = Project::orderBy('id','desc')->paginate(3);
+        return view('projects.index', $data);
     }
-    // public function project2(){
-    //     return view('signup');
-    // }
+
 }

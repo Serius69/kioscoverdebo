@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Crud;
+use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -11,11 +12,11 @@ class EventCRUDController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
-public function index()
+public function indexcrud()
 {
-$data['events'] = Event::orderBy('id','desc')->paginate(5);
-// return view('crud_event', $data);
-return view("crud_event", [ "events" => $events ]);
+$data['events'] = Event::orderBy('id','asc')->paginate(12);
+ return view('crud.crud_event', $data);
+//return view("crud.crud_event", [ "events" => $events ]);
 }
 /**
 * Display an element.
@@ -34,7 +35,7 @@ public function view($id){
 */
 public function create()
 {
-return view('events.create');
+return view('createevent');
 }
 /**
 * Store a newly created resource in storage.
@@ -46,17 +47,17 @@ public function store(Request $request)
 {
 $request->validate([
 'name' => 'required',
-'information' => 'required',
+'media' => 'required',
 'description' => 'required',
-'projectPhoto' => 'required'
+'project_photo' => 'required'
 ]);
 $event = new Event;
 $event->name = $request->name;
-$event->information = $request->description;
+$event->media = $request->media;
 $event->description = $request->description;
-$event->projectPhoto = $request->projectPhoto;
+$event->project_photo = $request->project_photo;
 $event->save();
-return redirect()->route('events.index')
+return redirect()->route('events.indexcrud')
 ->with('success','event has been created successfully.');
 }
 /**
@@ -100,7 +101,7 @@ $event->information = $request->description;
 $event->description = $request->description;
 $event->projectPhoto = $request->projectPhoto;
 $event->save();
-return redirect()->route('events.index')
+return redirect()->route('events.crudEvent')
 ->with('success','event Has Been updated successfully');
 }
 /**

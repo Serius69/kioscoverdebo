@@ -18,14 +18,18 @@
                                     <input type="text" name="name" value="" placeholder="Nombre" required>
                                 </div>
 
+                                <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                    <div class="field-label">Correo electronico <span class="required">*</span></div>
+                                    <input type="email" name="name" value="" placeholder="Email" required>
+                                </div>
+
                                  <div class="form-group col-lg-6 col-md-6 col-xs-12">
                                     <div class="field-label">Contraseña <span class="required">*</span></div>
                                     <input type="text" name="name" value="" placeholder="Last Name" required>
                                 </div>
-
                                 <div class="form-group col-lg-6 col-md-6 col-xs-12">
-                                    <div class="field-label">Correo electronico <span class="required">*</span></div>
-                                    <input type="email" name="name" value="" placeholder="Email" required>
+                                    <div class="field-label">Confirmar Contraseña <span class="required">*</span></div>
+                                    <input type="text" name="name" value="" placeholder="Last Name" required>
                                 </div>
 
                                 <div class="form-group col-lg-6 col-md-6 col-xs-12">

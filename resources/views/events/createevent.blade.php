@@ -1,7 +1,7 @@
 @extends('layouts.footer')
 @extends('crud.create_event')
 @extends('layouts.titlebar')
-@extends('layouts.header')
+@extends('layouts.admin_header')
 
 @section('title', 'Crear Evento')
 @section('subtitle1', 'Crear')

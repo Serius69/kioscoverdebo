@@ -11,7 +11,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FooterController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\LatestController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
@@ -35,6 +35,13 @@ use App\Http\Controllers\CrudController;
 use App\Http\Controllers\Auth\GoogleSocialiteController;
 /*
 |--------------------------------------------------------------------------
+| Login ang SignUp
+|
+*/
+use App\Http\Controllers\Auth\AuthController;
+
+/*
+|--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -47,7 +54,7 @@ use App\Http\Controllers\Auth\GoogleSocialiteController;
 Route::get('/', HomeController::class);
 
 Route::controller(AboutController::class)->group(function(){
-    Route::get('aboutus',  'aboutus');
+    Route::get('aboutus',  'indexAbout');
 });
 
 Route::controller(ContactController::class)->group(function(){
@@ -56,17 +63,16 @@ Route::controller(ContactController::class)->group(function(){
     Route::get('contact/standars',  'standars');
 });
 
-
 Route::controller(FooterController::class)->group(function(){
     Route::get('footer/privacy',  'privacy');
     Route::get('footer/terms', 'terms');
 });
 
-Route::controller(NewsController::class)->group(function(){
+Route::controller(LatestController::class)->group(function(){
     Route::get('news/intermediaty',  'intermediaty');
     Route::get('news/agend', 'agend');
     Route::get('news/investigation',  'investigation');
-    Route::get('news/news',  'news');
+    Route::get('news/news',  'indexLatest');
     Route::get('news/newsn',  'newsn');
     Route::get('admin/createnew',  'createnew');
     Route::get('admin/editnew',  'editnew');
@@ -84,19 +90,29 @@ Route::controller(LoginController::class)->group(function(){
     Route::get('login/signup', 'signup');
 });
 
-
 Route::controller(ProjectController::class)->group(function(){
     // Route::get('project/$name',  'login');
-    Route::get('project/project', 'project');
-    Route::get('admin/createproject', 'createproject');
-    Route::get('admin/editproject', 'editproject');
+    Route::get('project/project', 'lastProjects');
+});
+Route::controller(LatestCRUDController::class)->group(function(){
+    Route::get('admin/latest', 'indexcrud');
+    Route::get('admin/createlatest', 'create');
+    Route::get('admin/editlatest', 'edit');
+});
+Route::controller(EventCRUDController::class)->group(function(){
+    Route::get('admin/event', 'indexcrud');
+    Route::get('admin/createevent', 'create');
+    Route::get('admin/editevent', 'edit');
+});
+Route::controller(ProjectCRUDController::class)->group(function(){
+    Route::get('admin/project', 'indexcrud');
+    Route::get('admin/createproject', 'create');
+    Route::get('admin/editproject', 'edit');
 });
 
-Route::controller(CrudController::class)->group(function(){
-    Route::get('admin/event', 'eventCrud');
-    Route::get('admin/project', 'projectCrud');
-    Route::get('admin/latest', 'latestCrud');
-});
+// Login
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
 
 
 // Integration with Google

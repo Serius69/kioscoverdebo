@@ -15,11 +15,13 @@
 
 @section('introduction')
 
-@section('last_projects')
+
 
 @section('service')
 
 @section('anexo')
+
+@section('last_projects')
 
 @section('last_news')
 

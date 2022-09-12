@@ -9,7 +9,7 @@ class Event extends Model
 {
     use HasFactory;
 
-    // protected $table = "events";
+    protected $table = "events";
 
     /**
      * The attributes that are mass assignable.
@@ -18,8 +18,16 @@ class Event extends Model
      */
     protected $fillable = [
         'name',
-        'information',
+        'media',
         'description',
-        'eventPhoto',
+        'event_photo',
     ];
+
+    protected function name(): Attribute {
+        return new Attribute (
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value)
+        );
+    }
+
 }

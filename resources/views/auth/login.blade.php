@@ -1,52 +1,49 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+    <!-- Login Form - Main -->
+    <!--Default Section / Other Info-->
+    <section class="default-section other-info">
+    	<!--Login Form Main-->
+    <!-- <div class="modal fade pop-box"  tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true"> -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--SignUp Section-->
+                <section class="donation-section">
+                    <div class="donation-form-outer">
+                        <form method="post" action="http://world5.commonsupport.com/html/greenture-new/contact.html">
+                            <!--Form Portlet-->
+                            <div class="form-portlet">
+                                <h4>Ingrese sus datos de cuenta</h4>
+                                <div class="row clearfix">
 
-        <x-jet-validation-errors class="mb-4" />
+                                    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                        <div class="field-label">Nombre | Correo electronico <span class="required">*</span></div>
+                                        <input type="text" name="name" value="" placeholder="Nombre" required>
+                                    </div>
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+                                    <div class="form-group col-lg-6 col-md-6 col-xs-12">
+                                        <div class="field-label">Contraseña <span class="required">*</span></div>
+                                        <input type="text" name="name" value="" placeholder="Contraseña" required>
+                                    </div>
+                                    <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Ingresar</button></div>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+                                </div>
+                            </div>
 
-            <div>
-                <x-jet-label value="{{ __('Email') }}" />
-                <x-jet-input class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+                            <br>
+                                <!-- Google button -->
+                                <h5>Ingresa directamente con tu cuenta de Google</h5>
+                                    <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
+                                        <button type="button" class="login-with-google-btn" href="{{ url('auth/google') }}">
+                                            Log in with Google
+                                        </button>
+                                    </div>
+                                    <!-- Login -->
+                                        <h4>Si no estas registrado dale click a <a href="signup.html"> Registrarse</a> </h4>
+                                </div>
 
-            <div class="mt-4">
-                <x-jet-label value="{{ __('Password') }}" />
-                <x-jet-input class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+                            </div>
 
-            <div class="block mt-4">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Login') }}
-                </x-jet-button>
-
-                <a href="{{ url('auth/google') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
-                  <strong>Google Login</strong>
-                </a>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+                        </form>
+                    </div>
+    </section>
+    <!-- Login Form - End -->

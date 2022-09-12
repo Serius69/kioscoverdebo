@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Crud;
+use App\Http\Controllers\Controller;
 use App\Models\Project;
 use Illuminate\Http\Request;
 class ProjectCRUDController extends Controller
@@ -9,17 +10,12 @@ class ProjectCRUDController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
-public function index()
+public function indexcrud()
 {
-$data['projects'] = Project::orderBy('id','desc')->paginate(5);
-return view('projects.index', $data);
+$data['projects'] = Project::orderBy('id','asc')->paginate(10);
+return view('crudProject', $data);
 }
 
-public function view($id){
-    $pro = Project::find($id);
-    $projects=DB::table('projects')->get();
-    return view('/admin/projectCrud',compact('pro','projects'));
-}
 /**
 * Show the form for creating a new resource.
 *
@@ -70,7 +66,7 @@ return view('projects.show',compact('project'));
 */
 public function edit(project $project)
 {
-return view('projects.edit',compact('project'));
+return view('projects.edit_project',compact('project'));
 }
 /**
 * Update the specified resource in storage.

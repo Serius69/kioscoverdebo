@@ -24,10 +24,10 @@ class LatestFactory extends Factory
     {
         $url = "https://picsum.photos/800/600?random=12965";
         return [
-            'name' => $this->faker->sentence(),
-            'information' => $this->faker->randomElemtn,
-            'description' => $this->faker->paragraph(),
-            'latestPhoto' => $this->faker->url(800,600),
+            'name' => $this->faker->title(),
+            'author' => $this->faker->name(),
+            'description' => $this->faker->sentence(),
+            'latest_photo' => $this->faker->url(800,600),
         ];
     }
 }

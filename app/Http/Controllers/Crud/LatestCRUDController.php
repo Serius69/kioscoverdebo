@@ -1,5 +1,6 @@
 <?php
 namespace App\Http\Controllers\Crud;
+use App\Http\Controllers\Controller;
 use App\Models\Latest;
 use Illuminate\Http\Request;
 class LatestCRUDController extends Controller
@@ -9,10 +10,10 @@ class LatestCRUDController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
-public function index()
+public function indexcrud()
 {
-$data['latests'] = latest::orderBy('id','desc')->paginate(5);
-return view('latests.index', $data);
+$data['latests'] = latest::orderBy('id','asc')->paginate(10);
+return view('crudLatest', $data);
 }
 /**
 * Show the form for creating a new resource.

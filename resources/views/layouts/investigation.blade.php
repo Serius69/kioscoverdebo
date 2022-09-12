@@ -19,141 +19,26 @@
 
             <div class="items-container row clearfix">
 
+                @foreach ($latests as $latest)
                 <!--Column-->
                 <div class="column all eco plants col-md-4 col-sm-6 col-xs-12">
                     <!--Default Portfolio Item-->
                     <div class="default-portfolio-item">
                         <div class="inner-box text-center">
                             <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-7.jpg" alt=""></figure>
+                            <figure class="image-box"><img src={{ $latest->latest_photo }} alt=""></figure>
                             <div class="overlay-box">
                                 <div class="inner-content">
                                     <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-7.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
+                                        <h3><a href="#">{{ $latest->name }}</a></h3>
+                                        <a class="arrow lightbox-image" href={{ $latest->latest_photo }} title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!--Column-->
-                <div class="column all environment  energy animals col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-8.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-8.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!--Column-->
-                <div class="column all environment eco animals col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-12.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-12.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Column-->
-                <div class="column all eco energy animals col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-9.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-4.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Column-->
-                <div class="column all environment eco energy animals col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-11.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-11.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Column-->
-                <div class="column all energy animals plants col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-13.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-13.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Column-->
-                <div class="column all eco plants col-md-4 col-sm-6 col-xs-12">
-                    <!--Default Portfolio Item-->
-                    <div class="default-portfolio-item">
-                        <div class="inner-box text-center">
-                            <!--Image Box-->
-                            <figure class="image-box"><img src="images/gallery/image-10.jpg" alt=""></figure>
-                            <div class="overlay-box">
-                                <div class="inner-content">
-                                    <div class="content">
-                                        <h3><a href="#">Climate Change: Vital Signs of the Planet</a></h3>
-                                        <a class="arrow lightbox-image" href="images/gallery/image-10.jpg" title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                @endforeach
 
             </div>
             </div>

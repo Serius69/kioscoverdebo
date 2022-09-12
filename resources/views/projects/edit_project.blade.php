@@ -13,7 +13,7 @@
 <h2>Edit project</h2>
 </div>
 <div class="pull-right">
-<a class="btn btn-primary" href="{{ route('companies.index') }}" enctype="multipart/form-data"> Back</a>
+<a class="btn btn-primary" href="{{ route('events.index') }}" enctype="multipart/form-data"> Back</a>
 </div>
 </div>
 </div>
@@ -22,13 +22,13 @@
 {{ session('status') }}
 </div>
 @endif
-<form action="{{ route('companies.update',$project->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('events.update',$project->id) }}" method="POST" enctype="multipart/form-data">
 @csrf
 @method('PUT')
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>project Name:</strong>
+<strong>Nombre del Proyecto</strong>
 <input type="text" name="name" value="{{ $project->name }}" class="form-control" placeholder="project name">
 @error('name')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -37,22 +37,31 @@
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>project Email:</strong>
-<input type="email" name="email" class="form-control" placeholder="project Email" value="{{ $project->email }}">
-@error('email')
+<strong>Informacion del proyecto</strong>
+<input type="text" name="information" class="form-control" placeholder="project Email" value="{{ $project->information }}">
+@error('information')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>project Address:</strong>
-<input type="text" name="address" value="{{ $project->address }}" class="form-control" placeholder="project Address">
-@error('address')
+<strong>Descripcion del proyecto</strong>
+<input type="text" name="description" value="{{ $project->description }}" class="form-control" placeholder="project Address">
+@error('description')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
 </div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="form-group">
+    <strong>URL imagen</strong>
+    <input type="text" name="description" value="{{ $project->project_photo }}" class="form-control" placeholder="project Address">
+    @error('description')
+    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+    @enderror
+    </div>
+    </div>
 <button type="submit" class="btn btn-primary ml-3">Submit</button>
 </div>
 </form>

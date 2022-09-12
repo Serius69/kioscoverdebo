@@ -24,57 +24,27 @@
                 </div>
             </div>
 
+
         	<div class="row clearfix">
-
-                <!--Featured Column-->
+                @foreach ($latests as $latest)
+                    <!--Featured Column-->
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
+
                 	<article class="inner-box">
                 		<figure class="image-box">
                         	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
-                            <div class="post-tag">Noticia N</div>
+                            <div class="post-tag">{{ $latest->name }}</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="">Titulo</a></h3>
-                            <div class="column-info">Fecha</div>
-                            <div class="text">Descripcion. </div>
+                        	<h3><a href="">{{ $latest->author }}</a></h3>
+                            <div class="column-info">{{ $latest->datetime }}</div>
+                            <div class="text">{{ $latest->description }} </div>
                             <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
+
                 </div>
-
-                <!--Featured Column-->
-                <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
-                            <div class="post-tag">Noticia N</div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="{{url('/news/newsn')}}">Titulo</a></h3>
-                            <div class="column-info">Fecha</div>
-                            <div class="text">Descripcion. </div>
-                            <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
-                        </div>
-                    </article>
-                </div>
-                <!--Featured Column-->
-                <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                	<article class="inner-box">
-                		<figure class="image-box">
-                        	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
-                            <div class="post-tag">Noticia N</div>
-                        </figure>
-                        <div class="content-box">
-                        	<h3><a href="{{url('/news/newsn')}}">Titulo</a></h3>
-                            <div class="column-info">Fecha</div>
-                            <div class="text">Descripcion. </div>
-                            <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
-                        </div>
-                    </article>
-                </div>
-
-
-
+                @endforeach
             </div>
 
             <!-- Styled Pagination -->

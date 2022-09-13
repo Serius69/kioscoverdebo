@@ -14,8 +14,8 @@ class EventCRUDController extends Controller
 */
 public function indexcrud()
 {
-$data['events'] = Event::orderBy('id','asc')->paginate(12);
- return view('crud.crud_event', $data);
+$data['events'] = Event::orderBy('id','asc')->paginate(7);
+ return view('events.crudEvent', $data);
 //return view("crud.crud_event", [ "events" => $events ]);
 }
 /**

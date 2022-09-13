@@ -53,7 +53,7 @@
         	<div class="auto-container clearfix">
             	<!-- Logo -->
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset('/images/logo-1.png') }}"  alt="Greenture"></a>
+                    <a href="{{ url('/admin') }}"><img src="{{ asset('/images/logo-1.png') }}"  alt="Greenture"></a>
                  </div>
 
                  <!--Nav Outer-->
@@ -76,9 +76,9 @@
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation">
 
-                                <li><a href="{{ url('/') }}">INICIO</a>
+                                <li><a href="{{ url('/admin') }}">INICIO</a>
                                 </li>
-                                <li><a href="{{ url('/aboutus') }}">Quienes somos </a>
+                                {{-- <li><a href="{{ url('/aboutus') }}">Quienes somos </a>
                                 </li>
                                 <li class="dropdown"><a href="#">NOTICIAS</a>
                                     <ul>
@@ -95,7 +95,7 @@
                                         <li><a href="{{ url('/service/advice') }}">ASESORAMIENTO</a></li>
 
                                     </ul>
-                                </li>
+                                </li> --}}
                                 <li class="dropdown"><a href="#">CRUD</a>
                                     <ul>
                                         <li><a href="{{ url('/admin/event') }}">CRUD EVENTO</a></li>
@@ -103,7 +103,7 @@
                                         <li><a href="{{ url('/admin/project') }}">CRUD PROYECTO</a></li>
                                     </ul>
                                 </li>
-                                 <li class="dropdown"><a href="#">CONTACTANOS</a>
+                                 {{-- <li class="dropdown"><a href="#">CONTACTANOS</a>
                                     <ul>
                                         <li><a href="{{ url('/contact/question') }}">PREGUNTAS FRECUENTES</a></li>
                                         <li><a href="{{ url('/contact/contactus') }}">ESCRÍBENOS</a></li>
@@ -112,7 +112,7 @@
 
                                         </li>
                                     </ul>
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->

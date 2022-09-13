@@ -15,6 +15,4 @@ class ContactController extends Controller
         return view('standars');
     }
 
-
-
 }

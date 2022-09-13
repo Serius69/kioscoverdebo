@@ -1,5 +1,5 @@
 {{-- @extends('layouts.footer') --}}
-@extends('crud_event')
+@extends('crud.crud_event')
 @extends('layouts.titlebar')
 @extends('layouts.admin_header')
 

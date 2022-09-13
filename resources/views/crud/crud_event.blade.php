@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Laravel 9 CRUD Tutorial Example</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-</head>
-<body>
-<div class="container mt-2">
-<div class="row">
-<div class="col-lg-12 margin-tb">
-<div class="pull-left">
-</div>
+
 <div class="pull-right mb-2">
 <a class="btn btn-success" href="{{ url('/admin/createevent') }}"> Crear Evento</a>
 </div>
@@ -30,7 +18,6 @@
 <th>Imagen</th>
 <th width="280px">Accion</th>
 </tr>
-
 {{-- error Undefined variable $events --}}
 @foreach ($events as $event)
 <tr>
@@ -51,7 +38,5 @@
 @endforeach
 </table>
 {!! $events->links() !!}
-</body>
-</html>
 
 

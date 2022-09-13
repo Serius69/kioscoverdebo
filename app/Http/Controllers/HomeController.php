@@ -24,4 +24,18 @@ class HomeController extends Controller
 
         return view('index',$data);
    }
+   public function admin(){
+    // $data['events'] = Event::orderBy('id','asc')->paginate(3);
+    // $data2['latests'] = Latest::orderBy('id','asc')->paginate(3);
+    // $data3['projects'] = Project::orderBy('id','asc')->paginate(3);
+
+    $data = [
+        'events'  => Event::orderBy('id','asc')->paginate(3),
+        'latests'   => Latest::orderBy('id','asc')->paginate(3),
+        'projects' => Project::orderBy('id','asc')->paginate(3)
+    ];
+
+
+    return view('admin-index',$data);
+}
 }

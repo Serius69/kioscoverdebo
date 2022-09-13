@@ -59,7 +59,15 @@
                  <!--Nav Outer-->
                 <div class="nav-outer clearfix">
 
-                    <a href="{{ url('/home') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#signup-popup">REGISTRATE</a>
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                    </div>
+                    <a onclick="logout()" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">cerrar sesion</a>
+                    @else
+                    <a href="{{ url('/home') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">ingresar</a>
+                    @endif
+
 
                     <!-- Main Menu -->
                     <nav class="main-menu">
@@ -98,9 +106,9 @@
                                 </li>
                                  <li class="dropdown"><a href="#">CONTACTANOS</a>
                                     <ul>
-                                        <li><a href="{{ url('/contact/question') }}">PREGUNTAS FRECUENTES</a></li>
-                                        <li><a href="{{ url('/contact/contactus') }}">ESCRÍBENOS</a></li>
-                                        <li><a href="{{ url('/contact/standars') }}">BIBLIOTECA</a>
+                                        <li><a href="{{ url('/contactus/question') }}">PREGUNTAS FRECUENTES</a></li>
+                                        <li><a href="{{ url('/contactus') }}">ESCRÍBENOS</a></li>
+                                        <li><a href="{{ url('/contactus/standars') }}">BIBLIOTECA</a>
 
 
                                         </li>
@@ -120,8 +128,8 @@
     @yield('content')
 
 
-    <!--SignUp Popup-->
-<div class="modal fade pop-box" id="signup-popup" tabindex="-1" role="dialog" aria-labelledby="signup-popup" aria-hidden="true">
+    <!--Login Popup-->
+<div class="modal fade pop-box" id="login-popup" tabindex="-1" role="dialog" aria-labelledby="signup-popup" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         	<!--SignUp Section-->
@@ -134,7 +142,7 @@
                             <h4>Ingrese sus datos personales de manera correcta</h4>
                             <div class="row clearfix">
                                 <div class="form-group col-lg-6 col-md-6 col-xs-12">
-                                    <div class="field-label">Nombre <span class="required">*</span></div>
+                                    <div class="field-label">Nombre | Correo electronico <span class="required">*</span></div>
                                     <input type="text" name="name" value="" placeholder="Nombre" required>
                                     @if ($errors->has('name'))
                                     <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -144,46 +152,31 @@
                                  <div class="form-group col-lg-6 col-md-6 col-xs-12">
                                     <div class="field-label">Contraseña <span class="required">*</span></div>
                                     <input type="text" name="name" value="" placeholder="Last Name" required>
-                                </div>
-
-                                <div class="form-group col-lg-6 col-md-6 col-xs-12">
-                                    <div class="field-label">Correo electronico <span class="required">*</span></div>
-                                    <input type="email" name="email" value="" placeholder="Email" required>
-                                    @if ($errors->has('email'))
-                                      <span class="text-danger">{{ $errors->first('email') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group col-lg-6 col-md-6 col-xs-12">
-                                    <div class="field-label">Telefono <span class=""></span></div>
-                                    <input type="text" name="phone" value="" placeholder="Telefono" required>
                                     @if ($errors->has('phone'))
-                                      <span class="text-danger">{{ $errors->first('phone') }}</span>
-                                  @endif
+                                    <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                @endif
                                 </div>
-
-                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                    <div class="field-label">Direccion <span class=""></span></div>
-                                    <input type="text" name="name" value="" placeholder="Direccion" required>
-                                </div>
-                                <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Registrate</button></div>
+                                <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Ingresar</button></div>
 
                             </div>
                         </div>
                         <br>
-                            <h3> Si ya tienes una cuenta </h3>
+                            <h3>Si aun no esta registrado dele click a <a href="{{ url('signup') }}"> Registrarse</a></h3>
                             <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
                         <br>
                               <!-- Google button -->
                             <h3>Ingresa directamente con tu cuenta de Google</h3>
                             <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
-
                         </div>
                         <div>
-                            <a href="{{ url('auth/google') }}" style="margin-top: 0px !important;background: green;color: #ffffff;padding: 5px;border-radius:7px;" class="ml-2">
-                                <strong>Google Login</strong>
+                            <a href="{{ url('auth/google') }}">
+                                <button type="button" class="login-with-google-btn" >
+                                    Sign in with Google
+                                  </button>
                               </a>
                         </div>
+                         <!-- SingUp option -->
+
 
 
                     </form>

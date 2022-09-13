@@ -37,12 +37,13 @@
                                     <input type="text" name="name" value="" placeholder="Telefono" required>
                                 </div>
 
-                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                <div class="form-group col-lg-6 col-md-12 col-xs-12">
                                     <div class="field-label">Direccion <span class=""></span></div>
                                     <input type="text" name="name" value="" placeholder="Direccion" required>
                                 </div>
-                                <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Registrate</button></div>
+
                             </div>
+                            <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Registrate</button></div>
                         </div>
 
                         <br>
@@ -57,9 +58,11 @@
 
                         </div>
                         <div>
+                            <a href="{{ url('auth/google') }}">
                             <button type="button" class="login-with-google-btn" >
-                                Sign in with Google
+                                Sign up with Google
                               </button>
+                            </a>
                         </div>
 
 

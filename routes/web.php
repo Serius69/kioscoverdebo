@@ -16,6 +16,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | CRUD
@@ -51,16 +52,21 @@ use App\Http\Controllers\Auth\AuthController;
 |
 */
 
-Route::get('/', HomeController::class);
+// Route::get('/', HomeController::class);
+
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/',  '__invoke');
+    Route::get('admin',  'admin');
+});
 
 Route::controller(AboutController::class)->group(function(){
     Route::get('aboutus',  'indexAbout');
 });
 
 Route::controller(ContactController::class)->group(function(){
-    Route::get('contact/question',  'question');
-    Route::get('contact/contactus', 'contactus');
-    Route::get('contact/standars',  'standars');
+    Route::get('contactus/question',  'question');
+    Route::get('contactus/', 'index');
+    Route::get('contactus/standars',  'standars');
 });
 
 Route::controller(FooterController::class)->group(function(){
@@ -86,8 +92,8 @@ Route::controller(ServiceController::class)->group(function(){
 
 
 Route::controller(LoginController::class)->group(function(){
-    Route::get('login/login',  'login');
-    Route::get('login/signup', 'signup');
+    Route::get('login',  'login');
+    Route::get('signup', 'signup');
 });
 
 Route::controller(ProjectController::class)->group(function(){

@@ -41,14 +41,11 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required',
-            'password' => 'required',
-            'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                        ->withSuccess('You have Successfully loggedin');
+            return redirect()->intended('dashboard')->withSuccess('You have Successfully loggedin');
         }
 
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
@@ -65,14 +62,12 @@ class AuthController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'password' => 'required',
-            'password' => 'required',
         ]);
 
         $data = $request->all();
         $check = $this->create($data);
 
-        return redirect("dashboard")->withSuccess('Great! You have Successfully loggedin');
+        return redirect("index")->withSuccess('Great! You have Successfully loggedin');
     }
 
     /**

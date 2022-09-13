@@ -8,13 +8,14 @@ class LatestController extends Controller
 {
     public function indexLatest(){
         $data['latests'] = Latest::orderBy('id','asc')->paginate(12);
-        return view ('news',$data);
+        return view ('latests.latest',$data);
     }
 
     public function create(){
         return view('intermediaty');
     }
     public function intermediaty(){
+        $data['latests'] = Latest::orderBy('id','asc')->paginate(12);
         return view('intermediaty');
     }
     public function agend(){

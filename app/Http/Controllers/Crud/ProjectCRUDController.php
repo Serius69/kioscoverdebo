@@ -12,7 +12,7 @@ class ProjectCRUDController extends Controller
 */
 public function indexcrud()
 {
-$data['projects'] = Project::orderBy('id','asc')->paginate(10);
+$data['projects'] = Project::orderBy('id','asc')->paginate(7);
 return view('crudProject', $data);
 }
 

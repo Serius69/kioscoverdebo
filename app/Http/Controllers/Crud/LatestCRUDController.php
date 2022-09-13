@@ -12,8 +12,8 @@ class LatestCRUDController extends Controller
 */
 public function indexcrud()
 {
-$data['latests'] = latest::orderBy('id','asc')->paginate(10);
-return view('crudLatest', $data);
+$data['latests'] = latest::orderBy('id','asc')->paginate(7);
+return view('latests.crudLatest', $data);
 }
 /**
 * Show the form for creating a new resource.
@@ -53,7 +53,7 @@ return redirect()->route('latests.index')
 * @param  \App\Latest  $latest
 * @return \Illuminate\Http\Response
 */
-public function show(latest $latest)
+public function show(Latest $latest)
 {
 return view('latests.show',compact('latest'));
 }

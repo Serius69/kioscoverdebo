@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Edit event Form - Laravel 9 CRUD Tutorial</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
 </head>
 <body>
@@ -10,10 +9,10 @@
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div class="pull-left">
-<h2>Edit event</h2>
+<h2>Editar Evento</h2>
 </div>
 <div class="pull-right">
-<a class="btn btn-primary" href="{{ route('events.index') }}" enctype="multipart/form-data"> Back</a>
+<a class="btn btn-primary" href="{{ route('events.index') }}" enctype="multipart/form-data"> Atras</a>
 </div>
 </div>
 </div>
@@ -28,7 +27,7 @@
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>event Name:</strong>
+<strong>Nombre</strong>
 <input type="text" name="name" value="{{ $event->name }}" class="form-control" placeholder="event name">
 @error('name')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
@@ -37,23 +36,23 @@
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>event Email:</strong>
-<input type="email" name="email" class="form-control" placeholder="event Email" value="{{ $event->email }}">
-@error('email')
+<strong>Informacion</strong>
+<input type="text" name="information" class="form-control" placeholder="Informacion" value="{{ $event->media }}">
+@error('information')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
-<strong>event Address:</strong>
-<input type="text" name="address" value="{{ $event->address }}" class="form-control" placeholder="event Address">
-@error('address')
+<strong>Descripcion</strong>
+<input type="text" name="description" value="{{ $event->description }}" class="form-control" placeholder="event Address">
+@error('description')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
 </div>
-<button type="submit" class="btn btn-primary ml-3">Submit</button>
+<button type="submit" class="btn btn-primary ml-3">Actualizar</button>
 </div>
 </form>
 </div>

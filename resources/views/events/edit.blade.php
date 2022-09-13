@@ -1,9 +1,8 @@
-{{-- @extends('layouts.footer') --}}
-@extends('crud.crud_project')
+@extends('crud.edit_event')
 @extends('layouts.titlebar')
 @extends('layouts.admin_header')
 
-@section('title', 'CRUD Proyectos')
+@section('title', 'CRUD Eventos')
 @section('subtitle1', 'CRUD')
 @section('subtitle2', ' Eventos')
 

@@ -37,11 +37,12 @@
                         <!-- Styled Pagination -->
                         <div class="styled-pagination padd-top-20 margin-bott-40">
                             <ul>
-                                <li><a class="prev" href="#"><span class="fa fa-angle-left"></span>&ensp;Prev</a></li>
+                                {{-- <li><a class="prev" href="#"><span class="fa fa-angle-left"></span>&ensp;Prev</a></li>
                                 <li><a href="#">1</a></li>
                                 <li><a href="#" class="active">2</a></li>
                                 <li><a href="#">3</a></li>
-                                <li><a class="next" href="#">Next&ensp;<span class="fa fa-angle-right"></span></a></li>
+                                <li><a class="next" href="#">Next&ensp;<span class="fa fa-angle-right"></span></a></li> --}}
+                                {!! $latests->links() !!}
                             </ul>
                         </div>
                     </section>

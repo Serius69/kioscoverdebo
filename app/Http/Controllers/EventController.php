@@ -23,7 +23,7 @@ class EventController extends Controller
         return view("crud_event", [ "events" => $events ]);
     }
 
-    public function createevent(){
+    public function create(){
         return view('createevent');
     }
 }

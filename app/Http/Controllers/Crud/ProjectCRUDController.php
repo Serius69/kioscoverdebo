@@ -10,10 +10,10 @@ class ProjectCRUDController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
-public function indexcrud()
+public function index()
 {
 $data['projects'] = Project::orderBy('id','asc')->paginate(7);
-return view('crudProject', $data);
+return view('projects.crudProject', $data);
 }
 
 /**
@@ -37,13 +37,13 @@ $request->validate([
 'name' => 'required',
 'information' => 'required',
 'description' => 'required',
-'projectPhoto' => 'required'
+'project_photo' => 'required'
 ]);
 $project = new Project;
 $project->name = $request->name;
-$project->information = $request->description;
+$project->information = $request->information;
 $project->description = $request->description;
-$project->projectPhoto = $request->projectPhoto;
+$project->project_photo = $request->project_photo;
 $project->save();
 return redirect()->route('projects.index')
 ->with('success','project has been created successfully.');
@@ -54,19 +54,19 @@ return redirect()->route('projects.index')
 * @param  \App\project  $project
 * @return \Illuminate\Http\Response
 */
-public function show(project $project)
+public function show(Project $project)
 {
 return view('projects.show',compact('project'));
 }
 /**
 * Show the form for editing the specified resource.
 *
-* @param  \App\project  $project
+* @param  \App\Project  $project
 * @return \Illuminate\Http\Response
 */
-public function edit(project $project)
+public function edit(Project $project)
 {
-return view('projects.edit_project',compact('project'));
+return view('projects.edit',compact('project'));
 }
 /**
 * Update the specified resource in storage.
@@ -81,24 +81,24 @@ $request->validate([
     'name' => 'required',
     'information' => 'required',
     'description' => 'required',
-    'projectPhoto' => 'required'
+    'project_photo' => 'required'
 ]);
 $project = Project::find($id);
 $project->name = $request->name;
-$project->information = $request->description;
+$project->information = $request->information;
 $project->description = $request->description;
-$project->projectPhoto = $request->projectPhoto;
+$project->project_photo = $request->project_photo;
 $project->save();
-return redirect()->route('projects.index')
+return redirect()->route('projects.crudProject')
 ->with('success','project Has Been updated successfully');
 }
 /**
 * Remove the specified resource from storage.
 *
-* @param  \App\project  $project
+* @param  \App\Project  $project
 * @return \Illuminate\Http\Response
 */
-public function destroy(project $project)
+public function destroy(Project $project)
 {
 $project->delete();
 return redirect()->route('projects.index')

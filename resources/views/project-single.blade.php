@@ -1,11 +1,11 @@
 @extends('layouts.footer')
-@extends('layouts.project-single')
+@extends('projects.show')
 @extends('layouts.header')
 
 
-@section('header', 'Kiosco Verde | Proyecto')
+@section('header', 'Kiosco Verde | {{ $project->name }}')
 @section('subtitle1', 'Proyecto')
-@section('subtitle2', 'N')
+@section('subtitle2', '{{ $project->name }}')
 @section('number', '500')
 
 @section('content')

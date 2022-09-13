@@ -10,7 +10,7 @@ class LatestCRUDController extends Controller
 *
 * @return \Illuminate\Http\Response
 */
-public function indexcrud()
+public function index()
 {
 $data['latests'] = latest::orderBy('id','asc')->paginate(7);
 return view('latests.crudLatest', $data);
@@ -36,13 +36,13 @@ $request->validate([
 'name' => 'required',
 'author' => 'required',
 'description' => 'required',
-'latestPhoto' => 'required'
+'latest_photo' => 'required'
 ]);
 $latest = new Latest;
 $latest->name = $request->name;
 $latest->author = $request->author;
 $latest->description = $request->description;
-$latest->latestPhoto = $request->latestPhoto;
+$latest->latest_photo = $request->latest_photo;
 $latest->save();
 return redirect()->route('latests.index')
 ->with('success','latest has been created successfully.');
@@ -80,24 +80,24 @@ $request->validate([
 'name' => 'required',
 'author' => 'required',
 'description' => 'required',
-// 'latest_photo' => 'required',
+'latest_photo' => 'required',
 ]);
-$latest = latest::find($id);
+$latest = Latest::find($id);
 $latest->name = $request->name;
 $latest->author = $request->author;
 $latest->description = $request->description;
 $latest->latest_photo = $request->latest_photo;
 $latest->save();
-return redirect()->route('latests.index')
+return redirect()->route('latests.crudLatest')
 ->with('success','latest Has Been updated successfully');
 }
 /**
 * Remove the specified resource from storage.
 *
-* @param  \App\latest  $latest
+* @param  \App\Latest  $latest
 * @return \Illuminate\Http\Response
 */
-public function destroy(latest $latest)
+public function destroy(Latest $latest)
 {
 $latest->delete();
 return redirect()->route('latests.index')

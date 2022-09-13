@@ -1,65 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Add Company Form - Laravel 9 CRUD</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-</head>
-<body>
-<div class="container mt-2">
-<div class="row">
-<div class="col-lg-12 margin-tb">
-<div class="pull-left mb-2">
-<h2>Adicionar evento</h2>
-</div>
-<div class="pull-right">
-<a class="btn btn-primary" href="{{ route('events.index') }}"> Back</a>
-</div>
-</div>
-</div>
-@if(session('status'))
-<div class="alert alert-success mb-1 mt-1">
-{{ session('status') }}
-</div>
-@endif
-<form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
-@csrf
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12">
-<div class="form-group">
-<strong>Nombre del evento</strong>
-<input type="text" name="name" class="form-control" placeholder="Company Name">
-@error('name')
-<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-@enderror
-</div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12">
-<div class="form-group">
-<strong>Company Email:</strong>
-<input type="email" name="email" class="form-control" placeholder="Company Email">
-@error('email')
-<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-@enderror
-</div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12">
-<div class="form-group">
-<strong>Company Address:</strong>
-<input type="text" name="address" class="form-control" placeholder="Company Address">
-@error('address')
-<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-@enderror
-</div>
-</div>
-<button type="submit" class="btn btn-primary ml-3">Submit</button>
-</div>
-</form>
-</body>
-</html> --}}
-
-
-
     <!--Default Section / Other Info-->
     <section class="default-section other-info">
     	<!--Login Form Main-->
@@ -100,11 +38,25 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                {{-- <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Url Imagen <span class=""></span></div>
-                                    <input type="text" name="eventPhoto" value="" placeholder="Url Imagen" required>
+                                    <input type="text" name="event_photo" value="" placeholder="Url Imagen" required>
                                     @error('eventPhoto')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div> --}}
+
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Imagen <span class="required">*</span></div>
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        id="inputImage"
+                                        class="form-control
+                                        @error('image') is-invalid @enderror">
+
+                                    @error('image')
+                                        <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Guardar</button></div>

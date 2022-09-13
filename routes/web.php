@@ -90,7 +90,6 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('service/advice',  'advice');
 });
 
-
 Route::controller(LoginController::class)->group(function(){
     Route::get('login',  'login');
     Route::get('signup', 'signup');
@@ -101,17 +100,17 @@ Route::controller(ProjectController::class)->group(function(){
     Route::get('project/project', 'lastProjects');
 });
 Route::controller(LatestCRUDController::class)->group(function(){
-    Route::get('admin/latest', 'indexcrud');
+    Route::get('admin/latest', 'index');
     Route::get('admin/createlatest', 'create');
     Route::get('admin/editlatest', 'edit');
 });
 Route::controller(EventCRUDController::class)->group(function(){
-    Route::get('admin/event', 'indexcrud');
+    Route::get('admin/event', 'index');
     Route::get('admin/createevent', 'create');
     Route::get('admin/editevent', 'edit');
 });
 Route::controller(ProjectCRUDController::class)->group(function(){
-    Route::get('admin/project', 'indexcrud');
+    Route::get('admin/project', 'index');
     Route::get('admin/createproject', 'create');
     Route::get('admin/editproject', 'edit');
 });
@@ -129,6 +128,10 @@ Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback
 Route::resource('latests', LatestCRUDController::class);
 Route::resource('events', EventCRUDController::class);
 Route::resource('projects', ProjectCRUDController::class);
+
+//Image
+Route::get('image-upload', [ ImageController::class, 'index' ]);
+Route::post('image-upload', [ ImageController::class, 'store' ])->name('image.store');
 
 Route::middleware([
     'auth:sanctum',

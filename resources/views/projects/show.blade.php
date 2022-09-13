@@ -17,19 +17,18 @@
                                 <div class="content-box padd-top-40">
                                     <div class="row detail-header clearfix">
                                         <div class="col-md-8 col-sm-12">
-                                            <h2>Nombre del proyecto</h2>
+                                            <h2>{{ $project->name }}</h2>
                                         </div>
                                         <div class="col-md-4 col-sm-12 pull-right text-right"><a href="#" class="theme-btn btn-style-two">DOnate NOW</a></div>
                                     </div>
                                     <div class="text">
                                         <br>
                                         <p class="bigger-text">Lorem ipsum dolor sit amet, quo odio atqui tamquam eu, duo ex amet elitr. <strong class="theme_color">Ne essent feugiat vim, et soluta reprimique instructior mel</strong>, ne nonumes deserunt. Vix in dico vivendum forensibus. Munere tamquam referrentur ad duo, ei tibique dissentias.</p>
-                                        <p>Lorem ipsum dolor sit amet, et electram comprehensam sit. Quo an splendide siniferman vix sententiae instructior laudem corrumpit dolor amet.</p>
-                                        <p>alienum corrumpit ullamcorper. Vel ea fabulas instructior, agam falli sit an.Ad cum amet graeco consequat, sed ei veri novum appellantur. Qui in quod ubique euismod, consul seo noster disputationi eos no, nec te latine repudiare. Te pro dolor volutpat.</p>
+                                        <p>{{ $project->description }}</p>
                                     </div>
 
                                     <br>
-                                    <h3 class="text-uppercase">Project Target</h3>
+                                    <h3 class="text-uppercase">{{ $project->information }}</h3>
 
                                     <ul class="styled-list-two">
                                         <li>Lorem ipsum dolor sit amet, usu an quem augue admodum. </li>
@@ -52,47 +51,22 @@
 
                         <!--Related Posts Carousel-->
                         <div class="related-posts-carousel">
-                        	<!--Post-->
+                            @foreach ($projects as $project)
+                            <!--Post-->
                             <div class="column default-featured-column">
                                 <article class="inner-box">
                                     <figure class="image-box">
                                         <a href="#"><img src="https://us.123rf.com/450wm/romanbykhalets/romanbykhalets1909/romanbykhalets190900245/131068993-icono-aislado-de-la-imagen-s%C3%ADmbolo-de-galer%C3%ADa-signo-de-imagen-para-web-o-aplicaci%C3%B3n-.jpg?ver=6" alt=""></a>
                                     </figure>
                                     <div class="content-box">
-                                        <h3><a href="project-single.html">Salva los ecosistemas</a></h3>
-                                        <div class="column-info">Environment, Go Green Company</div>
+                                        <h3><a href="project-single.html"></a>{{ $project->name }}</h3>
+                                        <div class="column-info">{{ $project->name }}</div>
                                         <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
                                     </div>
                                 </article>
                             </div>
+                            @endforeach
 
-                            <!--Post-->
-                            <div class="column default-featured-column">
-                                <article class="inner-box">
-                                    <figure class="image-box">
-                                        <a href="project-single.html"><img src="https://us.123rf.com/450wm/romanbykhalets/romanbykhalets1909/romanbykhalets190900245/131068993-icono-aislado-de-la-imagen-s%C3%ADmbolo-de-galer%C3%ADa-signo-de-imagen-para-web-o-aplicaci%C3%B3n-.jpg?ver=6" alt=""></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <h3><a href="project-single.html">Melting Ice</a></h3>
-                                        <div class="column-info">Environment, Go Green Company</div>
-                                        <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <!--Post-->
-                            <div class="column default-featured-column">
-                                <article class="inner-box">
-                                    <figure class="image-box">
-                                        <a href="project-single.html"><img src="https://us.123rf.com/450wm/romanbykhalets/romanbykhalets1909/romanbykhalets190900245/131068993-icono-aislado-de-la-imagen-s%C3%ADmbolo-de-galer%C3%ADa-signo-de-imagen-para-web-o-aplicaci%C3%B3n-.jpg?ver=6" alt=""></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <h3><a href="project-single.html">Solar Panels</a></h3>
-                                        <div class="column-info">Environment, Go Green Company</div>
-                                        <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
-                                    </div>
-                                </article>
-                            </div>
                         </div>
 
                     </section>

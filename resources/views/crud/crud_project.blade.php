@@ -28,10 +28,10 @@
     <td>{{ $project->project_photo }}</td>
 <td>
 <form action="{{ route('projects.destroy',$project->id) }}" method="Post">
-<a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}">Edit</a>
+<a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}">Editar</a>
 @csrf
 @method('DELETE')
-<button type="submit" class="btn btn-danger">Delete</button>
+<button type="submit" class="btn btn-danger">Eliminar</button>
 </form>
 </td>
 </tr>

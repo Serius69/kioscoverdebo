@@ -36,7 +36,7 @@
                             <div class="post-tag">{{ $latest->name }}</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="">{{ $latest->author }}</a></h3>
+                        	<h3><a href="{{ route('latests.show',$latest->id) }}">{{ $latest->author }}</a></h3>
                             <div class="column-info">{{ $latest->datetime }}</div>
                             <div class="text">{{ $latest->description }} </div>
                             <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
@@ -49,12 +49,15 @@
 
             <!-- Styled Pagination -->
             <div class="styled-pagination text-center padd-top-20 margin-bott-40">
+
                 <ul>
-                    <li><a class="prev" href="{{url('/news/news')}}"><span class="fa fa-angle-left"></span>&ensp;Anterior</a></li>
+
+                    {{-- <li><a class="prev" href="{{url('/news/news')}}"><span class="fa fa-angle-left"></span>&ensp;Anterior</a></li>
                     <li><a href="{{url('/news/news')}}">1</a></li>
                     <li><a href="{{url('/news/news')}}" class="active">2</a></li>
                     <li><a href="{{url('/news/news')}}">3</a></li>
-                    <li><a class="next" href="{{url('/news/news')}}">Siguiente&ensp;<span class="fa fa-angle-right"></span></a></li>
+                    <li><a class="next" href="{{url('/news/news')}}">Siguiente&ensp;<span class="fa fa-angle-right"></span></a></li> --}}
+                    {!! $latests->links() !!}
                 </ul>
             </div>
 

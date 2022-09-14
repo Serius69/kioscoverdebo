@@ -59,8 +59,14 @@
                  <!--Nav Outer-->
                 <div class="nav-outer clearfix">
 
-                    <a href="{{ url('/home') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#signup-popup">REGISTRATE</a>
-
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                    </div>
+                    <a onclick="{{ route('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">cerrar sesion</a>
+                    @else
+                    <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="signup-popup">ingresar</a>
+                    @endif
                     <!-- Main Menu -->
                     <nav class="main-menu">
 

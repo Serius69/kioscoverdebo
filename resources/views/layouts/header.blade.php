@@ -63,9 +63,9 @@
                     <div class="alert alert-success">
                     <p>{{ $message }}</p>
                     </div>
-                    <a onclick="logout()" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">cerrar sesion</a>
+                    <a onclick="{{ route('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">cerrar sesion</a>
                     @else
-                    <a href="{{ url('/home') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">ingresar</a>
+                    <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">ingresar</a>
                     @endif
 
 
@@ -188,7 +188,7 @@
 <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
-<!-- End SignUp PopUp -->
+<!-- End Login PopUp -->
 
 </body>
 </html>

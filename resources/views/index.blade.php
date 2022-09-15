@@ -8,14 +8,11 @@
 @extends('layouts.introduction')
 @extends('layouts.header')
 
-
 @section('header', 'Kiosco Verde | Inicio')
 
 @section('content')
 
-@section('introduction')
-
-
+{{-- @section('introduction')
 
 @section('service')
 
@@ -29,7 +26,7 @@
 
 @section('register')
 
-@section('footer')
+@section('footer') --}}
 
 @endsection
 

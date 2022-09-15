@@ -4,27 +4,26 @@
     <meta charset="utf-8">
     <title>@yield('header')</title>
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ asset('/css/style.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('/css/responsive.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('/css/revolution-slider.css') }}"/>
+    <link rel="stylesheet" href="{{ url('/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url('/css/bootstrap.css') }}"/>
+    <link rel="stylesheet" href="{{ url('/css/responsive.css') }}"/>
+    <link rel="stylesheet" href="{{ url('/css/revolution-slider.css') }}"/>
     {{-- scripts --}}
-    <script src="{{asset('/js/jquery.js')}}"></script>
-    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('/js/jquery.fancybox.pack.js')}}"></script>
-    <script src="{{asset('/js/jquery.fancybox-media.js')}}"></script>
-    <script src="{{asset('/js/owl.js')}}"></script>
-    <script src="{{asset('/js/map-script.js')}}"></script>
-    <script src="{{asset('/js/validate.js')}}"></script>
-    <script src="{{asset('/js/wow.js')}}"></script>
-    <script src="{{asset('/js/script.js')}}"></script>
+    <script src="{{url('/js/jquery.js')}}"></script>
+    <script src="{{url('/js/bootstrap.min.js')}}"></script>
+    <script src="{{url('/js/jquery.fancybox.pack.js')}}"></script>
+    <script src="{{url('/js/jquery.fancybox-media.js')}}"></script>
+    <script src="{{url('/js/owl.js')}}"></script>
+    <script src="{{url('/js/map-script.js')}}"></script>
+    <script src="{{url('/js/validate.js')}}"></script>
+    <script src="{{url('/js/wow.js')}}"></script>
+    <script src="{{url('/js/script.js')}}"></script>
     {{-- responsive --}}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 
 <body>
-
     <!-- Preloader -->
     <div class="preloader"></div>
 
@@ -53,7 +52,7 @@
         	<div class="auto-container clearfix">
             	<!-- Logo -->
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ asset('/images/logo-1.png') }}"  alt="Greenture"></a>
+                    <a href="{{ url('/') }}"><img src="{{ url('/images/logo-1.png') }}"  alt="Greenture"></a>
                  </div>
 
                  <!--Nav Outer-->

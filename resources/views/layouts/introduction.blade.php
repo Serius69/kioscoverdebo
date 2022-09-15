@@ -4,11 +4,11 @@
         <div class="tp-banner-container" >
             <div class="tp-banner">
                 <ul>
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('/images/main-slider/1.jpg')}}" data-saveperformance="off"  data-title="Kiosco Verde">
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="{{url('/images/main-slider/1.jpg')}}" data-saveperformance="off"  data-title="Kiosco Verde">
                     <img src="https://scontent.flpb3-1.fna.fbcdn.net/v/t1.6435-9/121150087_1038394086600122_3553430211870980689_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=FykBPH864ZMAX8i3BBT&_nc_ht=scontent.flpb3-1.fna&oh=00_AT9eyA8t7tL2b-jH8R8FT622HMdIHdsf2g8VoNFM6rjcmw&oe=632F0137"  alt="" width="500" height="500"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                     </li>
 
-                    <li data-transition="slidedown" data-slotamount="1" data-masterspeed="1000" data-thumb="{{asset('/images/main-slider/2.jpg')}}"  data-saveperformance="off"  data-title="Awesome Title Here">
+                    <li data-transition="slidedown" data-slotamount="1" data-masterspeed="1000" data-thumb="{{url('/images/main-slider/2.jpg')}}"  data-saveperformance="off"  data-title="Awesome Title Here">
                     <img src="https://scontent.flpb3-1.fna.fbcdn.net/v/t31.18172-8/17097544_276428222796716_1465363133244869880_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=6zKeUxEN4L4AX_MqJKF&_nc_ht=scontent.flpb3-1.fna&oh=00_AT-di5p_MaEautLbN6zNkVQ81pAsTjzpiVL2QLimW8mjtA&oe=632E80CB"  alt="" width="500" height="500" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                     </li>
                 </ul>

@@ -112,7 +112,7 @@ return redirect()->route('latests.index')
 * @param  \App\Latest  $event
 * @return \Illuminate\Http\Response
 */
-public function modify(Latest $latest)
+public function modify(Latest $id)
 {
     $event->status = 0;
 return redirect()->route('events.index')

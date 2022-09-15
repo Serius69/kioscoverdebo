@@ -30,7 +30,7 @@
                             <div class="overlay-box">
                                 <div class="inner-content">
                                     <div class="content">
-                                        <h3><a href="#">{{ $latest->name }}</a></h3>
+                                        <h3><a href="{{ route('latests.show',$latest->id) }}">{{ $latest->name }}</a></h3>
                                         <a class="arrow lightbox-image" href={{ $latest->latest_photo }} title="Image Caption Here"><span class="icon flaticon-cross-4"></span></a>
                                     </div>
                                 </div>

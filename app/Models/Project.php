@@ -20,7 +20,9 @@ class Project extends Model
          'name',
          'information',
          'description',
-         'project_photo',
+         'user_id',
+         'photo_id',
+         'status'
      ];
 
      protected function name(): Attribute {
@@ -28,6 +30,11 @@ class Project extends Model
             get: fn($value) => ucwords($value),
             set: fn($value) => strtolower($value)
         );
+    }
+
+    public function photo()
+    {
+    return $this->belongsTo(Photo::class, 'photo_id');
     }
 
 

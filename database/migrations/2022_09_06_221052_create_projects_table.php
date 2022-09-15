@@ -19,6 +19,13 @@ return new class extends Migration
             $table->string('information');
             $table->string('description');
             $table->string('project_photo', 2048)->nullable();
+
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->unsignedBigInteger('photo_id');
+            $table->foreign('photo_id')->references('id')->on('photos');
+            $table->integer('status');
             $table->timestamps();
         });
     }

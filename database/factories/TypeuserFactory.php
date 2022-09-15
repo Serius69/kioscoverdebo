@@ -3,18 +3,18 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Event;
+use App\Models\Typeuser;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Event>
  */
-class EventFactory extends Factory
+class TypeuserFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Event::class;
+    protected $model = Typeuser::class;
     /**
      * Define the model's default state.
      *
@@ -24,12 +24,7 @@ class EventFactory extends Factory
     {
         $url = "https://picsum.photos/800/600?random=12965";
         return [
-            'name' => $this->faker->name(),
-            'media' => $this->faker->name(),
-            'description' => $this->faker->sentence(),
-            // 'event_photo' => $this->faker->url(800,600),
-            'user_id' => '1',
-            'photo_id' => '1',
+            'type' => 'user',
             'status' => 1
 
         ];

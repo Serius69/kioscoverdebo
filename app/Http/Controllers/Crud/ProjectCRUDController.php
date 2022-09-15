@@ -89,8 +89,11 @@ $project->information = $request->information;
 $project->description = $request->description;
 $project->project_photo = $request->project_photo;
 $project->save();
-return redirect()->route('projects.crudProject')
-->with('success','project Has Been updated successfully');
+// return redirect()->back()->with('message', 'IT WORKS!');
+// return redirect()->route('projects.index')
+//  ->with('success','project Has Been updated successfully');
+return view('projects.edit',compact('project'))->with('success','project Has Been updated successfully');
+
 }
 /**
 * Remove the specified resource from storage.
@@ -104,4 +107,19 @@ $project->delete();
 return redirect()->route('projects.index')
 ->with('success','project has been deleted successfully');
 }
+/**
+* Remove the specified resource from storage logic.
+*
+* @param  \App\Event  $event
+* @return \Illuminate\Http\Response
+*/
+public function modify(Project $project)
+{
+    $project->status = 0;
+return redirect()->route('events.index')
+->with('success','Eliminado logico exitoso');
+}
+
+
+
 }

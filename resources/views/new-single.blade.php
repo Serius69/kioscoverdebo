@@ -5,8 +5,8 @@
 @extends('layouts.header')
 
 @section('title', 'Noticia')
-@section('subtitle1', 'Noticia')
-@section('subtitle2', ' N')
+@section('subtitle1', '{{$latest->name}}')
+@section('subtitle2', ' ')
 
 @section('content')
 

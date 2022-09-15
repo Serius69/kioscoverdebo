@@ -55,7 +55,7 @@ return redirect()->route('latests.index')
 */
 public function show(Latest $latest)
 {
-return view('latests.show',compact('latest'));
+return view('new-single',compact('latest'));
 }
 /**
 * Show the form for editing the specified resource.
@@ -71,7 +71,7 @@ return view('latests.edit',compact('latest'));
 * Update the specified resource in storage.
 *
 * @param  \Illuminate\Http\Request  $request
-* @param  \App\Latest  $latest
+* @param  \App\latest  $latest
 * @return \Illuminate\Http\Response
 */
 public function update(Request $request, $id)
@@ -88,8 +88,9 @@ $latest->author = $request->author;
 $latest->description = $request->description;
 $latest->latest_photo = $request->latest_photo;
 $latest->save();
-return redirect()->route('latests.crudLatest')
-->with('success','latest Has Been updated successfully');
+// return redirect()->route('latests.edit',compact('latest'))
+// ->with('success','latest Has Been updated successfully');
+return view('latest.edit',compact('latest'))->with('success','latest Has Been updated successfully');
 }
 /**
 * Remove the specified resource from storage.
@@ -104,5 +105,17 @@ return redirect()->route('latests.index')
 // ->with('success','latest has been deleted successfully');
 ->with('success','Noticia fue eliminada correctamente');
 
+}
+/**
+* Remove the specified resource from storage logic.
+*
+* @param  \App\Latest  $event
+* @return \Illuminate\Http\Response
+*/
+public function modify(Latest $latest)
+{
+    $event->status = 0;
+return redirect()->route('events.index')
+->with('success','Eliminado logico exitoso');
 }
 }

@@ -13,11 +13,11 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('/news/newsn')}}"><img src="https://previews.123rf.com/images/sabuhinovruzov/sabuhinovruzov1705/sabuhinovruzov170501362/78609018-icono-de-vector-de-noticias-ilustraci%C3%B3n-de-noticias-en-blanco-y-negro-icono-lineal-de-contorno-.jpg" alt=""></a>
-                            <div class="news-date">DIA<span class="month">MES</span></div>
+                        	<a href="{{ route('latests.show',$latest->id) }}"><img src="{{$latest->photo->path}}"  alt="Greenture"></a>
+                            <div class="news-date">{{ $latest->name }}<span class="month">{{ $latest->photo->path }}</span></div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#">{{ $latest->name }}</a></h3>
+                        	<h3><a href="#">{{ $latest->photo->path }}</a></h3>
                         	<div class="post-info clearfix">
                             	<div class="post-author">{{ $latest->author }}</div>
                                 <div class="post-options clearfix">

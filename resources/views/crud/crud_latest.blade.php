@@ -26,7 +26,7 @@
     <td>{{ $latest->name }}</td>
     <td>{{ $latest->author }}</td>
     <td>{{ $latest->description }}</td>
-    <td>{{ $latest->latest_photo }}</td>
+    <td><img src="{{$latest->photo->path}}"  alt="Greenture"></td>
 <td>
 <form action="{{ route('latests.destroy',$latest->id) }}" method="Post">
 <a class="btn btn-primary" href="{{ route('latests.edit',$latest->id) }}">Editar</a>

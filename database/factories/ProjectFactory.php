@@ -27,7 +27,9 @@ class ProjectFactory extends Factory
             'name' => $this->faker->title(),
             'information' => $this->faker->sentence(),
             'description' => $this->faker->sentence(),
-            'project_photo' => $this->faker->url(800,600),
+            'user_id' => '1',
+            'photo_id' => '1',
+            'status' => 1
         ];
     }
 }

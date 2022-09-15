@@ -90,7 +90,7 @@
                                 </li>
                                 <li class="dropdown"><a href="#">NOTICIAS</a>
                                     <ul>
-                                        <li><a href="{{ url('/news/intermediaty') }}">INTERMEDIACIONES</a> </li>
+                                        {{-- <li><a href="{{ url('/news/intermediaty') }}">INTERMEDIACIONES</a> </li> --}}
                                         <li><a href="{{ url('/news/agend') }}">AGENDA</a></li>
                                         <li><a href="{{ url('/news/news') }}">NOTICIAS AMBIENTALES</a></li>
                                         <li><a href="{{ url('/news/investigation') }}">INVESTIGACIÓN</a></li>

@@ -1,69 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-</head>
-<body>
-<div class="container mt-2">
-<div class="row">
-<div class="col-lg-12 margin-tb">
-<div class="pull-left">
-<h2>Editar Proyecto</h2>
-</div>
-<div class="pull-right">
-<a class="btn btn-primary" href="{{ route('projects.index') }}" enctype="multipart/form-data"> Back</a>
-</div>
-</div>
-</div>
-@if(session('status'))
-<div class="alert alert-success mb-1 mt-1">
-{{ session('status') }}
-</div>
-@endif
-<form action="{{ route('events.update',$project->id) }}" method="POST" enctype="multipart/form-data">
-@csrf
-@method('PUT')
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12">
-<div class="form-group">
-<strong>Nombre del Proyecto</strong>
-<input type="text" name="name" value="{{ $project->name }}" class="form-control" placeholder="project name">
-@error('name')
-<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-@enderror
-</div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12">
-<div class="form-group">
-<strong>Informacion del proyecto</strong>
-<input type="text" name="information" class="form-control" placeholder="project Email" value="{{ $project->information }}">
-@error('information')
-<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-@enderror
-</div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12">
-<div class="form-group">
-<strong>Descripcion del proyecto</strong>
-<input type="text" name="description" value="{{ $project->description }}" class="form-control" placeholder="project Address">
-@error('description')
-<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-@enderror
-</div>
-</div>
-<div class="col-xs-12 col-sm-12 col-md-12">
-    <div class="form-group">
-    <strong>URL imagen</strong>
-    <input type="text" name="description" value="{{ $project->project_photo }}" class="form-control" placeholder="project Address">
-    @error('description')
-    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-    @enderror
+    <!--Default Section / Other Info-->
+    <section class="default-section other-info">
+    	<!--Login Form Main-->
+    <!-- <div class="modal fade pop-box"  tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true"> -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--SignUp Section-->
+
+                @if(session('status'))
+                <div class="alert alert-success mb-1 mt-1">
+                {{ session('status') }}
+                </div>
+                @endif
+
+                @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+                @endif
+            <section class="donation-section">
+                <div class="donation-form-outer">
+                    <form action="{{ route('projects.update',$project->id) }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <!--Form Portlet-->
+                        <div class="form-portlet">
+                            <h4>Editar Proyecto   </h4>
+                            <div class="row clearfix">
+
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">ID del proyecto  <span class="required">   {{ $project->id }} </span></div>
+                                </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Nombre del Proyecto <span class="required">*</span></div>
+                                    <input type="text" name="name" value="{{ $project->name }}" placeholder="Nombre del proyecto" required>
+                                    @error('name')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Informacion <span class="required">*</span></div>
+                                    <input type="text" name="information" value="{{ $project->information }}" placeholder="Informacion" required>
+                                    @error('information')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Descripcion <span class="required">*</span></div>
+                                    <input type="text" name="description" value="{{ $project->description }}" placeholder="Descripcion" required>
+                                    @error('description')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Url Imagen <span class=""></span></div>
+                                    <input type="text" name="project_photo" value="{{ $project->project_photo }}" placeholder="Url Imagen" required>
+                                    @error('project_photo')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Imagen <span class="required">*</span></div>
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        id="inputImage"
+                                        class="form-control
+                                        @error('image') is-invalid @enderror">
+
+                                    @error('image')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Actualizar</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+
+            </div>
+        <!-- /.modal-content -->
+        <!-- </div> -->
+    <!-- /.modal-dialog -->
     </div>
-    </div>
-<button type="submit" class="btn btn-primary ml-3">Submit</button>
-</div>
-</form>
-</div>
-</body>
-</html>
+<!-- /.modal -->
+<!-- End SignUp PopUp -->
+    </section>
+

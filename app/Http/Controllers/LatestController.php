@@ -26,7 +26,10 @@ class LatestController extends Controller
         $data['latests'] = Latest::orderBy('id','asc')->paginate(6);
         return view('investigation',$data);
     }
-    public function newsn(){
-        return view('new-single');
+    public function newsn(Latest $latest)
+    {
+    return view('new-single',compact('latest'));
     }
+
+
 }

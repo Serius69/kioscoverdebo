@@ -32,14 +32,14 @@
 
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="{{url('/news/newsn')}}"><img src="{{asset('/images/resource/featured-image-24.jpg')}}" alt=""></a>
+                        	<a href="{{ route('latests.show',$latest->id) }}"><img src="{{$latest->photo->path}}" alt=""></a>
                             <div class="post-tag">{{ $latest->name }}</div>
                         </figure>
                         <div class="content-box">
                         	<h3><a href="{{ route('latests.show',$latest->id) }}">{{ $latest->author }}</a></h3>
                             <div class="column-info">{{ $latest->datetime }}</div>
                             <div class="text">{{ $latest->description }} </div>
-                            <a href="{{url('/news/newsn')}}" class="theme-btn btn-style-three">Saber Mas</a>
+                            <a href="{{ route('latests.show',$latest->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
 

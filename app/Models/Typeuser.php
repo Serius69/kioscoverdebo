@@ -5,20 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Photo extends Model
+class Typeuser extends Model
 {
     use HasFactory;
-    protected $table = "photos";
 
+    protected $table = "typeuser";
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
-     */
-    protected $fillable = [
-        'name',
-        'path',
-        'status'
-    ];
+    **/
+
+     protected $fillable = [
+         'type',
+         'status'
+     ];
+
 
 }

@@ -3,18 +3,18 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Latest;
+use App\Models\Photo;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Latest>
  */
-class LatestFactory extends Factory
+class PhotoFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Latest::class;
+    protected $model = Photo::class;
     /**
      * Define the model's default state.
      *
@@ -22,13 +22,9 @@ class LatestFactory extends Factory
      */
     public function definition()
     {
-        $url = "https://picsum.photos/800/600?random=12965";
         return [
-            'name' => $this->faker->title(),
-            'author' => $this->faker->name(),
-            'description' => $this->faker->sentence(),
-            'user_id' => '1',
-            'photo_id' => '1',
+            'name' => 'Nombre de Imagen',
+            'path' => '\images\resource\blog-image-1.jpg',
             'status' => 1
         ];
     }

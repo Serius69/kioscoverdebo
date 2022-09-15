@@ -40,11 +40,24 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                {{-- <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Url Imagen <span class=""></span></div>
                                     <input type="text" name="project_photo" value="" placeholder="Url Imagen" required>
                                     @error('project_photo')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div> --}}
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Imagen <span class="required">*</span></div>
+                                    <input
+                                        type="file"
+                                        name="image"
+                                        id="inputImage"
+                                        class="form-control
+                                        @error('image') is-invalid @enderror">
+
+                                    @error('image')
+                                        <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
                                 <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Guardar</button></div>

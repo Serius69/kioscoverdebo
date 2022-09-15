@@ -15,16 +15,16 @@
                                 <div class="row clearfix">
                                 	<div class="col-md-5 col-sm-5 col-xs-12">
                                         <figure class="image-box">
-                                            <a href="#"><img src="{{asset('images/resource/featured-image-19.jpg')}}" alt=""></a>
+                                            <a href="{{ route('events.show',$event->id) }}"><img src="{{$event->photo->path}}" alt=""></a>
                                             <div class="post-tag">Featured</div>
                                         </figure>
                                     </div>
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <div class="content-box">
-                                            <h3><a href="#">{{ $event->name }}</a></h3>
+                                            <h3><a href="{{ route('events.show',$event->id) }}">{{ $event->name }}</a></h3>
                                             <div class="column-info">{{ $event->name }}</div>
                                             <div class="text">{{ $event->name }}</div>
-                                            <a href="#" class="theme-btn btn-style-three">Saber Mas</a>
+                                            <a href="{{ route('events.show',$event->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
                                         </div>
                                     </div>
 

@@ -98,24 +98,12 @@ return view('latest.edit',compact('latest'))->with('success','latest Has Been up
 * @param  \App\Latest  $latest
 * @return \Illuminate\Http\Response
 */
-public function destroy(Latest $latest)
-{
-$latest->delete();
-return redirect()->route('latests.index')
-// ->with('success','latest has been deleted successfully');
-->with('success','Noticia fue eliminada correctamente');
+public function destroy(Request $request, $id){
+        $latest = Latest::find($id);
+        $latest->status = 0;
+        $latest->save();
+        $data['latests'] = DB::table('latests')->where('status','1')->orderBy('id','ASC')->paginate(6);
+        return view('latest.index',compact('latest'))->with('success','latest Has Been updated successfully');
 
-}
-/**
-* Remove the specified resource from storage logic.
-*
-* @param  \App\Latest  $event
-* @return \Illuminate\Http\Response
-*/
-public function modify(Latest $id)
-{
-    $event->status = 0;
-return redirect()->route('events.index')
-->with('success','Eliminado logico exitoso');
 }
 }

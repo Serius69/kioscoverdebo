@@ -14,7 +14,7 @@
                 	<article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
                         	<a href="{{ route('latests.show',$latest->id) }}"><img src="{{$latest->photo->path}}"  alt="Greenture"></a>
-                            <div class="news-date">{{ $latest->name }}<span class="month">{{ $latest->photo->path }}</span></div>
+                            <div class="news-date">{{ $latest->name }}<span class="month">{{ $latest->name }}</span></div>
                         </figure>
                         <div class="content-box">
                         	<h3><a href="#">{{ $latest->photo->path }}</a></h3>

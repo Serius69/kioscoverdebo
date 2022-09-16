@@ -13,7 +13,7 @@ class ProjectController extends Controller
     * @return \Illuminate\Http\Response
     */
     public function lastProjects(){
-        $data['projects'] = Project::orderBy('id','desc')->paginate(3);
+        $data['projects'] = Project::orderBy('id','desc')->paginate(4);
         return view('projects.index', $data);
     }
     /**

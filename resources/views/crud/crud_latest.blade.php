@@ -30,9 +30,7 @@
 <td>
 <form action="{{ route('latests.destroy',$latest->id) }}" method="Post">
 <a class="btn btn-primary" href="{{ route('latests.edit',$latest->id) }}">Editar</a>
-@csrf
-@method('DELETE')
-<button type="submit" class="btn btn-danger">Eliminar</button>
+<a class="btn btn-primary" href="{{ route('latests.destroy',$latest->id) }}">Eliminar</a>
 </form>
 </td>
 </tr>

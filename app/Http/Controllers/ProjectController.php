@@ -27,4 +27,16 @@ class ProjectController extends Controller
     return view('projects.show',compact('project'));
     }
 
+    /**
+* Display a listing of the resource.
+*
+* @return \Illuminate\Http\Response
+*/
+public function list()
+{
+$data['projects'] = Project::orderBy('id','asc')->paginate(7);
+return view('projects.listproject', $data);
+}
+
+
 }

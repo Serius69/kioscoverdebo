@@ -17,12 +17,12 @@
                             <div class="news-date">{{ $latest->name }}<span class="month">{{ $latest->name }}</span></div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="#">{{ $latest->photo->path }}</a></h3>
+                        	<h3><a href="{{ route('latests.show',$latest->id) }}">{{ $latest->name }}</a></h3>
                         	<div class="post-info clearfix">
                             	<div class="post-author">{{ $latest->author }}</div>
                                 <div class="post-options clearfix">
-                                	<a href="{{url('/news/newsn')}}" class="comments-count"><span class="icon flaticon-communication-2"></span> 6</a>
-                                    <a href="{{url('/news/newsn')}}" class="fav-count"><span class="icon flaticon-favorite-1"></span> 14</a>
+                                	<a href="{{ route('latests.show',$latest->id) }}" class="comments-count"><span class="icon flaticon-communication-2"></span> 6</a>
+                                    <a href="{{ route('latests.show',$latest->id) }}" class="fav-count"><span class="icon flaticon-favorite-1"></span> 14</a>
                                 </div>
                             </div>
                             <div class="text">{{ $latest->description }}</div>

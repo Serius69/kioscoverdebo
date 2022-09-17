@@ -15,6 +15,7 @@ public function index()
 $data['latests'] = latest::orderBy('id','asc')->paginate(7);
 return view('latests.crudLatest', $data);
 }
+
 /**
 * Show the form for creating a new resource.
 *
@@ -47,16 +48,7 @@ $latest->save();
 return redirect()->route('latests.index')
 ->with('success','latest has been created successfully.');
 }
-/**
-* Display the specified resource.
-*
-* @param  \App\Latest  $latest
-* @return \Illuminate\Http\Response
-*/
-public function show(Latest $latest)
-{
-return view('new-single',compact('latest'));
-}
+
 /**
 * Show the form for editing the specified resource.
 *
@@ -105,5 +97,17 @@ public function destroy(Request $request, $id){
         $data['latests'] = DB::table('latests')->where('status','1')->orderBy('id','ASC')->paginate(6);
         return view('latest.index',compact('latest'))->with('success','latest Has Been updated successfully');
 
+}
+
+    /**
+* Display the specified resource.
+*
+* @param  \App\Latest  $latest
+* @return \Illuminate\Http\Response
+*/
+public function show(Latest $latest)
+{
+    $latests=Latest::orderBy('id','asc')->paginate(4);
+return view('new-single',compact('latest','latests'));
 }
 }

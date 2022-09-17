@@ -1,4 +1,4 @@
-    <!--Events Page-->
+    <!--projects Page-->
     <div class="sidebar-page">
     	<div class="auto-container">
 
@@ -6,28 +6,28 @@
 
                 <!--Content Side-->
                 <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
-                    <!--Events Section / List View-->
-                    <section class="events-section list-view no-padd-bottom no-padd-top padd-right-20">
-                        @foreach ($events as $event)
+                    <!--projects Section / List View-->
+                    <section class="projects-section list-view no-padd-bottom no-padd-top padd-right-20">
+                        @foreach ($projects as $project)
                         <!--Featured Column-->
                         <div class="column default-featured-column style-two">
                             <article class="inner-box">
                                 <div class="row clearfix">
                                 	<div class="col-md-5 col-sm-5 col-xs-12">
                                         <figure class="image-box">
-                                            <a href="{{ route('events.show',$event->id) }}"><img src="{{$event->photo->path}}" alt=""></a>
-                                            @if ({{$event->date_ubication}}>{!! Form::datetimeLocal($name, $value, [$options]) !!})
+                                            <a href="{{ route('projects.show',$project->id) }}"><img src="{{$project->photo->path}}" alt=""></a>
+                                            {{-- @if ({{$project->date_ubication}}>{!! Form::datetimeLocal($name, $value, [$options]) !!})
                                             <div class="post-tag">MUY PRONTO</div>
-                                            @endif
+                                            @endif --}}
 
                                         </figure>
                                     </div>
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <div class="content-box">
-                                            <h3><a href="{{ route('events.show',$event->id) }}">{{ $event->name }}</a></h3>
-                                            <div class="column-info">{{ $event->media }}</div>
-                                            <div class="text">{{ $event->description }}</div>
-                                            <a href="{{ route('events.show',$event->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
+                                            <h3><a href="{{ route('projects.show',$project->id) }}">{{ $project->name }}</a></h3>
+                                            <div class="column-info">{{ $project->media }}</div>
+                                            <div class="text">{{ $project->description }}</div>
+                                            <a href="{{ route('projects.show',$project->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
                                         </div>
                                     </div>
 
@@ -45,7 +45,7 @@
                                 <li><a href="#" class="active">2</a></li>
                                 <li><a href="#">3</a></li>
                                 <li><a class="next" href="#">Next&ensp;<span class="fa fa-angle-right"></span></a></li> --}}
-                                {!! $events->links() !!}
+                                {!! $projects->links() !!}
                             </ul>
                         </div>
                     </section>
@@ -81,4 +81,4 @@
             </div>
         </div>
     </div>
-    <!-- Events Page -->
+    <!-- projects Page -->

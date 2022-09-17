@@ -1,3 +1,4 @@
+@extends('layouts.latest_relational')
     <!--Sidebar Page-->
     <div class="sidebar-page">
     	<div class="auto-container">
@@ -45,56 +46,8 @@
 
                     <hr>
 
-                    <!--Related Posts Section-->
-                    <section class="related-posts-section padd-right-20">
-                    	<h2>Noticias <span class="normal-font">Relacionados</span></h2>
-
-                        <!--Related Posts Carousel-->
-                        <div class="related-posts-carousel">
-                        	<!--Post-->
-                            <div class="column default-featured-column">
-                                <article class="inner-box">
-                                    <figure class="image-box">
-                                        <a href="noticy-single.html"><img src="https://us.123rf.com/450wm/romanbykhalets/romanbykhalets1909/romanbykhalets190900245/131068993-icono-aislado-de-la-imagen-s%C3%ADmbolo-de-galer%C3%ADa-signo-de-imagen-para-web-o-aplicaci%C3%B3n-.jpg?ver=6" alt=""></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <h3><a href="project-single.html">Salva los ecosistemas</a></h3>
-                                        <div class="column-info">Environment, Go Green Company</div>
-                                        <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <!--Post-->
-                            <div class="column default-featured-column">
-                                <article class="inner-box">
-                                    <figure class="image-box">
-                                        <a href="noticy-single.html"><img src="https://us.123rf.com/450wm/romanbykhalets/romanbykhalets1909/romanbykhalets190900245/131068993-icono-aislado-de-la-imagen-s%C3%ADmbolo-de-galer%C3%ADa-signo-de-imagen-para-web-o-aplicaci%C3%B3n-.jpg?ver=6" alt=""></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <h3><a href="project-single.html">Melting Ice</a></h3>
-                                        <div class="column-info">Environment, Go Green Company</div>
-                                        <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
-                                    </div>
-                                </article>
-                            </div>
-
-                            <!--Post-->
-                            <div class="column default-featured-column">
-                                <article class="inner-box">
-                                    <figure class="image-box">
-                                        <a href="noticy-single.html"><img src="https://us.123rf.com/450wm/romanbykhalets/romanbykhalets1909/romanbykhalets190900245/131068993-icono-aislado-de-la-imagen-s%C3%ADmbolo-de-galer%C3%ADa-signo-de-imagen-para-web-o-aplicaci%C3%B3n-.jpg?ver=6" alt=""></a>
-                                    </figure>
-                                    <div class="content-box">
-                                        <h3><a href="project-single.html">Solar Panels</a></h3>
-                                        <div class="column-info">Environment, Go Green Company</div>
-                                        <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-
-                    </section>
+                    @section('relational')
+                    @endsection
 
                 </div>
                 <!--Content Side-->

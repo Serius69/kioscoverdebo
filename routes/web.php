@@ -98,6 +98,7 @@ Route::controller(LoginController::class)->group(function(){
 Route::controller(ProjectController::class)->group(function(){
     // Route::get('project/$name',  'login');
     Route::get('project/project', 'lastProjects');
+    Route::get('project/listproject', 'list');
 });
 Route::controller(LatestCRUDController::class)->group(function(){
     Route::get('admin/latest', 'index');

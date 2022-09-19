@@ -29,6 +29,7 @@ class HomeController extends Controller
     // $data2['latests'] = Latest::orderBy('id','asc')->paginate(3);
     // $data3['projects'] = Project::orderBy('id','asc')->paginate(3);
 
+    //  Bug en el index para mandar banners
     $data = [
         'events'  => Event::orderBy('id','asc')->paginate(3),
         'latests'   => Latest::orderBy('id','asc')->paginate(3),
@@ -37,5 +38,5 @@ class HomeController extends Controller
 
 
     return view('admin-index',$data);
-}
+    }
 }

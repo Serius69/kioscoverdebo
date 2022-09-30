@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
 class EventCRUDController extends Controller
@@ -15,18 +16,7 @@ class EventCRUDController extends Controller
 public function index()
 {
 $data['events'] = Event::orderBy('id','asc')->paginate(7);
- return view('events.crudEvent', $data);
-//return view("crud.crud_event", [ "events" => $events ]);
-}
-/**
-* Display an element.
-*
-* @return \Illuminate\Http\Response
-*/
-public function view($id){
-    $pro = Event::find($id);
-    $events=DB::table('events')->get();
-    return view('crud_event',compact('pro','events'));
+ return view('event.crud', $data);
 }
 /**
 * Show the form for creating a new resource.
@@ -35,7 +25,7 @@ public function view($id){
 */
 public function create()
 {
-return view('events.create');
+return view('event.create');
 }
 /**
 * Store a newly created resource in storage.
@@ -49,26 +39,45 @@ $request->validate([
 'name' => 'required',
 'media' => 'required',
 'description' => 'required',
-'event_photo' => 'required'
+'path' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
 ]);
-$event = new Event;
-$event->name = $request->name;
-$event->media = $request->media;
-$event->description = $request->description;
-$event->event_photo = $request->event_photo;
-$event->save();
-return redirect()->route('events.index')
-->with('success','event has been created successfully.');
+        if($request->file('path')!=null)
+         {
+             $file = $request->file('path');
+             $file->move('img/events', $file->getClientOriginalName());
+             $imagen=$file->getClientOriginalName();
+         }
+         else
+         {
+             $imagen="sin_imagen.jpg";
+         }
+        
+        $event = new Event;
+        $event->name = $request->name;
+                $event->media = $request->media;
+                $event->description = $request->description;
+        
+                $photo = new Photo;
+                $photo->path = $imagen;
+                
+                $photo->save();  
+                $event->photo_id = $photo->id;          
+                $event->save();
+                $events = Event::orderBy('id','asc')->paginate(10);
+return view('event.crud',compact('events'));
 }
 /**
-* Display the specified resource.
+* Destroy the specified resource.
 *
 * @param  \App\Event  $event
 * @return \Illuminate\Http\Response
 */
 public function show(Event $event)
 {
-return view('event-single',compact('event'));
+        $event->status=0;
+         $event->save();
+         $data['events'] = Event::orderBy('id','asc')->paginate(10);
+         return view('event.crud',$data)->with('success','event Has Been updated successfully');
 }
 /**
 * Show the form for editing the specified resource.
@@ -78,7 +87,7 @@ return view('event-single',compact('event'));
 */
 public function edit(Event $event)
 {
-return view('events.edit',compact('event'));
+return view('event.edit',compact('event'));
 }
 /**
 * Update the specified resource in storage.
@@ -89,22 +98,36 @@ return view('events.edit',compact('event'));
 */
 public function update(Request $request, $id)
 {
-$request->validate([
-     'name' => 'required',
-     'media' => 'required',
-     'description' => 'required',
-     'event_photo' => 'required'
-]);
-$event = Event::find($id);
-$event->name = $request->name;
-$event->media = $request->media;
-$event->description = $request->description;
-$event->event_photo = $request->event_photo;
-$event->save();
-// Error
-//return redirect()->route('events.crudEvent')
-//->with('success','event Has Been updated successfully');
-return view('events.edit',compact('event'))->with('success','latest Has Been updated successfully');
+    $request->validate([
+        'name' => 'required',
+        'media' => 'required',
+        'description' => 'required',
+        'path' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        ]);
+                if($request->file('path')!=null)
+                 {
+                     $file = $request->file('path');
+                     $file->move('img/events', $file->getClientOriginalName());
+                     $imagen=$file->getClientOriginalName();
+                 }
+                 else
+                 {
+                     $imagen="sin_imagen.jpg";
+                 }
+                
+                 $event = Event::find($id);
+                $event->name = $request->name;
+                $event->media = $request->media;
+                $event->description = $request->description;
+        
+                $photo = new Photo;
+                $photo->path = $imagen;
+                
+                $photo->save();  
+                $event->photo_id = $photo->id;          
+                $event->save();
+                $events = Event::orderBy('id','asc')->paginate(10);
+return view('event.crud',compact('events'))->with('success','event Has Been updated successfully');
 
 }
 /**
@@ -119,7 +142,7 @@ public function modify($id)
     $event->status = 0;
     $event->save();
     //$event->delete();
-    return view('events.index',compact('event'))->with('success','latest Has Been updated successfully');
+    return view('events.index',compact('event'))->with('success','event Has Been updated successfully');
 }
 
 /**

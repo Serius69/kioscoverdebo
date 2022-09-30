@@ -22,13 +22,11 @@ class EventFactory extends Factory
      */
     public function definition()
     {
-        $url = "https://picsum.photos/800/600?random=12965";
         return [
             'name' => $this->faker->name(),
             'media' => $this->faker->name(),
             'description' => $this->faker->sentence(),
-            // 'event_photo' => $this->faker->url(800,600),
-            'user_id' => '1',
+            // 'url'-> 'https://picsum.photos/800/600?random=12965',
             'photo_id' => '1',
             'status' => 1
 

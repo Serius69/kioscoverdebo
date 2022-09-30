@@ -18,15 +18,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('author');
             $table->string('description');
-            $table->string('latest_photo', 2048)->nullable();
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-
+            $table->string('date_publication');
+            $table->string('url');
             $table->unsignedBigInteger('photo_id');
             $table->foreign('photo_id')->references('id')->on('photos');
-
-            $table->integer('status');
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('typelatest')->default(1);
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

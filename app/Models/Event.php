@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Event extends Model
 {
@@ -20,7 +21,7 @@ class Event extends Model
         'name',
         'media',
         'description',
-        'user_id',
+        'url',
         'photo_id',
         'status'
     ];

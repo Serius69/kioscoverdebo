@@ -1,16 +1,10 @@
-@extends('layouts.footer')
-@extends('layouts.noregister')
-@extends('layouts.titlebar')
-@extends('layouts.header')
+@extends('layouts.master')
 
 @section('title', 'Ofertas')
 @section('subtitle1', 'Ofe')
 @section('subtitle2', 'rtas')
 
-@section('content')
-
-
-
-@section('footer')
+@section('body')
+<img src="{{ url('img/logocommingsoon.png')}}" alt="Comming Soon" width="1000">
 @endsection
 

@@ -16,7 +16,6 @@ class Photo extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name',
         'path',
         'status'
     ];

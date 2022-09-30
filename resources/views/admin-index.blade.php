@@ -1,11 +1,11 @@
-@extends('layouts.footer')
+@extends('layouts.components.footer')
 
-@extends('layouts.admin_header')
+@extends('layouts.masterADMIN')
 
 
 @section('header', 'Kiosco Verde | INICIO ADMIN')
 
-@section('content')
+@section('body')
 
 @section('introduction')
 

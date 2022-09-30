@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Crud;
 use App\Http\Controllers\Controller;
+use App\Models\Photo;
 use App\Models\Project;
 use Illuminate\Http\Request;
 class ProjectCRUDController extends Controller
@@ -13,7 +14,7 @@ class ProjectCRUDController extends Controller
 public function index()
 {
 $data['projects'] = Project::orderBy('id','asc')->paginate(7);
-return view('projects.crudProject', $data);
+return view('project.crud', $data);
 }
 
 /**
@@ -23,7 +24,7 @@ return view('projects.crudProject', $data);
 */
 public function create()
 {
-return view('projects.create');
+return view('project.create');
 }
 /**
 * Store a newly created resource in storage.
@@ -37,16 +38,34 @@ $request->validate([
 'name' => 'required',
 'information' => 'required',
 'description' => 'required',
-'project_photo' => 'required'
+'path' => 'required'
 ]);
+if($request->file('path')!=null)
+                 {
+                     $file = $request->file('path');
+                     $file->move('img/projects', $file->getClientOriginalName());
+                     $imagen=$file->getClientOriginalName();
+                 }
+                 else
+                 {
+                     $imagen="sin_imagen.jpg";
+                 }
 $project = new Project;
 $project->name = $request->name;
 $project->information = $request->information;
 $project->description = $request->description;
-$project->project_photo = $request->project_photo;
+        $photo = new Photo;
+        $photo->path = $imagen;
+        $photo->save();  
+$project->photo_id = $photo->id;  
 $project->save();
-return redirect()->route('projects.index')
-->with('success','project has been created successfully.');
+// return redirect()->back()->with('message', 'IT WORKS!');
+// return redirect()->route('projects.index')
+//  ->with('success','project Has Been updated successfully');
+$projects = project::orderBy('id','asc')->paginate(10);
+
+return view('project.crud',compact('projects'))->with('success','project Has Been updated successfully');
+
 }
 /**
 * Display the specified resource.
@@ -56,7 +75,12 @@ return redirect()->route('projects.index')
 */
 public function show(Project $project)
 {
-return view('projects.show',compact('project'));
+    $project->status=0;
+    $project->save();
+    $data['projects'] = project::orderBy('id','asc')->paginate(10);
+    return view('project.crud',$data)->with('success','project Has Been updated successfully');
+
+
 }
 /**
 * Show the form for editing the specified resource.
@@ -66,7 +90,7 @@ return view('projects.show',compact('project'));
 */
 public function edit(Project $project)
 {
-return view('projects.edit',compact('project'));
+return view('project.edit',compact('project'));
 }
 /**
 * Update the specified resource in storage.
@@ -81,18 +105,33 @@ $request->validate([
     'name' => 'required',
     'information' => 'required',
     'description' => 'required',
-    'project_photo' => 'required'
+    'path' => 'required'
 ]);
+                if($request->file('path')!=null)
+                 {
+                     $file = $request->file('path');
+                     $file->move('img/projects', $file->getClientOriginalName());
+                     $imagen=$file->getClientOriginalName();
+                 }
+                 else
+                 {
+                     $imagen="sin_imagen.jpg";
+                 }
 $project = Project::find($id);
 $project->name = $request->name;
 $project->information = $request->information;
 $project->description = $request->description;
-$project->project_photo = $request->project_photo;
+        $photo = new Photo;
+        $photo->path = $imagen;
+        $photo->save();  
+$project->photo_id = $photo->id;  
 $project->save();
 // return redirect()->back()->with('message', 'IT WORKS!');
 // return redirect()->route('projects.index')
 //  ->with('success','project Has Been updated successfully');
-return view('projects.edit',compact('project'))->with('success','project Has Been updated successfully');
+$projects = project::orderBy('id','asc')->paginate(10);
+
+return view('project.crud',compact('projects'))->with('success','project Has Been updated successfully');
 
 }
 /**
@@ -107,19 +146,6 @@ $project->delete();
 return redirect()->route('projects.index')
 ->with('success','project has been deleted successfully');
 }
-/**
-* Remove the specified resource from storage logic.
-*
-* @param  \App\Event  $event
-* @return \Illuminate\Http\Response
-*/
-public function modify(Project $project)
-{
-    $project->status = 0;
-return redirect()->route('events.index')
-->with('success','Eliminado logico exitoso');
-}
-
 
 
 }

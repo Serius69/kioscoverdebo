@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
+    private $quantity = 1;
     public function indexAbout(){
-        return view('aboutus');
+        $data = [
+            'validate' => $this->quantity
+        ];
+        return view('aboutus',$data);
     }
 }

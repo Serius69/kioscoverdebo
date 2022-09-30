@@ -10,6 +10,9 @@ use App\Models\User;
 use App\Models\Project;
 use App\Models\Photo;
 use App\Models\Typeuser;
+use App\Models\Banner;
+use App\Models\Operator;
+use App\Models\Typelatest;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,11 +30,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Typeuser::factory(2)->create();
-        Photo::factory(50)->create();
-        User::factory(50)->create();
-        Event::factory(50)->create();
-        Latest::factory(50)->create();
-        Project::factory(50)->create();
+        Typelatest::factory(3)->create();
+        Photo::factory(5)->create();
+        User::factory(5)->create();
+        Event::factory(5)->create();
+        Latest::factory(5)->create();
+        Project::factory(5)->create();
+        Banner::factory(3)->create();
+        Operator::factory(3)->create();
+
 
     }
 }

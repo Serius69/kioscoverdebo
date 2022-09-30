@@ -22,13 +22,15 @@ class LatestFactory extends Factory
      */
     public function definition()
     {
-        $url = "https://picsum.photos/800/600?random=12965";
+        // $url = "https://picsum.photos/800/600?random=12965";
         return [
             'name' => $this->faker->title(),
             'author' => $this->faker->name(),
             'description' => $this->faker->sentence(),
-            'user_id' => '1',
-            'photo_id' => '1',
+            'date_publication' => $this->faker->date(),
+            'url' => $this->faker->date(),
+            'photo_id' => 1,
+            'type_id' => 1,
             'status' => 1
         ];
     }

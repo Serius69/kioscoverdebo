@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('media');
             $table->string('description');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('date_publication')->nullable();
+            $table->string('url')->default('url');;
             $table->unsignedBigInteger('photo_id');
             $table->foreign('photo_id')->references('id')->on('photos');
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

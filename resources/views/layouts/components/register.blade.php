@@ -1,0 +1,3 @@
+<!--Register Section-->
+@yield('register')
+

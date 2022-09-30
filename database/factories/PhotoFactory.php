@@ -23,8 +23,7 @@ class PhotoFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Nombre de Imagen',
-            'path' => '\images\resource\blog-image-1.jpg',
+            'path' => 'image-12.jpg',
             'status' => 1
         ];
     }

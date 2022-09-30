@@ -16,6 +16,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EventController;
+
 use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Crud\LatestCRUDController;
 use App\Http\Controllers\Crud\EventCRUDController;
 use App\Http\Controllers\Crud\ProjectCRUDController;
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\Crud\BannerCRUDController;
+use App\Http\Controllers\Crud\TypelatestCRUDController;
+use App\Http\Controllers\Crud\OperatorCRUDController;
+// use App\Http\Controllers\CrudController;
 //
 
 /*
@@ -40,6 +44,7 @@ use App\Http\Controllers\Auth\GoogleSocialiteController;
 |
 */
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\OperatorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,7 +71,7 @@ Route::controller(AboutController::class)->group(function(){
 Route::controller(ContactController::class)->group(function(){
     Route::get('contactus/question',  'question');
     Route::get('contactus/', 'index');
-    Route::get('contactus/standars',  'standars');
+    Route::get('standars',  'standars');
 });
 
 Route::controller(FooterController::class)->group(function(){
@@ -76,9 +81,9 @@ Route::controller(FooterController::class)->group(function(){
 
 Route::controller(LatestController::class)->group(function(){
     Route::get('news/intermediaty',  'intermediaty');
-    Route::get('news/agend', 'agend');
+    Route::get('agend', 'agend');
     Route::get('news/investigation',  'investigation');
-    Route::get('news/news',  'indexLatest');
+    Route::get('news',  'indexLatest');
     Route::get('news/newsn',  'newsn');
     Route::get('admin/createnew',  'createnew');
     Route::get('admin/editnew',  'editnew');
@@ -88,6 +93,7 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('service/recicle',  'recicle');
     Route::get('service/ofert', 'ofert');
     Route::get('service/advice',  'advice');
+    Route::get('operator',  'operator');
 });
 
 Route::controller(LoginController::class)->group(function(){
@@ -102,18 +108,33 @@ Route::controller(ProjectController::class)->group(function(){
 });
 Route::controller(LatestCRUDController::class)->group(function(){
     Route::get('admin/latest', 'index');
-    Route::get('admin/createlatest', 'create');
-    Route::get('admin/editlatest', 'edit');
+    Route::get('admin/latest/create', 'create');
+    Route::get('admin/latest/edit', 'edit');
 });
 Route::controller(EventCRUDController::class)->group(function(){
     Route::get('admin/event', 'index');
-    Route::get('admin/createevent', 'create');
-    Route::get('admin/editevent', 'edit');
+    Route::get('admin/event/create', 'create');
+    Route::get('admin/event/edit', 'edit');
 });
 Route::controller(ProjectCRUDController::class)->group(function(){
     Route::get('admin/project', 'index');
-    Route::get('admin/createproject', 'create');
-    Route::get('admin/editproject', 'edit');
+    Route::get('admin/project/create', 'create');
+    Route::get('admin/project/edit', 'edit');
+});
+Route::controller(BannerCRUDController::class)->group(function(){
+    Route::get('admin/banner', 'index');
+    Route::get('admin/banner/create', 'create');
+    Route::get('admin/banner/edit', 'edit');
+});
+Route::controller(TypelatestCRUDController::class)->group(function(){
+    Route::get('admin/typelatest', 'index');
+    Route::get('admin/typelatest/create', 'create');
+    Route::get('admin/typelatest/edit', 'edit');
+});
+Route::controller(OperatorCRUDController::class)->group(function(){
+    Route::get('admin/operator', 'index');
+    Route::get('admin/operator/create', 'create');
+    Route::get('admin/operator/edit', 'edit');
 });
 
 // Login
@@ -129,7 +150,14 @@ Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback
 Route::resource('latests', LatestCRUDController::class);
 Route::resource('events', EventCRUDController::class);
 Route::resource('projects', ProjectCRUDController::class);
-
+Route::resource('banners', BannerCRUDController::class);
+Route::resource('typelatests', TypelatestCRUDController::class);
+Route::resource('operators', OperatorCRUDController::class);
+//Para vista del usuario
+Route::resource('noticia', LatestController::class);
+Route::resource('proyecto', ProjectController::class);
+Route::resource('evento', EventController::class);
+Route::resource('operador', OperatorController::class);
 //Image
 Route::get('image-upload', [ ImageController::class, 'index' ]);
 Route::post('image-upload', [ ImageController::class, 'store' ])->name('image.store');

@@ -1,7 +1,7 @@
-@extends('layouts.footer')
+@extends('layouts.components.footer')
 @extends('layouts.login')
-@extends('layouts.titlebar')
-@extends('layouts.header')
+@extends('layouts.components.titlebar')
+@extends('layouts.master')
 
 @section('title', 'Ingresar')
 @section('subtitle1', 'Ingre')

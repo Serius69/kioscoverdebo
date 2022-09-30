@@ -6,6 +6,7 @@ use App\Models\Project;
 
 class ProjectController extends Controller
 {
+    private $quantity = 1;
     /**
     * Display the specified resource.
     *
@@ -13,7 +14,10 @@ class ProjectController extends Controller
     * @return \Illuminate\Http\Response
     */
     public function lastProjects(){
-        $data['projects'] = Project::orderBy('id','desc')->paginate(4);
+        $data = [
+            'validate' => $this->quantity,
+            'projects' => Project::orderBy('id','desc')->paginate(4)
+        ];
         return view('projects.index', $data);
     }
     /**
@@ -24,7 +28,8 @@ class ProjectController extends Controller
     */
     public function show(Project $project)
     {
-    return view('projects.show',compact('project'));
+        $validate = $this->quantity;
+    return view('projects.show',compact('project','validate'));
     }
 
     /**
@@ -34,7 +39,10 @@ class ProjectController extends Controller
 */
 public function list()
 {
-$data['projects'] = Project::orderBy('id','asc')->paginate(7);
+$data = [
+    'projects'=> Project::orderBy('id','asc')->paginate(7),
+    'validate' => $this->quantity
+];
 return view('projects.listproject', $data);
 }
 

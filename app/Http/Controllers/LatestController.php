@@ -1,15 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Event;
 use App\Models\Latest;
-use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\Typelatest;
 
 class LatestController extends Controller
 {
-
+    private $quantity = 1;
     public function indexLatest(){
-        $data['latests'] = Latest::orderBy('id','asc')->paginate(12);
-        return view ('latests.latest',$data);
+        $data = [
+            'latests'   => Latest::orderBy('id','asc')->paginate(9),
+            'validate' => $this->quantity
+        ];
+        return view ('latest.last',$data);
     }
     /**
 * Display the specified resource.
@@ -17,12 +23,14 @@ class LatestController extends Controller
 * @param  \App\Latest  $latest
 * @return \Illuminate\Http\Response
 */
-    public function create(){
-        return view('intermediaty');
-    }
+    // public function create(){
+    //     return view('intermediaty');
+    // }
     public function intermediaty(){
-        $data['latests'] = Latest::orderBy('id','asc')->paginate(12);
-        return view('intermediaty');
+        $data = ['latests'=> Latest::orderBy('id','asc')->paginate(12),
+                'validate' => $this->quantity
+        ];
+        return view('intermediaty',$data);
     }
             /**
 * Display the specified resource.
@@ -31,18 +39,24 @@ class LatestController extends Controller
 * @return \Illuminate\Http\Response
 */
     public function agend(){
-        $data['events'] = Latest::orderBy('id','asc')->paginate(9);
+        
+        $data = [
+            'events' => Event::orderBy('id','asc')->paginate(9),
+            'validate' => $this->quantity
+        ] ;
         return view('agend',$data);
     }
         /**
-* Display the specified resource.
+* Display a lot of latest
 *
 * @param  \App\Latest  $latest
 * @return \Illuminate\Http\Response
 */
     public function investigation(){
-        $data['latests'] = Latest::orderBy('id','asc')->paginate(6);
-        return view('investigation',$data);
+        $typelatests = Typelatest::orderBy('id','asc')->paginate(100);
+        $latests = Latest::orderBy('date_publication','desc')->paginate(5);       
+        $validate = $this->quantity    ;
+        return view('investigation',compact('latests','typelatests','validate'));
     }
         /**
 * Display the specified resource.
@@ -50,9 +64,13 @@ class LatestController extends Controller
 * @param  \App\Latest  $latest
 * @return \Illuminate\Http\Response
 */
-    public function newsn(Latest $latest)
+    public function show($id)
     {
-    return view('new-single',compact('latest'));
+        $latest = Latest::find($id);
+        $projects = Project::orderBy('id','asc')->paginate(6);
+        $typelatests = Typelatest::orderBy('id','asc')->paginate(100);
+        $latests = Latest::orderBy('date_publication','desc')->paginate(5);
+    return view('latest.single',compact('latest','latests','typelatests','projects'));
     }
 
 

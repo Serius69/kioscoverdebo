@@ -27,7 +27,7 @@ class ProjectFactory extends Factory
             'name' => $this->faker->title(),
             'information' => $this->faker->sentence(),
             'description' => $this->faker->sentence(),
-            'user_id' => '1',
+            'url' => $url,
             'photo_id' => '1',
             'status' => 1
         ];

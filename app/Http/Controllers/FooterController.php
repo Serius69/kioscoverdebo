@@ -5,11 +5,18 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller
 {
+    private $quantity = 1;
     public function privacy(){
-        return view('privacy');
+        $data = [
+            'validate' => $this->quantity
+        ];
+        return view('privacy',$data);
    }
     public function terms(){
-        return view('terms');
+        $data = [
+            'validate' => $this->quantity
+        ];
+        return view('terms',$data);
     }
     // public function aboutus(){
     //     return view('about');

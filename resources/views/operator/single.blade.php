@@ -14,13 +14,13 @@
                 <!--Content Side-->
                 <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
 
-                    <!--Projects Section-->
-                    <section class="projects-section project-details no-padd-bottom no-padd-top padd-right-20">
+                    <!--operators Section-->
+                    <section class="operators-section operator-details no-padd-bottom no-padd-top padd-right-20">
 
                         <div class="column default-featured-column">
                             <article class="inner-box">
                                 <figure class="image-box">
-                                    <a href="#"><img src="{{ url('img/operadores/'.$operator->photo->path)}}" width="600" height="800"  alt=""></a>
+                                    <a href="{{ route('operador.show',$operator->id) }}"><img src="{{ url('img/operator/'.$operator->photo->path)}}" width="600" height="600"  alt=""></a>
                                 </figure>
                                 <div class="content-box padd-top-40">
                                     <div class="row detail-header clearfix">
@@ -30,19 +30,38 @@
                                         {{-- <div class="col-md-4 col-sm-12 pull-right text-right"><a href="#" class="theme-btn btn-style-two">DOnate NOW</a></div> --}}
                                     </div>
                                     <div class="text">
-                                        <p class="bigger-text">{{$operator->description}}
+                                        <br>
+                                        <p class="bigger-text">{{$operator->media}} 
+                                            {{-- <strong class="theme_color">Ne essent feugiat vim, et soluta reprimique instructior mel</strong>, 
+                                            ne nonumes deserunt. Vix in dico vivendum forensibus. Munere tamquam referrentur ad duo, ei tibique
+                                             dissentias.</p> --}}
+                                        <p>{{$operator->description}}</p>
                                     </div>
 
                                     <br>
-                                    <h3 class="text-uppercase">URL </h3>
-
-                                    <ul class="styled-list-two">
-                                        <li>{{$operator->url}}</li>
-                                    </ul>
+                                    
 
                                 </div>
                             </article>
                         </div>
+                        @if(($operator->path_video)!=null)
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <iframe
+                                    id="existing-iframe-example"
+                                    width="640" height="360"
+                                    src="{{$operator->path_video}}?autoplay=1&mute=1&enablejsapi=1"
+                                    frameborder="0"
+                                    style="border: solid 4px #37474F"
+                                ></iframe>
+
+                                <a href=" {{$operator->url}}">
+                                    <h3 class="text-uppercase">Descarga información adjunta en el siguiente enlace </h3>
+                                    </a>
+                        </div>
+                        @endif
+
+                        
+                        
                     </section>
                     <hr>
                 </div>
@@ -65,7 +84,7 @@
                         </div>
 
                         <!-- Popular Categories -->
-                        <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        {{-- <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="sidebar-title"><h3>Categorias</h3></div>
 
                             <ul class="list">
@@ -73,17 +92,19 @@
                                 <li><a class="clearfix" href="{{ route('noticia.show',$operator->id) }}">{{$typeoperator->type}}</a></li>
                                 @endforeach
                             </ul>
-                        </div>
+                        </div> --}}
 
                         <!-- Recent Posts -->
                         <div class="widget recent-posts wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <div class="sidebar-title"><h3>Ultimos proyectos</h3></div>
+                            <div class="sidebar-title"><h3>Otros Operadores</h3></div>
 
-                            @foreach ($projects as $project)
+                            @foreach ($operators as $operator)
                             <article class="post">
-                            	<figure class="post-thumb"><img src="{{ url('img/projects/'.$project->photo->path)}}" alt=""></figure>
-                                <h4><a href="project-single.html">{{$project->name}}</a></h4>
-                                <div class="post-info"><span class="icon flaticon-people-1"></span>{{$project->description}}</div>
+                                <a href="{{ route('operador.show',$operator->id) }}">
+                            	<figure class="post-thumb"><img src="{{ url('img/operadores/'.$operator->photo->path)}}" width="70" height="70" alt=""></figure>
+                                </a>
+                                <h4><a href="{{ route('operador.show',$operator->id) }}">{{$operator->name}}</a></h4>
+                                <div class="post-info"><span class="icon flaticon-people-1"></span>{{$operator->description}}</div>
                             </article>
                             @endforeach                         
                         </div>

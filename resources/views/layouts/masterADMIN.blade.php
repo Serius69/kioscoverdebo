@@ -46,7 +46,7 @@
                     </div>
                     <a onclick="{{ route('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#login-popup">cerrar sesion</a>
                     @else
-                    <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="signup-popup">ingresar</a>
+                    {{-- <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="signup-popup">ingresar</a> --}}
                     @endif
                     <!-- Main Menu -->
                     <nav class="main-menu">
@@ -66,14 +66,14 @@
                                 <li><a href="{{ url('/admin') }}">INICIO</a>
                                 </li>
                                 
-                                <li class="dropdown"><a href="#">CRUD</a>
+                                <li class="dropdown"><a href="#">ADMIN</a>
                                     <ul>
                                         <li><a href="{{ url('/admin/event') }}">ADMIN EVENTO</a></li>
                                         <li><a href="{{ url('/admin/latest') }}">ADMIN NOTICIA</a></li>
                                         <li><a href="{{ url('/admin/project') }}">ADMIN PROYECTO</a></li>
                                         <li><a href="{{ url('/admin/banner') }}">ADMIN BANNER</a></li>
                                         <li><a href="{{ url('/admin/typelatest') }}">ADMIN TIPO NOTICIA</a></li>
-                                        <li><a href="{{ url('/admin/operator') }}">ADMIN </a></li>
+                                        <li><a href="{{ url('/admin/operator') }}">ADMIN OPERADORES</a></li>
                                     </ul>
                                 </li>
                                  

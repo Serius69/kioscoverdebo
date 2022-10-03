@@ -1,7 +1,7 @@
     @extends('layouts.master')
 
 @section('title', 'Evento')
-@section('subtitle1', '')
+@section('subtitle1', 'Evento')
 @section('subtitle2', ' ')
 
 @section('body')
@@ -13,43 +13,73 @@
                     <!--Content Side-->
                     <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
     
-                        <!--Projects Section-->
-                        <section class="projects-section project-details no-padd-bottom no-padd-top padd-right-20">
-    
-                            <div class="column default-featured-column">
-                                <article class="inner-box">
-                                    <figure class="image-box">
-                                        <a href="#"><img src="{{ url('img/events/'.$event->photo->path)}}"  alt=""></a>
-                                    </figure>
-                                    <div class="content-box padd-top-40">
-                                        <div class="row detail-header clearfix">
-                                            <div class="col-md-8 col-sm-12">
-                                                <h2>{{$event->name}}</h2>
-                                            </div>
-                                            {{-- <div class="col-md-4 col-sm-12 pull-right text-right"><a href="#" class="theme-btn btn-style-two">DOnate NOW</a></div> --}}
+                        <!--events Section-->
+                    <section class="events-section event-details no-padd-bottom no-padd-top padd-right-20">
+
+                        <div class="column default-featured-column">
+                            <article class="inner-box">
+                                <figure class="image-box">
+                                    <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/events/'.$event->photo->path)}}" width="600" height="800"  alt=""></a>
+                                </figure>
+                                <ul>
+                                    {{-- <li class="post-category"><span>{{$event->type->type}}</span> </li> --}}
+                                    <div class="text"><h3>
+                                        <?php $mes = date("m", strtotime($event->date_publication)); ?>
+                                        @if($mes == '01' ) Enero
+                                        @endif
+                                        @if($mes == '02' ) Febrero
+                                        @endif
+                                        @if($mes == '03' ) Marzo
+                                        @endif
+                                        @if($mes == '04' ) Abril
+                                        @endif
+                                        @if($mes == '05' ) Mayo
+                                        @endif
+                                        @if($mes == '06' ) Junio
+                                        @endif
+                                        @if($mes == '07' ) Julio
+                                        @endif
+                                        @if($mes == '08' ) Agosto
+                                        @endif
+                                        @if($mes == '09' ) Septiembre
+                                        @endif
+                                        @if($mes == '10' ) Octubre
+                                        @endif
+                                        @if($mes == '11' ) Noviembre
+                                        @endif
+                                        @if($mes == '12' ) Diciembre
+                                        @endif
+
+                                        
+                                        {{date("d", strtotime($event->date_publication))}}, {{date("Y", strtotime($event->date_publication))}}
+                                        </h3>
+                                </div>
+                                </ul>
+                                <div class="content-box padd-top-40">
+                                    <div class="row detail-header clearfix">
+                                        <div class="col-md-8 col-sm-12">
+                                            <h2>{{$event->name}}</h2>
                                         </div>
-                                        <div class="text">
-                                            <br>
-                                            <p class="bigger-text">{{$event->media}} <strong class="theme_color">Ne essent feugiat vim, et soluta reprimique instructior mel</strong>, ne nonumes deserunt. Vix in dico vivendum forensibus. Munere tamquam referrentur ad duo, ei tibique dissentias.</p>
-                                            <p>{{$event->description}}</p>
-                                        </div>
-    
-                                        <br>
-                                        <h3 class="text-uppercase">Anexos</h3>
-    
-                                        <!-- <ul class="styled-list-two">
-                                            <li>Lorem ipsum dolor sit amet, usu an quem augue admodum. </li>
-                                            <li>Lorem ipsum dolor sit amet, usu an quem augue admodum. </li>
-                                            <li>Lorem ipsum dolor sit amet, usu an quem augue admodum. </li>
-                                            <li>Lorem ipsum dolor sit amet, usu an quem augue admodum. </li>
-                                        </ul> -->
-    
+                                        {{-- <div class="col-md-4 col-sm-12 pull-right text-right"><a href="#" class="theme-btn btn-style-two">DOnate NOW</a></div> --}}
                                     </div>
-                                </article>
-                            </div>
-    
-                        </section>
-    
+                                    <div class="text">
+                                        <br>
+                                        <p class="bigger-text">{{$event->media}} 
+                                            {{-- <strong class="theme_color">Ne essent feugiat vim, et soluta reprimique instructior mel</strong>, 
+                                            ne nonumes deserunt. Vix in dico vivendum forensibus. Munere tamquam referrentur ad duo, ei tibique
+                                             dissentias.</p> --}}
+                                        <p>{{$event->description}}</p>
+                                    </div>
+
+                                    <br>
+                                    <a href=" {{$event->url}}">
+                                    <h3 class="text-uppercase">Descarga información adjunta en el siguiente enlace </h3>
+                                    </a>
+
+                                </div>
+                            </article>
+                        </div>
+                    </section>    
                         <hr>
     
                         <!--Related Posts Section-->
@@ -64,12 +94,12 @@
                                 <div class="column default-featured-column">
                                     <article class="inner-box">
                                         <figure class="image-box">
-                                            <a href="noticy-single.html"><img src="{{ url('img/events/'.$event->photo->path)}}" width="200" height="400" alt="image"></a>
+                                            <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/events/'.$event->photo->path)}}" width="200" height="400" alt="image"></a>
                                         </figure>
                                         <div class="content-box">
-                                            <h3><a href="project-single.html">{{$event->name}}</a></h3>
+                                            <h3><a href="{{ route('evento.show',$event->id) }}">{{$event->name}}</a></h3>
                                             <div class="column-info">{{$event->description}}</div>
-                                            <a href="project-single.html" class="theme-btn btn-style-three">Saber Mas</a>
+                                            <a href="{{ route('evento.show',$event->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
                                         </div>
                                     </article>
                                 </div>
@@ -101,38 +131,42 @@
                             </div>
     
                             <!-- Popular Categories -->
-                            <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            {{-- <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <div class="sidebar-title"><h3>Categorias</h3></div>
     
                                 <ul class="list">
-                                    <li><a class="clearfix" href="projects-two-column.html">Categoria 1</a></li>
+                                    <li><a class="clearfix" href="events-two-column.html">Categoria 1</a></li>
                                     
                                 </ul>
     
                             </div>
-    
+     --}}
     
                             <!-- Recent Posts -->
                             <div class="widget recent-posts wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="sidebar-title"><h3>Ultimos proyectos</h3></div>
+                                <div class="sidebar-title"><h3>Ultimos Eventos</h3></div>
     
+                                @foreach($events as $event)
                                 <article class="post">
-                                    <figure class="post-thumb"><img src="images/resource/post-thumb-6.jpg" alt=""></figure>
-                                    <h4><a href="project-single.html">Proyecto N-1</a></h4>
-                                    <div class="post-info"><span class="icon flaticon-people-1"></span> By Rashed Kabir </div>
+                                    <a href="{{ route('evento.show',$event->id) }}">
+                                    <figure class="post-thumb"><img src="{{url('img/events/'.$event->photo->path)}}" width="60" height="60" alt=""></figure>
+                                    </a>
+                                    <h4><a href="{{ route('evento.show',$event->id) }}">{{$event->name}}</a></h4>
+                                    <div class="post-info"><span class="icon flaticon-people-1"></span>{{$event->description}} </div>
                                 </article> 
+                                @endforeach
                                  
     
                             </div>
     
                             <!-- Archives -->
-                            <div class="widget archives-list wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            {{-- <div class="widget archives-list wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                                 <div class="sidebar-title"><h3>Archivos</h3></div>
     
                                 <ul class="list">
                                     <li><a href="#">April 2022</a></li>
                                 </ul>
-                            </div>
+                            </div> --}}
                             <!-- Popular Tags -->
                             <!-- <div class="widget popular-tags">
                                 <div class="sidebar-title"><h3>KeyWords</h3></div>

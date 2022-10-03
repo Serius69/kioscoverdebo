@@ -66,10 +66,10 @@
                                 @enderror
                             </div>
 
-                            <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                <div class="field-label">Url Imagen <span class=""></span></div>
-                                <input type="text" name="event_photo" value="{{ $event->event_photo }}" placeholder="Url Imagen" required>
-                                @error('eventPhoto')
+                             <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                <div class="field-label">Url Externa <span class=""></span></div>
+                               <input type="text" name="url" value="{{ $event->event_photo }}" placeholder="Url Externa" required>
+                                @error('url')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
                             </div>

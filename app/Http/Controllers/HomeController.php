@@ -40,7 +40,8 @@ class HomeController extends Controller
 
     return view('admin-index',$data);
     }
-    public function comming(){     
-        return view('comingsoon');
+    public function comming(){  
+        $validate = $this->quantity;   
+        return view('comingsoon',compact('validate'));
     }
 }

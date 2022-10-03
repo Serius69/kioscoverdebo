@@ -68,7 +68,7 @@
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Video <span class=""></span></div>
-                                    <input type="text" name="path_video" value="{{ $operator->path_video }}" placeholder="Video" required>
+                                    <input type="text" name="path_video" value="{{ $operator->path_video }}" placeholder="Url Imagen" required>
                                     @error('path_video')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror

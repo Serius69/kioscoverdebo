@@ -56,7 +56,9 @@
                     </div>
                     <a onclick="{{ route('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#donate-popup">cerrar sesion</a>
                     @else
-                    <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#donate-popup">ingresar</a>
+                    {{-- <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#donate-popup">ingresar</a> --}}
+                    {{-- <a href="{{url('login')}}" class="theme-btn btn-donate" data-toggle="modal">ingresar</a> --}}
+
                     @endif
                     <!-- Main Menu -->
                     <nav class="main-menu">
@@ -80,7 +82,7 @@
                                 <li class="dropdown"><a href="#">NOTICIAS</a>
                                     <ul>
                                         {{-- <li><a href="{{ url('/news/intermediaty') }}">INTERMEDIACIONES</a> </li> --}}
-                                        <li><a href="{{ url('agend') }}">AGENDA</a></li>
+                                        <li><a href="{{ url('agend') }}">EVENTOS</a></li>
                                         <li><a href="{{ url('news') }}">NOTICIAS AMBIENTALES</a></li>
                                         {{-- <li><a href="{{ url('news/investigation') }}">INVESTIGACIÓN</a></li> --}}
                                     </ul>
@@ -270,7 +272,7 @@
                         </div>
 
                         <!-- Login option -->
-                        <h3>Si aun no esta registrado dele click a<a href="signup.html"> Registrarse </a></h3>
+                        <h3>Si aun no esta registrado dele click a<a href="{{url('signup')}}"> Registrarse </a></h3>
                             <!-- <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true"> -->
                         
                         

@@ -28,7 +28,7 @@ public function investigation(){
 public function show($id)
 {
     $operator = Operator::find($id);
-    $operators = operator::orderBy('date_publication','desc')->paginate(5);
+    $operators = operator::orderBy('id','asc')->paginate(5);
     $validate = $this->quantity;
 return view('operator.single',compact('operator','operators','validate'));
 }

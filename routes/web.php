@@ -16,7 +16,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EventController;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +62,7 @@ use App\Http\Controllers\OperatorController;
 Route::controller(HomeController::class)->group(function(){
     Route::get('/',  '__invoke');
     Route::get('admin',  'admin');
+    Route::get('comingsoon',  'comming');
 });
 
 Route::controller(AboutController::class)->group(function(){
@@ -70,7 +71,7 @@ Route::controller(AboutController::class)->group(function(){
 
 Route::controller(ContactController::class)->group(function(){
     Route::get('contactus/question',  'question');
-    Route::get('contactus/', 'index');
+    Route::get('contactus', 'index');
     Route::get('standars',  'standars');
 });
 
@@ -158,18 +159,7 @@ Route::resource('noticia', LatestController::class);
 Route::resource('proyecto', ProjectController::class);
 Route::resource('evento', EventController::class);
 Route::resource('operador', OperatorController::class);
-//Image
-Route::get('image-upload', [ ImageController::class, 'index' ]);
-Route::post('image-upload', [ ImageController::class, 'store' ])->name('image.store');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
-
+// Auth
+// 
+Auth::routes();
 

@@ -41,7 +41,7 @@ $request->validate([
 'name' => 'required',
 'description' => 'required',
 'url' => 'required',
-'path_video' => 'required',
+// 'path_video' => 'required',
 'path' => 'required'
 ]);
         if($request->file('path')!=null)
@@ -54,6 +54,7 @@ $request->validate([
          {
              $imagen="sin_imagen.jpg";
          }
+         
                 $operator = new operator;
                 $operator->name = $request->name;
                 $operator->description = $request->description;
@@ -91,7 +92,7 @@ public function update(Request $request, $id)
         'name' => 'required',
         'description' => 'required',
         'url' => 'required',
-        'path_video' => 'required',
+        // 'path_video' => 'required',
         'path' => 'required'
         ]);
         if($request->file('path')!=null)
@@ -104,6 +105,7 @@ public function update(Request $request, $id)
                  {
                      $imagen="sin_imagen.jpg";
                  }
+                 
                 $operator = operator::find($id);
                 $operator->name = $request->name;
                 $operator->description = $request->description;

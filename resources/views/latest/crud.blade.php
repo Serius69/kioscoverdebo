@@ -48,14 +48,44 @@
         </tr>
         @foreach ($latests as $latest)
         @if (($latest->status)==1)
-        <tr>
-            <td>{{ $latest->id }}</td>
+        <tr><td>{{ $latest->id }}</td>            
+            @if(($latest->name)==null)
+            <td>No tiene nombre</td>
+            @endif
+            @if(($latest->name)!=null)
             <td>{{ $latest->name }}</td>
-            <td>{{ $latest->author }}</td>       
+            @endif
+            @if(($latest->author)==null)
+            <td>No tiene autor</td>
+            @endif     
+            @if(($latest->author)!=null)
+            <td>{{ $latest->author }}</td> 
+            @endif        
+            @if(($latest->description)==null)
+            <td>No tiene descripcion</td>
+            @endif
+            @if(($latest->description)!=null)
             <td>{{ $latest->description }}</td>
+            @endif
+            @if(($latest->date_publication)==null)
+            <td>No tiene fecha de publicacion</td>
+            @endif
+            @if(($latest->date_publication)!=null)
             <td>{{ $latest->date_publication }}</td>
-            <td><img src="{{ url('img/latest/'.$latest->photo->path) }}" height="250" width="300" alt="Greenture"></td>
+            @endif                  
+            @if(($latest->photo->path)==null)
+            <td>No tiene imagen</td>
+            @endif
+            @if(($latest->photo->path)!=null)
+            <td><img src="{{ url('img/latest/'.$latest->photo->path) }}" height="250" width="300" alt="Noticia imagen"></td>
+            @endif
+            @if(($latest->url)==null)
+            <td>No tiene URL externa</td>
+            @endif
+            @if(($latest->url)!=null)
             <td> <a href="{{ $latest->url }}">URL externa</a>  </td>
+            @endif
+            
             <td>
                 <a class="btn btn-primary" href="{{ route('latests.edit',$latest->id) }}">Editar</a>
                 <a class="btn btn-warning" href="{{ route('latests.destroy',$latest->id) }}">Eliminar</a>

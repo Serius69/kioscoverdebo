@@ -65,9 +65,17 @@
             <td>No existe Video</td>
             @endif
             @if(($operator->path_video)!=null)
-            <td><a href="{{ url('video/'.$operator->photo->path_video)}}" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a></td>
-            @endif           
-            <td><img src="{{ url('img/operadores/'.$operator->photo->path) }}" height="250" width="300" alt="Greenture"></td>
+            {{-- <td><a href="{{ url('video/'.$operator->photo->path_video)}}" class="lightbox-image video-link"><div class="icon-outer"><span class="img-circle fa fa-play"></span></div></a></td> --}}
+            <td>
+            <iframe
+                id="existing-iframe-example"
+                width="320" height="180"
+                src="{{$operator->path_video}}?autoplay=1&mute=1&enablejsapi=1"
+                frameborder="0"
+                style="border: solid 4px #37474F"
+                ></iframe>
+            @endif</td>           
+            <td><img src="{{ url('img/operadores/'.$operator->photo->path) }}" height="200" width="300" alt="Greenture"></td>
             <td> <a href="{{ $operator->url }}">URL externa</a>  </td>
             <td>
                 <a class="btn btn-primary" href="{{ route('operators.edit',$operator->id) }}">Editar</a>

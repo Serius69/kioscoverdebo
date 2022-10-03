@@ -183,17 +183,17 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('comingsoon')}}"><img src="{{ url('img\inicio\reciclaje.jpg')}}" height="200" width="200"></a>
+                        	<a href="{{url('/comingsoon')}}"><img src="{{ url('img\inicio\reciclaje.jpg')}}" height="200" width="200"></a>
                             <!-- <div class="news-date">dia <span class="month">mes</span></div> -->
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="{{url('comingsoon')}}">Reducir, Reutilizar, Reciclar</a></h3>
+                        	<h3><a href="{{url('/comingsoon')}}">Reducir, Reutilizar, Reciclar</a></h3>
                         	<div class="post-info clearfix">
                             	<div class="post-author">Fuente: </div>
 
                             </div>
                             <div class="text">Diariamente consumimos papel en las oficinas sin darnos cuenta de la gran cantidad. El papel y cartón constituye hasta el 90% de los residuos generados en las oficinas, también es uno de los lugares de mayor utilización del papel por lo que resultan espacios privilegiados para conseguir un uso lo más eficiente posible de productos de papel y cartón.</div>
-                            <a href="{{url('comingsoon')}}" class="theme-btn read-more">Saber mas</a>
+                            <a href="{{url('/comingsoon')}}" class="theme-btn read-more">Saber mas</a>
                         </div>
                     </article>
                 </div>
@@ -202,16 +202,16 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('comingsoon')}}"><img src="{{ url('img\inicio\importancia.jpg')}}" height="200" width="200"></a>
+                        	<a href="{{url('/comingsoon')}}"><img src="{{ url('img\inicio\importancia.jpg')}}" height="200" width="200"></a>
                             <!-- <div class="news-date">dia <span class="month">mes</span></div> -->
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="{{url('comingsoon')}}">Compra vende recicla</a></h3>
+                        	<h3><a href="{{url('/comingsoon')}}">Compra vende recicla</a></h3>
                         	<div class="post-info clearfix">
                                 <div class="post-author">Fuente: </div>
                             </div>
                             <div class="text">Definicion</div>
-                            <a href="{{url('comingsoon')}}" class="theme-btn read-more">Saber mas</a>
+                            <a href="{{url('/comingsoon')}}" class="theme-btn read-more">Saber mas</a>
                         </div>
                     </article>
                 </div>
@@ -220,17 +220,17 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('/service/ofert')}}"><img src="{{ url('img\inicio\recoleccion.jpg')}}" height="200" width="200"></a>
+                        	<a href="{{url('comingsoon')}}"><img src="{{ url('img\inicio\recoleccion.jpg')}}" height="200" width="200"></a>
                             <!-- <div class="news-date">dia <span class="month">mes</span></div> -->
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="{{url('/service/ofert')}}">Replanteamiento de residuos</a></h3>
+                        	<h3><a href="{{url('comingsoon')}}">Replanteamiento de residuos</a></h3>
                         	<div class="post-info clearfix">
                             	<div class="post-author">Fuente: </div>
 
                             </div>
                             <div class="text">Los residuos valorizables son una empresa en crecimiento.</div>
-                            <a href="{{url('/service/ofert')}}" class="theme-btn read-more">Saber mas</a>
+                            <a href="{{url('comingsoon')}}" class="theme-btn read-more">Saber mas</a>
                         </div>
                     </article>
                 </div>
@@ -249,7 +249,6 @@
                     <div class="text">Las ultimas noticias sobre reciclaje en el pais. </div>
                 </div>
                 <div class="row clearfix">
-    
                     @foreach ($latests as $latest )
                     <!--News Column-->
                     <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -263,18 +262,16 @@
                                 <div class="post-info clearfix">
                                     <div class="post-author">{{ $latest->author }}</div>
                                     <div class="post-options clearfix">
-                                        <a href="{{ route('noticia.show',$latest->id) }}" class="comments-count"><span class="icon flaticon-communication-2"></span> 6</a>
-                                        <a href="{{ route('noticia.show',$latest->id) }}" class="fav-count"><span class="icon flaticon-favorite-1"></span> 14</a>
+                                        <a href="{{ route('noticia.show',$latest->id) }}" class="comments-count"></a>
+                                        <a href="{{ route('noticia.show',$latest->id) }}" class="fav-count"></a>
                                     </div>
                                 </div>
                                 <div class="text">{{ $latest->description }}</div>
                                 <a href="{{ route('noticia.show',$latest->id) }}" class="theme-btn read-more">Saber Mas</a>
                             </div>
                         </article>
-                    </div>
-    
+                    </div>    
                     @endforeach
-    
                 </div>
             </div>
         </section>
@@ -295,7 +292,7 @@
             <div class="auto-container">
                 <div class="text-center">
                     <h2>El mejor momento para <span class="theme_color">reciclar</span> es ahora</h2>
-                    <a href="{{url('/login/signup')}}" class="theme-btn btn-style-two">Registrate Ahora</a>
+                    <a href="{{url('signup')}}" class="theme-btn btn-style-two">Registrate Ahora</a>
                     <a href="{{url('comingsoon')}}" class="theme-btn btn-style-one">Ingresa a un evento</a>
                 </div>
             </div>
@@ -312,11 +309,10 @@
                         <!--Column-->
                         <div class="column col-md-3 col-sm-12 col-xs-12">
                             <div class="text-right padd-top-20">
-                                <a href="{{url('/contact/contactus')}}" class="theme-btn btn-style-one">MENSAJE</a>
+                                <a href="{{url('contactus')}}" class="theme-btn btn-style-one">MENSAJE</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 @endsection
-

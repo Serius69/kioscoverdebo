@@ -11,7 +11,18 @@
     <!-- <div class="modal fade pop-box"  tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true"> -->
         <div class="modal-dialog">
             <div class="modal-content">
-                <!--SignUp Section-->
+                <div class="modal-content">
+                    @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> Hay un error.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                    <!--SignUp Section-->
             <section class="donation-section">
                 <div class="donation-form-outer">
                     <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data">
@@ -46,15 +57,23 @@
                                 </div>
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Url Externa <span class=""></span></div>
+                                   <input type="text" name="url" value="{{ $event->event_photo }}" placeholder="Url Externa" required>
+                                    @error('url')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Imagen <span class="required">*</span></div>
                                     <input
                                         type="file"
-                                        name="image"
+                                        name="path"
                                         id="inputImage"
                                         class="form-control
-                                        @error('image') is-invalid @enderror">
+                                        @error('path') is-invalid @enderror">
 
-                                    @error('image')
+                                    @error('path')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>

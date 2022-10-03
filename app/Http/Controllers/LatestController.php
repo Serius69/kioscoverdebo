@@ -70,7 +70,8 @@ class LatestController extends Controller
         $projects = Project::orderBy('id','asc')->paginate(6);
         $typelatests = Typelatest::orderBy('id','asc')->paginate(100);
         $latests = Latest::orderBy('date_publication','desc')->paginate(5);
-    return view('latest.single',compact('latest','latests','typelatests','projects'));
+        $validate = $this->quantity;
+    return view('latest.single',compact('latest','latests','typelatests','projects','validate'));
     }
 
 

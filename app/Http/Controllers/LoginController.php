@@ -5,10 +5,13 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    private $quantity = 1;
     public function login(){
-        return view('login');
+        $validate = $this->quantity    ;
+        return view('login',compact('validate'));
     }
     public function signup(){
-        return view('signup');
+        $validate = $this->quantity    ;
+        return view('signup',compact('validate'));
     }
 }

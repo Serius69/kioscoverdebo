@@ -1,6 +1,6 @@
 @extends('layouts.masteradmin')
-@section('title', 'CRUD Noticias')
-@section('subtitle1', 'CRUD')
+@section('title', 'ADMIN Noticias')
+@section('subtitle1', 'ADMIN')
 @section('subtitle2', ' Noticias')
 @section('body')
 

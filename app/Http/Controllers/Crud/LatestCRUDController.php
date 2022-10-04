@@ -60,6 +60,7 @@ $request->validate([
                 $latest->type_id = $request->type_id;
                 $latest->description = $request->description;
                 $latest->date_publication = $request->date_publication;
+                $latest->url = $request->url;
                 $photo = new Photo;
                 $photo->path = $imagen;
                 
@@ -114,6 +115,7 @@ public function update(Request $request, $id)
         $latest->description = $request->description;
         $latest->date_publication = $request->date_publication;
         $latest->type_id = $request->type_id;
+        $latest->url = $request->url;
         $photo = new Photo;
         $photo->path = $imagen;
         $photo->save();  

@@ -63,7 +63,7 @@
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation">
 
-                                <li><a href="{{ url('/admin') }}">INICIO</a>
+                                <li><a href="{{ url('/admin/home') }}">INICIO</a>
                                 </li>
                                 
                                 <li class="dropdown"><a href="#">ADMIN</a>

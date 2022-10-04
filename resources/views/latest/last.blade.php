@@ -7,48 +7,23 @@
 @section('body')
 
     <!--News Section-->
-    <section class="events-section latest-events">
-    	<div class="auto-container">
-
-            <!--Filters Section-->
-            {{-- <div class="filters-section">
-            	<div class="filter-form">
-                	<form method="post" action="http://world5.commonsupport.com/html/greenture-new/index.html">
-                    	<div class="row clearfix">
-                        	<div class="form-group col-md-5 col-sm-5 col-xs-12">
-                            	<div class="field-label">Noticias desde: </div>
-                                <input type="text" name="date" class="datepicker" value="" placeholder="Fecha">
-                            </div>
-                            <div class="form-group col-md-5 col-sm-5 col-xs-12">
-                            	<div class="field-label">Buscar por</div>
-                                <input type="text" name="keyword" value="" placeholder="Palabra clave">
-                            </div>
-                            <div class="form-group col-md-2 col-sm-2 col-xs-12">
-                            	<div class="field-label">&nbsp;</div>
-                                <button type="button" class="theme-btn btn-style-two">Buscar Noticias</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> --}}
-
-
+    <section class="events-section operator-events">
+    	<div class="auto-container">        
         	<div class="row clearfix">
                 @foreach ($latests as $latest)
                 @if(($latest->status)==1)
                     <!--Featured Column-->
                 <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
-
                 	<article class="inner-box">
                 		<figure class="image-box">
-                        	<a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/latest/'.$latest->photo->path)}}" width="300" height="300" alt=""></a>
+                        	<a href="{{ route('operador.show',$latest->id) }}"><img src="{{ url('img/operadores/'.$latest->photo->path)}}" width="300" height="300" alt=""></a>
                             <div class="post-tag">{{ $latest->name }}</div>
                         </figure>
                         <div class="content-box">
-                        	<h3><a href="{{ route('noticia.show',$latest->id) }}">{{ $latest->author }}</a></h3>
+                        	<h3><a href="{{ route('operador.show',$latest->id) }}">{{ $latest->author }}</a></h3>
                             <div class="column-info">{{ $latest->datetime }}</div>
                             <div class="text">{{ $latest->description }} </div>
-                            <a href="{{ route('noticia.show',$latest->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
+                            <a href="{{ route('operador.show',$latest->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
                         </div>
                     </article>
                 </div>
@@ -65,11 +40,8 @@
                     <li><a href="{{url('/news/news')}}">1</a></li>
                     <li><a href="{{url('/news/news')}}" class="active">2</a></li>
                     <li><a href="{{url('/news/news')}}">3</a></li>
-                
                     <li><a class="next" href="{{url('/news/news')}}">Siguiente&ensp;<span class="fa fa-angle-right"></span></a></li> --}}
-                
                     {!! $latests->links() !!}
-                
                 </ul>
             </div>
 

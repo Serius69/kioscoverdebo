@@ -1,7 +1,7 @@
 @extends('layouts.masterADMIN')
 
-@section('title', 'CRUD Noticias')
-@section('subtitle1', 'CRUD')
+@section('title', 'ADMIN Noticias')
+@section('subtitle1', 'ADMIN')
 @section('subtitle2', ' Noticias')
 
 @section('body')
@@ -35,11 +35,11 @@
                         @method('PUT')
                         <!--Form Portlet-->
                         <div class="form-portlet">
-                            <h4>Ingrese los datos para editar el nuevo evento   </h4>
+                            <h4>Ingrese nuevos datos   </h4>
                             <div class="row clearfix">
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                    <div class="field-label">ID del proyecto  <span class="required">   {{ $latest->id }} </span></div>
+                                    <div class="field-label">ID de la noticia  <span class="required">   {{ $latest->id }} </span></div>
                                 </div>
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
@@ -69,8 +69,10 @@
                                     <strong ><h3>Tipo</h3></strong>
                                     <select name="type_id" id="type_id">
                                         @foreach($types as $type)
+                                        @if(($type->status)==1)
                                             <option value="{{ $type->id }}">{{ $type->type }}</option>
-                                        @endforeach
+                                        @endif
+                                            @endforeach
                                     </select>
 
                                 </div>

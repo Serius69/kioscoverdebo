@@ -1,6 +1,6 @@
 @extends('layouts.masteradmin')
-@section('title', 'CRUD Projectos')
-@section('subtitle1', 'CRUD')
+@section('title', 'ADMIN Projectos')
+@section('subtitle1', 'ADMIN')
 @section('subtitle2', ' Projectos')
 @section('body')
 

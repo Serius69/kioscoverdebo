@@ -15,10 +15,10 @@ class HomeController extends Controller
     private $quantity2 = 1;
     public function __invoke(){   
         $data = [
-            'events'  => Event::orderBy('id','asc')->paginate(3),
-            'latests'   => Latest::orderBy('id','asc')->paginate(3),
-            'projects' => Project::orderBy('id','asc')->paginate(3),
-            'banners' => Banner::orderBy('id','asc')->paginate(10),
+            'events'  => Event::orderBy('id','asc')->paginate(100),
+             'latests'   => Latest::orderBy('date_publication','desc')->paginate(3),
+             'projects' => Project::orderBy('id','asc')->paginate(100),
+             'banners' => Banner::orderBy('id','asc')->paginate(100),
             'validate' => $this->quantity
         ];
         
@@ -35,10 +35,10 @@ class HomeController extends Controller
         // $validate = $this->quantity2; 
         // $this->middleware('auth');
          $data = [
-             'events'  => Event::orderBy('id','asc')->paginate(3),
-             'latests'   => Latest::orderBy('id','asc')->paginate(3),
-             'projects' => Project::orderBy('id','asc')->paginate(3),
-             'banners' => Banner::orderBy('id','asc')->paginate(10),
+             'events'  => Event::orderBy('id','asc')->paginate(100),
+             'latests'   => Latest::orderBy('id','asc')->paginate(100),
+             'projects' => Project::orderBy('id','asc')->paginate(100),
+             'banners' => Banner::orderBy('id','asc')->paginate(100),
              'validate' => $this->quantity
          ];
          return view('index',$data);
@@ -62,7 +62,7 @@ class HomeController extends Controller
     //  Bug en el index para mandar banners
     $data = [
         'events'  => Event::orderBy('id','asc')->paginate(3),
-        'latests'   => Latest::orderBy('id','asc')->paginate(3),
+        'latests'   => Latest::orderBy('id','asc')->paginate(5),
         'projects' => Project::orderBy('id','asc')->paginate(3)
     ];
 

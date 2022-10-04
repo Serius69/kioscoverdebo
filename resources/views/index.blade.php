@@ -250,12 +250,48 @@
                 </div>
                 <div class="row clearfix">
                     @foreach ($latests as $latest )
+                    @if(($latest->status)==1)
                     <!--News Column-->
                     <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <figure class="image-box">
                                 <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/banners/'.$latest->photo->path) }}" width="300" height="250" alt="Greenture"></a>
-                                <div class="news-date">{{ $latest->name }}<span class="month">{{ $latest->name }}</span></div>
+                            
+                                {{-- date --}}
+
+                                
+                                {{-- date ebd --}}
+                                <div class="news-date">{{ date('d', strtotime($latest->date_publication)) }}<span class="month">
+                                    
+                                    <?php $mes = date('m', strtotime($latest->date_publication)); ?>
+                                    @if ($mes == '01')
+                                        Ene
+                                    @elseif($mes == '02')
+                                        Feb
+                                    @elseif($mes == '03')
+                                        Mar
+                                    @elseif($mes == '04')
+                                        Abr
+                                    @elseif($mes == '05')
+                                        May
+                                    @elseif($mes == '06')
+                                        Jun
+                                    @elseif($mes == '07')
+                                        Jul
+                                    @elseif($mes == '08')
+                                        Ago
+                                    @elseif($mes == '09')
+                                        Sep
+                                    @elseif($mes == '10')
+                                        Oct
+                                    @elseif($mes == '11')
+                                        Nov
+                                    @elseif($mes == '12')
+                                        Dic
+                                    @else
+                                    @endif
+                                </span></div>
+                            
                             </figure>
                             <div class="content-box">
                                 <h3><a href="{{ route('noticia.show',$latest->id) }}">{{ $latest->name }}</a></h3>
@@ -271,6 +307,7 @@
                             </div>
                         </article>
                     </div>    
+                    @endif
                     @endforeach
                 </div>
             </div>

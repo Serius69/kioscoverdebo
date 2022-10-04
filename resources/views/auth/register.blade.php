@@ -87,16 +87,7 @@
     <!--Default Section / Other Info-->
     <section class="default-section other-info">
 
-        @if ($errors->any())
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> Hay un error.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+        
     	<!--Login Form Main-->
     <!-- <div class="modal fade pop-box"  tabindex="-1" role="dialog" aria-labelledby="donate-popup" aria-hidden="true"> -->
         <div class="modal-dialog">

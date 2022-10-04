@@ -128,16 +128,16 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                        <div class="form-check">
+                                        {{-- <div class="form-check">
                                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
         
                                             <label class="form-check-label" for="remember">
                                                 {{ __('Recuerdame') }}
                                             </label>
-                                        </div>
+                                        </div> --}}
                                     </div>   
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                        {{ __('INGRESAR ') }}
                                     </button>
                                     {{-- <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Ingresar</button></div> --}}
 
@@ -146,21 +146,21 @@
 
                             <br>
                                 <!-- Google button -->
-                                <h5>Ingresa directamente con tu cuenta de Google</h5>
+                                {{-- <h5>Ingresa directamente con tu cuenta de Google</h5>
                                     <div class="g-signin2" data-width="300" data-height="200" data-longtitle="true">
                                         <a href="{{ url('auth/google') }}">
                                         <button type="button" class="login-with-google-btn">
                                             Log in with Google
                                         </button>
                                     </a>
-                                    </div>
+                                    </div> --}}
                                     <!-- Forgot pasword -->
-                                        <h4>Si no estas registrado dale click a <a href="{{ url('register') }}"> Registrarse</a> </h4>
-                                        @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{-- <h4>Si no estas registrado dale click a <a href="{{ url('register') }}"> Registrarse</a> </h4>
+                                        @if (Route::has('password.request')) --}}
+                                        {{-- <a class="btn btn-link" href="{{ route('password.request') }}">
                                             <h5>{{ __('Olvidaste tu contrasenia?') }}</h5>
-                                        </a>
-                                        @endif
+                                        </a> --}}
+                                        {{-- @endif --}}
                                     </div>
 
                             </div>

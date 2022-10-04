@@ -51,17 +51,8 @@
                                     <input type="text" name="url" value="" placeholder="URL externa" required>
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                    <div class="field-label">Video <span class="required"></span></div>
-                                    <input
-                                        type="file"
-                                        name="path_video"
-                                        id="path_video"
-                                        class="form-control
-                                        @error('path_video') is-invalid @enderror">
-
-                                    @error('path_video')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                    <div class="field-label">URL del video de Youtube <span class="required">*</span></div>
+                                    <input type="text" name="path_video" value="" placeholder="Path del video de Youtube" required>
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Imagen <span class="required">*</span></div>

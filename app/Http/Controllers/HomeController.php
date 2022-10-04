@@ -12,11 +12,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     private $quantity = 0;
-    public function __invoke(){
-        // $data['events'] = Event::orderBy('id','asc')->paginate(3);
-        // $data2['latests'] = Latest::orderBy('id','asc')->paginate(3);
-        // $data3['projects'] = Project::orderBy('id','asc')->paginate(3);
-    
+    private $quantity2 = 1;
+    public function __invoke(){   
         $data = [
             'events'  => Event::orderBy('id','asc')->paginate(3),
             'latests'   => Latest::orderBy('id','asc')->paginate(3),
@@ -24,9 +21,40 @@ class HomeController extends Controller
             'banners' => Banner::orderBy('id','asc')->paginate(10),
             'validate' => $this->quantity
         ];
+        
         return view('index',$data);
+
    }
-   public function admin(){
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $validate = $this->quantity2; 
+        // $this->middleware('auth');
+         $data = [
+             'events'  => Event::orderBy('id','asc')->paginate(3),
+             'latests'   => Latest::orderBy('id','asc')->paginate(3),
+             'projects' => Project::orderBy('id','asc')->paginate(3),
+             'banners' => Banner::orderBy('id','asc')->paginate(10),
+             'validate' => $this->quantity
+         ];
+         return view('index',$data);
+    }
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    
+   /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+   public function adminHome(){
     // $data['events'] = Event::orderBy('id','asc')->paginate(3);
     // $data2['latests'] = Latest::orderBy('id','asc')->paginate(3);
     // $data3['projects'] = Project::orderBy('id','asc')->paginate(3);
@@ -38,7 +66,21 @@ class HomeController extends Controller
         'projects' => Project::orderBy('id','asc')->paginate(3)
     ];
 
-    return view('admin-index',$data);
+    return view('adminHome',$data);
+    }
+    public function master(){
+    // $data['events'] = Event::orderBy('id','asc')->paginate(3);
+    // $data2['latests'] = Latest::orderBy('id','asc')->paginate(3);
+    // $data3['projects'] = Project::orderBy('id','asc')->paginate(3);
+
+    //  Bug en el index para mandar banners
+    $data = [
+        'events'  => Event::orderBy('id','asc')->paginate(3),
+        'latests'   => Latest::orderBy('id','asc')->paginate(3),
+        'projects' => Project::orderBy('id','asc')->paginate(3)
+    ];
+
+    return view('master-index',$data);
     }
     public function comming(){  
         $validate = $this->quantity;   

@@ -46,28 +46,20 @@
                  </div>
 
                  <!--Nav Outer-->
-                <div class="nav-outer clearfix">                   
-                    {{-- @if(auth()->user()->is_admin == 2)
-                    <a href="{{url('admin/routes')}}" class="theme-btn btn-donate" data-toggle="modal">Master</a>
-                    <a onclick="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal">cerrar sesion</a>
-                    @else
-                    @if(auth()->user()->is_admin == 1)
-                    <a href="{{url('admin/routes')}}" class="theme-btn btn-donate" data-toggle="modal">Admin</a>
-                    @else --}}
-                    {{-- <a href="{{url('admin/routes')}}" class="theme-btn btn-donate" data-toggle="modal">Admin</a> --}}
-                    
-                    {{-- <form method="POST" action="{{ route('logout') }}"> --}}
-                        {{-- @csrf
-                    <a class="theme-btn btn-donate" data-toggle="modal">cerrar sesion</a>
-                    </form> --}}
-                    {{-- <div class=”panel-heading”>Normal User</div> --}}
-                    {{-- @endif
-                    @endif --}}
+                <div class="nav-outer clearfix">
 
+                    @if ($message = Session::get('success'))
+                    <div class="alert alert-success">
+
+                        {{-- Error en el popup --}}
+                    <p>{{ $message }}</p>
+                    </div>
+                    <a onclick="{{ route('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#donate-popup">cerrar sesion</a>
+                    @else
                     {{-- <a href="{{ url('/') }}" class="theme-btn btn-donate" data-toggle="modal" data-target="#donate-popup">ingresar</a> --}}
                     {{-- <a href="{{url('login')}}" class="theme-btn btn-donate" data-toggle="modal">ingresar</a> --}}
 
-                    
+                    @endif
                     <!-- Main Menu -->
                     <nav class="main-menu">
 
@@ -85,40 +77,7 @@
 
                                 <li><a href="{{ url('/') }}">INICIO</a>
                                 </li>
-                                <li><a href="{{ url('/aboutus') }}">Quienes somos </a>
-                                </li>
-                                <li class="dropdown"><a href="#">NOTICIAS</a>
-                                    <ul>
-                                        {{-- <li><a href="{{ url('/news/intermediaty') }}">INTERMEDIACIONES</a> </li> --}}
-                                        <li><a href="{{ url('agend') }}">EVENTOS</a></li>
-                                        <li><a href="{{ url('news') }}">NOTICIAS AMBIENTALES</a></li>
-                                        {{-- <li><a href="{{ url('news/investigation') }}">INVESTIGACIÓN</a></li> --}}
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">SERVICIOS</a>
-                                    <ul>
-                                        <li><a href="{{ url('service/recicle') }}">GESTION DE RESIDUOS</a></li>
-                                        <li><a href="{{ url('service/ofert') }}">OFERTAS </a></li>
-                                        <li><a href="{{ url('service/advice') }}">ASESORAMIENTO</a></li>
-                                        <li><a href="{{ url('operator') }}">OPERADORES</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown"><a href="#">CONTACTANOS</a>
-                                    <ul>
-                                        <li><a href="{{ url('contactus/question') }}">PREGUNTAS FRECUENTES</a></li>
-                                        <li><a href="{{ url('contactus') }}">ESCRÍBENOS</a></li>
-                                        <li><a href="{{ url('standars') }}">BIBLIOTECA</a>
-
-
-                                        </li>
-                                    </ul>
-                                </li>
-                                {{-- @if((auth()->user()->is_admin == 0)||(auth()->user()->is_admin == 1)||(auth()->user()->is_admin == 2))
-                                <li><p>Bienvenido usuario</p></li>
-                                @endif
-                                @if((auth()->user()->is_admin == 1))
-                                <li><p>Bienvenido admin</p></li>
-                                @endif --}}
+                                
                             </ul>
                         </div>
                     </nav><!-- Main Menu End-->
@@ -129,23 +88,8 @@
         </div><!-- Header Top End -->
 
     </header><!--End Main Header -->
-
-    @if(($validate)==1)
-<!--Page Title-->
-
-<section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.jpg') }});">
-    <div class="auto-container">
-        <div class="sec-title">
-            <h1>@yield('subtitle1')<span class="normal-font">@yield('subtitle2')</span></h1>
-            <div class="bread-crumb"><a href="{{ url('/') }}">inicio</a> / <a href="#" class="current">@yield('subtitle1') @yield('subtitle2')</a></div>
-        </div>
-    </div>
-</section>
-
-@endif
-
     @yield('body')
-    
+  
 
 <!--Main Footer-->
 <footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">

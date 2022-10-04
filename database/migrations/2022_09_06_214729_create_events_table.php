@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id('id');
-            $table->string('name');
-            $table->string('media');
-            $table->string('description');
+            $table->string('name')->nullable();
+            $table->string('media')->nullable();
+            $table->string('description')->nullable();
             $table->string('date_publication')->nullable();
-            $table->string('url')->default('url');;
+            $table->string('url')->default('url')->nullable();
             $table->unsignedBigInteger('photo_id');
             $table->foreign('photo_id')->references('id')->on('photos');
             $table->integer('status')->default(1);

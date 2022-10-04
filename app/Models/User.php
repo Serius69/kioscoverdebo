@@ -30,7 +30,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'type_user_id',
+        'type',
         'status'
     ];
 
@@ -72,6 +72,12 @@ class User extends Authenticatable
         return new Attribute (
             get: fn($value) => ucwords($value),
             set: fn($value) => strtolower($value)
+        );
+    }
+    protected function type(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) =>  ["user", "admin", "manager"][$value],
         );
     }
 }

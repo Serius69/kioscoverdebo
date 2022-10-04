@@ -61,7 +61,7 @@ use App\Http\Controllers\OperatorController;
 
 Route::controller(HomeController::class)->group(function(){
     Route::get('/',  '__invoke');
-    Route::get('admin',  'admin');
+    
     Route::get('comingsoon',  'comming');
 });
 
@@ -102,42 +102,6 @@ Route::controller(LoginController::class)->group(function(){
     Route::get('signup', 'signup');
 });
 
-Route::controller(ProjectController::class)->group(function(){
-    // Route::get('project/$name',  'login');
-    Route::get('project/project', 'lastProjects');
-    Route::get('project/listproject', 'list');
-});
-Route::controller(LatestCRUDController::class)->group(function(){
-    Route::get('admin/latest', 'index');
-    Route::get('admin/latest/create', 'create');
-    Route::get('admin/latest/edit', 'edit');
-});
-Route::controller(EventCRUDController::class)->group(function(){
-    Route::get('admin/event', 'index');
-    Route::get('admin/event/create', 'create');
-    Route::get('admin/event/edit', 'edit');
-});
-Route::controller(ProjectCRUDController::class)->group(function(){
-    Route::get('admin/project', 'index');
-    Route::get('admin/project/create', 'create');
-    Route::get('admin/project/edit', 'edit');
-});
-Route::controller(BannerCRUDController::class)->group(function(){
-    Route::get('admin/banner', 'index');
-    Route::get('admin/banner/create', 'create');
-    Route::get('admin/banner/edit', 'edit');
-});
-Route::controller(TypelatestCRUDController::class)->group(function(){
-    Route::get('admin/typelatest', 'index');
-    Route::get('admin/typelatest/create', 'create');
-    Route::get('admin/typelatest/edit', 'edit');
-});
-Route::controller(OperatorCRUDController::class)->group(function(){
-    Route::get('admin/operator', 'index');
-    Route::get('admin/operator/create', 'create');
-    Route::get('admin/operator/edit', 'edit');
-});
-
 // Login
 Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post');
@@ -147,13 +111,7 @@ Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.pos
 Route::get('auth/google', [GoogleSocialiteController::class, 'redirectToGoogle']);
 Route::get('callback/google', [GoogleSocialiteController::class, 'handleCallback']);
 
-// CRUD
-Route::resource('latests', LatestCRUDController::class);
-Route::resource('events', EventCRUDController::class);
-Route::resource('projects', ProjectCRUDController::class);
-Route::resource('banners', BannerCRUDController::class);
-Route::resource('typelatests', TypelatestCRUDController::class);
-Route::resource('operators', OperatorCRUDController::class);
+
 //Para vista del usuario
 Route::resource('noticia', LatestController::class);
 Route::resource('proyecto', ProjectController::class);
@@ -163,3 +121,87 @@ Route::resource('operador', OperatorController::class);
 // 
 Auth::routes();
 
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*------------------------------------------
+--------------------------------------------
+All viewers routes list
+--------------------------------------------
+--------------------------------------------*/
+// Route::middleware(['auth'])->group(function () {
+  
+//     Route::get('/home', [HomeController::class, 'index'])->name('home');
+// });
+/*------------------------------------------
+--------------------------------------------
+All Normal Users Routes List
+--------------------------------------------
+--------------------------------------------*/
+// Route::middleware(['auth', 'user-access:user'])->group(function () {
+  
+    // Route::get('/', [HomeController::class, 'index'])->name('home');
+// });
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+ Route::middleware(['auth', 'user-access:admin'])->group(function () {
+    
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+    
+     Route::controller(ProjectController::class)->group(function(){
+         // Route::get('project/$name',  'login');
+         Route::get('project/project', 'lastProjects');
+         Route::get('project/listproject', 'list');
+     });
+     Route::controller(LatestCRUDController::class)->group(function(){
+         Route::get('admin/latest', 'index');
+         Route::get('admin/latest/create', 'create');
+         Route::get('admin/latest/edit', 'edit');
+     });
+     Route::controller(EventCRUDController::class)->group(function(){
+         Route::get('admin/event', 'index');
+         Route::get('admin/event/create', 'create');
+         Route::get('admin/event/edit', 'edit');
+     });
+     Route::controller(ProjectCRUDController::class)->group(function(){
+         Route::get('admin/project', 'index');
+         Route::get('admin/project/create', 'create');
+         Route::get('admin/project/edit', 'edit');
+     });
+     Route::controller(BannerCRUDController::class)->group(function(){
+         Route::get('admin/banner', 'index');
+         Route::get('admin/banner/create', 'create');
+         Route::get('admin/banner/edit', 'edit');
+     });
+     Route::controller(TypelatestCRUDController::class)->group(function(){
+         Route::get('admin/typelatest', 'index');
+         Route::get('admin/typelatest/create', 'create');
+        Route::get('admin/typelatest/edit', 'edit');
+     });
+     Route::controller(OperatorCRUDController::class)->group(function(){
+         Route::get('admin/operator', 'index');
+        Route::get('admin/operator/create', 'create');
+         Route::get('admin/operator/edit', 'edit');
+     });
+     // CRUD
+        Route::resource('latests', LatestCRUDController::class);
+        Route::resource('events', EventCRUDController::class);
+        Route::resource('projects', ProjectCRUDController::class);
+        Route::resource('banners', BannerCRUDController::class);
+        Route::resource('typelatests', TypelatestCRUDController::class);
+        Route::resource('operators', OperatorCRUDController::class);
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+// Route::middleware(['auth', 'user-access:manager'])->group(function () {  
+//     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+// });

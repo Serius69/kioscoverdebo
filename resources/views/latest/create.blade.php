@@ -58,10 +58,26 @@
                                     <strong ><h3>Tipo</h3></strong>
                                     <select name="type_id" id="">
                                         @foreach($types as $type)
+                                        @if(($type->status)==1 )
                                             <option value="{{ $type->id }}">{{ $type->type }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
 
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Descripcion <span class="required">*</span></div>
+                                    <input type="text" name="description" value="" placeholder="Descripcion" required>
+                                    @error('description')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                    <div class="field-label">Descripcion <span class="required">*</span></div>
+                                    <input type="text" name="description" value="" placeholder="Descripcion" required>
+                                    @error('description')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Fecha de publicación <span class="required">*</span></div>

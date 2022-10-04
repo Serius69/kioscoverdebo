@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string('name');
-            $table->string('information');
-            $table->string('description');
+            $table->string('name')->nullable();
+            $table->string('information')->nullable();
+            $table->string('description')->nullable();
             $table->string('date_publication')->nullable();
             $table->string('url')->nullable();
-            $table->unsignedBigInteger('photo_id');
+            $table->unsignedBigInteger('photo_id')->nullable();
             $table->foreign('photo_id')->references('id')->on('photos');
             $table->integer('status')->default(1);
             $table->timestamps();

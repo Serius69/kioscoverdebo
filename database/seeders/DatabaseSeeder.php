@@ -49,17 +49,17 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        Typelatest::factory(3)->create();
-        Photo::factory(5)->create();
+        // Typelatest::factory(3)->create();
+        // Photo::factory(5)->create();
         foreach ($users as $key => $user) {
             User::create($user);
         }
         // User::factory(5)->create();
-        Event::factory(5)->create();
-        Latest::factory(5)->create();
-        Project::factory(5)->create();
-        Banner::factory(3)->create();
-        Operator::factory(3)->create();
+        // Event::factory(5)->create();
+        // Latest::factory(5)->create();
+        // Project::factory(5)->create();
+        // Banner::factory(3)->create();
+        // Operator::factory(3)->create();
 
 
     }

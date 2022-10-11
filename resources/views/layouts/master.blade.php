@@ -42,7 +42,7 @@
         	    <div class="auto-container clearfix">
             	<!-- Logo -->
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ url('/images/logo-1.png') }}"  alt="Greenture"></a>
+                    <a href="{{ url('/') }}"><img src="{{ url('/images/logo-1.webp') }}"  alt="Greenture"></a>
                  </div>
 
                  <!--Nav Outer-->
@@ -133,7 +133,7 @@
     @if(($validate)==1)
 <!--Page Title-->
 
-<section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.jpg') }});">
+<section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.webp') }});">
     <div class="auto-container">
         <div class="sec-title">
             <h1>@yield('subtitle1')<span class="normal-font">@yield('subtitle2')</span></h1>
@@ -148,7 +148,7 @@
     
 
 <!--Main Footer-->
-<footer class="main-footer" style="background-image:url(images/background/footer-bg.jpg);">
+<footer class="main-footer" style="background-image:url(images/background/footer-bg.webp);">
     	
     <!--Footer Upper-->         
     <div class="footer-upper">
@@ -160,7 +160,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-8 col-sm-6 col-xs-12 column">
                             <div class="footer-widget about-widget">
-                                <div class="logo"><a href="{{url('/')}}"><img src="{{ url('/images/logo-1.png') }}" class="img-responsive" alt=""></a></div>
+                                <div class="logo"><a href="{{url('/')}}"><img src="{{ url('/images/logo-1.webp') }}" class="img-responsive" alt=""></a></div>
                                 <div class="text">
                                     <p>Nuestra Dirección.</p>
                                 </div>

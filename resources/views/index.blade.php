@@ -85,10 +85,10 @@
     	<div class="router clearfix">
 
             <!--Image Column-->
-            <div class="image-column" style="background-image:url(images/resource/fluid-image-1.jpg);"></div>
+            <div class="image-column" style="background-image:url(images/resource/fluid-image-1.webp);"></div>
 
             <!--Text Column-->
-            <article class="column text-column dark-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url(images/resource/fluid-image-2.jpg);">
+            <article class="column text-column dark-column wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms" style="background-image:url(images/resource/fluid-image-2.webp);">
 
                 <div class="content-box pull-left">
                     <h2>REVITALIZACION DE <span class="theme_color">ESPACIOS VERDES</span></h2>
@@ -121,7 +121,7 @@
                     <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <article class="inner-box">
                             <figure class="image-box">
-                                <a href="{{url('/service/recicle')}}"><img src="{{ url('\img\services\gestion.png') }}" width="300" height="250"  alt=""></a>
+                                <a href="{{url('/service/recicle')}}"><img src="{{ url('\img\servicios\gestion.png') }}" width="300" height="250"  alt=""></a>
                                 <div class="post-tag">GESTION DE RESIDUOS</div>
                             </figure>
                             <div class="content-box">
@@ -136,7 +136,7 @@
                         <article class="inner-box">
                             <figure class="image-box">
                                 <a href="{{url('comingsoon')}}">
-                                    <img src="{{ url('img\services\investigacion.png') }}" width="300" height="250" alt=""></a>
+                                    <img src="{{ url('\img\servicios\investigacion.png') }}" width="300" height="250" alt=""></a>
                                 <div class="post-tag">Investigación</div>
                             </figure>
                             <div class="content-box">
@@ -155,7 +155,7 @@
                     <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <article class="inner-box">
                             <figure class="image-box">
-                                <a href="{{url('comingsoon')}}"><img src="{{ url('img\services\asesoramiento.jpg') }}" width="300" height="250" alt=""></a>
+                                <a href="{{url('comingsoon')}}"><img src="{{ url('img\services\asesoramiento.webp') }}" width="300" height="250" alt=""></a>
                                 <div class="post-tag">ASESORAMIENTO</div>
                             </figure>
                             <div class="content-box">
@@ -183,7 +183,7 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('/comingsoon')}}"><img src="{{ url('img\inicio\reciclaje.jpg')}}" height="200" width="200"></a>
+                        	<a href="{{url('/comingsoon')}}"><img src="{{ url('img\inicio\reciclaje.webp')}}" height="200" width="200"></a>
                             <!-- <div class="news-date">dia <span class="month">mes</span></div> -->
                         </figure>
                         <div class="content-box">
@@ -202,7 +202,7 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('/comingsoon')}}"><img src="{{ url('img\inicio\importancia.jpg')}}" height="200" width="200"></a>
+                        	<a href="{{url('/comingsoon')}}"><img src="{{ url('img\inicio\importancia.webp')}}" height="200" width="200"></a>
                             <!-- <div class="news-date">dia <span class="month">mes</span></div> -->
                         </figure>
                         <div class="content-box">
@@ -220,7 +220,7 @@
                 <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 	<article class="inner-box wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                 		<figure class="image-box">
-                        	<a href="{{url('comingsoon')}}"><img src="{{ url('img\inicio\recoleccion.jpg')}}" height="200" width="200"></a>
+                        	<a href="{{url('comingsoon')}}"><img src="{{ url('img\inicio\recoleccion.webp')}}" height="200" width="200"></a>
                             <!-- <div class="news-date">dia <span class="month">mes</span></div> -->
                         </figure>
                         <div class="content-box">
@@ -319,13 +319,13 @@
                     <!--Sponsors Slider-->
                     <ul class="sponsors-slider">
 
-                        <li><a href="https://www.cni.bo"><img src="{{ url('images/logo-4.png') }}" width="300"></a></li>
+                        <li><a href="https://www.cni.bo"><img src="{{ url('images/logo-4.webp') }}" width="300"></a></li>
                     
                     </ul>
                 </div>
             </div>
         </section>
-        <section class="parallax-section" style="background-image:url({{ asset('/images/parallax/image-1.jpg') }});">
+        <section class="parallax-section" style="background-image:url({{ asset('/images/parallax/image-1.webp') }});">
             <div class="auto-container">
                 <div class="text-center">
                     <h2>El mejor momento para <span class="theme_color">reciclar</span> es ahora</h2>

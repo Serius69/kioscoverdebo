@@ -11,7 +11,7 @@
                 <h2 style="margin: 15px;">Proyectos ADMIN</h2>
             </div>
             <div class="pull-right">
-            <a class="btn btn-info" style="margin: 25px;" href="{{ route('projects.create') }}"> Nuevo project</a>
+            <a class="btn btn-info" style="margin: 25px;" href="{{ route('projects.create') }}"> Nuevo Proyecto</a>
             </div>
         </div>
     </div>
@@ -42,7 +42,6 @@
             </td>
         </tr>
         @endif
-
         @endforeach
     </table>
     <div class="d-flex">

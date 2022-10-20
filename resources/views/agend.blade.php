@@ -65,16 +65,16 @@
                     <aside class="sidebar">
 
                         <!-- Search Form -->
-                        <div class="widget search-box">
+                        {{-- <div class="widget search-box">
                             <form method="post" action="http://world5.commonsupport.com/html/greenture-new/index.html">
                                 <div class="form-group">
                                     <input type="search" name="search-field" value="" placeholder="Enter keyword">
                                     <button type="submit"><span class="icon flaticon-tool-5"></span></button>
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                         <!-- Popular Categories -->
-                        <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                        {{-- <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="sidebar-title"><h3>Categorias</h3></div>
 
                             <ul class="list">
@@ -82,7 +82,7 @@
                                 <li><a class="clearfix" href="#">Categoria 2</a></li>
                                 <li><a class="clearfix" href="#">Categoria 3</a></li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </aside>
                 </div>
                 <!--Sidebar-->

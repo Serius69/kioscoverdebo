@@ -76,8 +76,8 @@ Route::controller(ContactController::class)->group(function(){
 });
 
 Route::controller(FooterController::class)->group(function(){
-    Route::get('footer/privacy',  'privacy');
-    Route::get('footer/terms', 'terms');
+    Route::get('privacy',  'privacy');
+    Route::get('terms', 'terms');
 });
 
 Route::controller(LatestController::class)->group(function(){
@@ -149,7 +149,7 @@ All Normal Users Routes List
 All Admin Routes List
 --------------------------------------------
 --------------------------------------------*/
- Route::middleware(['auth', 'user-access:admin'])->group(function () {
+//  Route::middleware(['auth', 'user-access:admin'])->group(function () {
     
     Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
     
@@ -195,7 +195,7 @@ All Admin Routes List
         Route::resource('banners', BannerCRUDController::class);
         Route::resource('typelatests', TypelatestCRUDController::class);
         Route::resource('operators', OperatorCRUDController::class);
-});
+// });
   
 /*------------------------------------------
 --------------------------------------------

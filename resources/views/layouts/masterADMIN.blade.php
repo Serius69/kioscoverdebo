@@ -34,7 +34,7 @@
         	<div class="auto-container clearfix">
             	<!-- Logo -->
                 <div class="logo">
-                    <a href="{{ url('/admin') }}"><img src="{{ asset('/images/logo-1.png') }}"  alt="Greenture"></a>
+                    <a href="{{ url('/admin') }}"><img src="{{ asset('/images/logo-1.webp') }}"  alt="Greenture"></a>
                  </div>
 
                  <!--Nav Outer-->
@@ -89,7 +89,7 @@
     </header><!--End Main Header -->
 
 <!--Page Title-->
-<section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.jpg') }});">
+<section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.webp') }});">
     <div class="auto-container">
         <div class="sec-title">
             <h1>@yield('subtitle1')<span class="normal-font">@yield('subtitle2')</span></h1>

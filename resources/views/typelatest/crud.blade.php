@@ -34,7 +34,6 @@
         <strong>Error !</strong> {{ session('error') }}
     </div>
     @endif
-
 <table class="table table-bordered">
         <tr>
             <th>ID</th>

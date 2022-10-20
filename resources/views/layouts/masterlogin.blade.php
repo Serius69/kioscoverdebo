@@ -42,7 +42,7 @@
         	    <div class="auto-container clearfix">
             	<!-- Logo -->
                 <div class="logo">
-                    <a href="{{ url('/') }}"><img src="{{ url('/images/logo-1.png') }}"  alt="Greenture"></a>
+                    <a href="{{ url('/') }}"><img src="{{ url('/images/logo-1.webp') }}"  alt="Greenture"></a>
                  </div>
 
                  <!--Nav Outer-->
@@ -104,7 +104,7 @@
                     <div class="row clearfix">
                         <div class="col-lg-8 col-sm-6 col-xs-12 column">
                             <div class="footer-widget about-widget">
-                                <div class="logo"><a href="{{url('/')}}"><img src="{{ url('/images/logo-1.png') }}" class="img-responsive" alt=""></a></div>
+                                <div class="logo"><a href="{{url('/')}}"><img src="{{ url('/images/logo-1.webp') }}" class="img-responsive" alt=""></a></div>
                                 <div class="text">
                                     <p>Nuestra Dirección.</p>
                                 </div>

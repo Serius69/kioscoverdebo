@@ -49,20 +49,22 @@
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">URL externa <span class="required">*</span></div>
                                     <input type="text" name="url" value="" placeholder="URL externa" required>
+                                    @error('url')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">URL del video de Youtube <span class="required">*</span></div>
                                     <input type="text" name="path_video" value="" placeholder="Path del video de Youtube" required>
+                                    @error('path_video')
+                                    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Imagen <span class="required">*</span></div>
                                     <input
-                                        type="file"
-                                        name="path"
-                                        id="path"
-                                        class="form-control
-                                        @error('path') is-invalid @enderror">
-
+                                        type="file" name="path" id="path" class="form-control
+                                        @error('path') is-invalid @enderror"    >
                                     @error('path')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror

@@ -95,7 +95,9 @@
 
         @endforeach
     </table>
-    {!! $latests->links() !!}
+    <ul class="pagination">
+        {!! $latests->links() !!}
+    </ul>
 </div>
 
 @endsection

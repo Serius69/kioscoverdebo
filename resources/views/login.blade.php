@@ -30,7 +30,7 @@
                                         <div class="field-label">Contraseña <span class="required">*</span></div>
                                         <input type="text" name="name" value="" placeholder="Contraseña" required>
                                     </div>
-                                    <div class="text-center"><button type="submit" class="theme-btn btn-style-two">Ingresar</button></div>
+                                    <div class="text-center"><button type="submit" class="theme-btn btn-style-three">Ingresar</button></div>
 
                                 </div>
                             </div>

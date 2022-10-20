@@ -121,7 +121,7 @@
                     <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <article class="inner-box">
                             <figure class="image-box">
-                                <a href="{{url('/service/recicle')}}"><img src="{{ url('\img\servicios\gestion.png') }}" width="300" height="250"  alt=""></a>
+                                <a href="{{url('/service/recicle')}}"><img src="{{ url('img\servicios\gestion.webp') }}" width="300" height="250"  alt=""></a>
                                 <div class="post-tag">GESTION DE RESIDUOS</div>
                             </figure>
                             <div class="content-box">
@@ -136,7 +136,7 @@
                         <article class="inner-box">
                             <figure class="image-box">
                                 <a href="{{url('comingsoon')}}">
-                                    <img src="{{ url('\img\servicios\investigacion.png') }}" width="300" height="250" alt=""></a>
+                                    <img src="{{ url('img\servicios\investigacion.webp') }}" width="300" height="250" alt=""></a>
                                 <div class="post-tag">Investigación</div>
                             </figure>
                             <div class="content-box">
@@ -155,7 +155,7 @@
                     <div class="column default-featured-column style-two col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <article class="inner-box">
                             <figure class="image-box">
-                                <a href="{{url('comingsoon')}}"><img src="{{ url('img\services\asesoramiento.webp') }}" width="300" height="250" alt=""></a>
+                                <a href="{{url('comingsoon')}}"><img src="{{ url('img\servicios\asesoramiento.webp') }}" width="300" height="250" alt=""></a>
                                 <div class="post-tag">ASESORAMIENTO</div>
                             </figure>
                             <div class="content-box">

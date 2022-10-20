@@ -56,8 +56,7 @@
                                             <p>Ofrecemos estudios de trazabilidad de residuos, certificando la buena gestión de los mismos por procesos validados y certificados de tratamiento. Para ello se realizan
                                                 inspecciones y se hace el seguimiento correspondiente.
                                             El certificado es otorgado con el aval de la Cámara Nacional de Industrias.</p>
-                                             <h4>¿Desea certificar la responsabilidad de gestionar y disponer correctamente un lote de residuos? </h4>
-                                                <p>Entre a la página y utilice este servicio.</p>
+                                             
                                         </div>
                                     </div>
                                 </div>

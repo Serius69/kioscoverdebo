@@ -11,7 +11,7 @@
                             <div class="row clearfix">
                                 <div class="col-lg-8 col-sm-6 col-xs-12 column">
                                     <div class="footer-widget about-widget">
-                                        <div class="logo"><a href="index.html"><img src="{{asset('/images/logo-1.png')}}"  class="img-responsive" alt=""></a></div>
+                                        <div class="logo"><a href="index.html"><img src="{{asset('/images/logo-1.webp')}}"  class="img-responsive" alt=""></a></div>
                                         <div class="text">
                                             <p>Nuestra Dirección.</p>
                                         </div>

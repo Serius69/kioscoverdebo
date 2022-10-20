@@ -8,7 +8,7 @@
 
 @section('body')
 
-<img src="{{ url('img/logocommingsoon.png')}}" alt="Comming Soon" width="1000">
+<img src="{{ url('img/logocommingsoon.webp')}}" alt="Comming Soon" width="1000">
 
 @endsection
 

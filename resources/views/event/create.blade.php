@@ -33,8 +33,8 @@
                             <div class="row clearfix">
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                    <div class="field-label">Nombre del proyecto <span class="required">*</span></div>
-                                    <input type="text" name="name" value="" placeholder="Nombre del proyecto" required>
+                                    <div class="field-label">Nombre del evento <span class="required">*</span></div>
+                                    <input type="text" name="name" value="" placeholder="Nombre del evento" required>
                                     @error('name')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror
@@ -58,7 +58,7 @@
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Url Externa <span class=""></span></div>
-                                   <input type="text" name="url" value="{{ $event->event_photo }}" placeholder="Url Externa" required>
+                                   <input type="text" name="url" value="" placeholder="Url Externa" required>
                                     @error('url')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror

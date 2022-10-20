@@ -15,7 +15,7 @@
                 </div>
 
             	<div class="col-md-6 col-sm-12 col-xs-12 pull-left">
-                	<figure class="image-box"><img src="images/resource/error-image.png" class="img-responsive" alt=""></figure>
+                	<figure class="image-box"><img src="images/resource/error-image.webp" class="img-responsive" alt=""></figure>
                 </div>
             </div>
     	</div>

@@ -17,13 +17,14 @@
                     <!--Events Section / List View-->
                     <section class="events-section list-view no-padd-bottom no-padd-top padd-right-20">
                         @foreach ($events as $event)
+                        @if(($event->status)==1)
                         <!--Featured Column-->
                         <div class="column default-featured-column style-two">
                             <article class="inner-box">
                                 <div class="row clearfix">
                                 	<div class="col-md-5 col-sm-5 col-xs-12">
                                         <figure class="image-box">
-                                            <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/events/'.$event->photo->path)}}" width="400" height="350" alt=""></a>
+                                            <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/eventos/'.$event->photo->path)}}" width="400" height="350" alt=""></a>
                                             {{-- @if ({{$event->date_ubication}})
                                             <div class="post-tag">MUY PRONTO</div>
                                             @endif --}}
@@ -42,7 +43,7 @@
                                 </div>
                             </article>
                         </div>
-
+                        @endif
                         @endforeach
 
                         <!-- Styled Pagination -->

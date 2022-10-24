@@ -19,7 +19,7 @@
                         <div class="column default-featured-column">
                             <article class="inner-box">
                                 <figure class="image-box">
-                                    <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/events/'.$event->photo->path)}}" width="600" height="800"  alt=""></a>
+                                    <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/eventos/'.$event->photo->path)}}" width="600" height="800"  alt=""></a>
                                 </figure>
                                 <ul>
                                     {{-- <li class="post-category"><span>{{$event->type->type}}</span> </li> --}}
@@ -57,7 +57,7 @@
                                 </ul>
                                 <div class="content-box padd-top-40">
                                     <div class="row detail-header clearfix">
-                                        <div class="col-md-8 col-sm-12">
+                                        <div class="col-md-12 col-sm-12">
                                             <h2>{{$event->name}}</h2>
                                         </div>
                                         {{-- <div class="col-md-4 col-sm-12 pull-right text-right"><a href="#" class="theme-btn btn-style-two">DOnate NOW</a></div> --}}
@@ -94,7 +94,7 @@
                                 <div class="column default-featured-column">
                                     <article class="inner-box">
                                         <figure class="image-box">
-                                            <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/events/'.$event->photo->path)}}" width="200" height="400" alt="image"></a>
+                                            <a href="{{ route('evento.show',$event->id) }}"><img src="{{ url('img/eventos/'.$event->photo->path)}}" width="200" height="400" alt="image"></a>
                                         </figure>
                                         <div class="content-box">
                                             <h3><a href="{{ route('evento.show',$event->id) }}">{{$event->name}}</a></h3>
@@ -119,7 +119,7 @@
                         <aside class="sidebar">
     
                             <!-- Search Form -->
-                            <div class="widget search-box">
+                            {{-- <div class="widget search-box">
     
                                 <form method="post" action="http://world5.commonsupport.com/html/greenture-new/index.html">
                                     <div class="form-group">
@@ -128,7 +128,7 @@
                                     </div>
                                 </form>
     
-                            </div>
+                            </div> --}}
     
                             <!-- Popular Categories -->
                             {{-- <div class="widget popular-categories wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
@@ -147,13 +147,15 @@
                                 <div class="sidebar-title"><h3>Ultimos Eventos</h3></div>
     
                                 @foreach($events as $event)
+                                @if (($event->status)==1)
                                 <article class="post">
                                     <a href="{{ route('evento.show',$event->id) }}">
-                                    <figure class="post-thumb"><img src="{{url('img/events/'.$event->photo->path)}}" width="60" height="60" alt=""></figure>
+                                    <figure class="post-thumb"><img src="{{url('img/eventos/'.$event->photo->path)}}" width="60" height="60" alt=""></figure>
                                     </a>
                                     <h4><a href="{{ route('evento.show',$event->id) }}">{{$event->name}}</a></h4>
                                     <div class="post-info"><span class="icon flaticon-people-1"></span>{{$event->description}} </div>
                                 </article> 
+                                @endif
                                 @endforeach
                                  
     

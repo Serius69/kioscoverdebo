@@ -21,6 +21,7 @@ class Event extends Model
         'name',
         'media',
         'description',
+        'date',
         'url',
         'photo_id',
         'status'

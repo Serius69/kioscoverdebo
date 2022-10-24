@@ -7,17 +7,6 @@ use App\Models\Banner;
 
 class BannerCRUDController extends Controller
 {
-    /**
-* Display a listing of the resource.
-*
-* @return \Illuminate\Http\Response
-*/
-public function list()
-{
-// $data['banners'] = DB::table('banners')->where('status','1')->orderBy('date_publication','ASC')->paginate(6);
-$data['banners'] = Banner::orderBy('id','desc')->paginate(7);
-return view('banner.banners', $data);
-}
 /**
 * Display a listing of the resource.
 *
@@ -25,7 +14,7 @@ return view('banner.banners', $data);
 */
 public function index()
 {
-$data['banners'] = Banner::orderBy('id','desc')->paginate(10);
+$data['banners'] = Banner::orderBy('id','asc')->paginate(10);
 return view('banner.crud', $data);
 }
 /**
@@ -115,7 +104,7 @@ public function update(Request $request, $id)
         $banner = Banner::find($id);
         $banner->path=$imagen1;
         $banner->save();
-$data['banners'] = banner::orderBy('id','desc')->paginate(10);
+$data['banners'] = banner::orderBy('id','asc')->paginate(10);
 return view('banner.crud',$data)->with('success','banner Has Been updated successfully');
 }
 /**
@@ -133,7 +122,7 @@ public function destroy(Request $request, $id)
     $banner = Banner::find($id);
         $banner->status=0;
         $banner->save();
-        $data['banners'] = banner::orderBy('id','desc')->paginate(10);
+        $data['banners'] = banner::orderBy('id','asc')->paginate(10);
         return view('banner.crud',$data)->with('success','banner Has Been updated successfully');
 }
 }

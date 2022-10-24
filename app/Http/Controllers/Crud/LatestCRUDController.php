@@ -47,7 +47,7 @@ $request->validate([
         if($request->file('path')!=null)
          {
              $file = $request->file('path');
-             $file->move('img/latests', $file->getClientOriginalName());
+             $file->move('img/noticias', $file->getClientOriginalName());
              $imagen=$file->getClientOriginalName();
          }
          else
@@ -102,7 +102,7 @@ public function update(Request $request, $id)
         if($request->file('path')!=null)
                  {
                      $file = $request->file('path');
-                     $file->move('img/latest', $file->getClientOriginalName());
+                     $file->move('img/noticias', $file->getClientOriginalName());
                      $imagen=$file->getClientOriginalName();
                  }
                  else

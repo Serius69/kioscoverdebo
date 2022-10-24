@@ -37,18 +37,19 @@
 
 <table class="table table-bordered">
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Autor</th>
-            <th>Descripcion</th>
-            <th>Fecha publicacion</th>
-            <th>Imagen</th>
-            <th>URL</th>
-            <th>Accion</th>
+            {{-- <th>ID</th> --}}
+            <th class="text-center">Nombre</th>
+            <th class="text-center">Autor</th>
+            <th class="text-center">Descripcion</th>
+            <th class="text-center">Fecha publicacion</th>
+            <th class="text-center">Imagen</th>
+            <th class="text-center">URL</th>
+            <th class="text-center">Accion</th>
         </tr>
         @foreach ($latests as $latest)
         @if (($latest->status)==1)
-        <tr><td>{{ $latest->id }}</td>            
+        <tr>
+            {{-- <td>{{ $latest->id }}</td>             --}}
             @if(($latest->name)==null)
             <td>No tiene nombre</td>
             @endif
@@ -77,15 +78,14 @@
             <td>No tiene imagen</td>
             @endif
             @if(($latest->photo->path)!=null)
-            <td><img src="{{ url('img/latest/'.$latest->photo->path) }}" height="250" width="300" alt="Noticia imagen"></td>
+            <td><img src="{{ url('img/noticias/'.$latest->photo->path) }}" height="250" width="300" alt="Noticia imagen"></td>
             @endif
             @if(($latest->url)==null)
             <td>No tiene URL externa</td>
             @endif
             @if(($latest->url)!=null)
-            <td> <a href="{{ $latest->url }}">URL externa</a>  </td>
-            @endif
-            
+            <td> <a href="{{ $latest->url }}">{{ $latest->url }}</a>  </td>
+            @endif            
             <td>
                 <a class="btn btn-primary" href="{{ route('latests.edit',$latest->id) }}">Editar</a>
                 <a class="btn btn-warning" href="{{ route('latests.destroy',$latest->id) }}">Eliminar</a>

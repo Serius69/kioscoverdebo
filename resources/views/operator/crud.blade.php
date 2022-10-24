@@ -37,7 +37,7 @@
 
 <table class="table table-bordered">
         <tr>
-            <th>ID</th>
+            {{-- <th>ID</th> --}}
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Video</th>
@@ -48,7 +48,7 @@
         @foreach ($operators as $operator)
         @if (($operator->status)==1)
         <tr>
-            <td>{{ $operator->id }}</td>
+            {{-- <td>{{ $operator->id }}</td> --}}
             @if(($operator->name)==null)
             <td>No tiene nombre</td>
             @endif

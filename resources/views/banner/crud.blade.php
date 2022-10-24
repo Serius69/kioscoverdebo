@@ -17,15 +17,15 @@
     </div>
 <table class="table table-bordered">
         <tr>
-            <th>ID</th>
-            <th>Imagen</th>
-            <th>Accion</th>
+            {{-- <th>ID</th> --}}
+            <th class="text-center">Imagen</th>
+            <th class="text-center">Accion</th>
         </tr>
         @foreach ($banners as $banner)
         @if (($banner->status)==1)
         <tr>
-            <td>{{ $banner->id }}</td>
-            <td><img src="{{ url('img/banners/'.$banner->path) }}" width="700" height="350"  alt="image"></td>
+            {{-- <td>{{ $banner->id }}</td> --}}
+            <td><img src="{{ url('img/banners/'.$banner->path) }}" width="800" height="250"  alt="image"></td>
             <td>
                 <a class="btn btn-primary" href="{{ route('banners.edit',$banner->id) }}">Editar</a>
                 @csrf

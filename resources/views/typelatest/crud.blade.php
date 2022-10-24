@@ -36,14 +36,14 @@
     @endif
 <table class="table table-bordered">
         <tr>
-            <th>ID</th>
-            <th>Tipo</th>
-            <th>Accion</th>
+            {{-- <th>ID</th> --}}
+            <th class="text-center">Tipo</th>
+            <th class="text-center">Accion</th>
         </tr>
         @foreach ($typelatests as $typelatest)
         @if (($typelatest->status)==1)
         <tr>
-            <td>{{ $typelatest->id }}</td>
+            {{-- <td>{{ $typelatest->id }}</td> --}}
             <td>{{ $typelatest->type }}</td>            
             <td>
                 <a class="btn btn-primary" href="{{ route('typelatests.edit',$typelatest->id) }}">Editar</a>

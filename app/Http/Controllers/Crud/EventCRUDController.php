@@ -56,7 +56,7 @@ $request->validate([
         $event->name = $request->name;
                 $event->media = $request->media;
                 $event->description = $request->description;
-        
+                $event->date = $request->date;
                 $photo = new Photo;
                 $photo->path = $imagen;
                 
@@ -107,7 +107,7 @@ public function update(Request $request, $id)
                 if($request->file('path')!=null)
                  {
                      $file = $request->file('path');
-                     $file->move('img/events', $file->getClientOriginalName());
+                     $file->move('img/eventos', $file->getClientOriginalName());
                      $imagen=$file->getClientOriginalName();
                  }
                  else
@@ -119,7 +119,7 @@ public function update(Request $request, $id)
                 $event->name = $request->name;
                 $event->media = $request->media;
                 $event->description = $request->description;
-        
+                $event->date = $request->date;
                 $photo = new Photo;
                 $photo->path = $imagen;
                 

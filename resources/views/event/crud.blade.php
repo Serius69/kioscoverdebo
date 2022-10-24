@@ -37,7 +37,7 @@
 
 <table class="table table-bordered">
         <tr>
-            <th>ID</th>
+            {{-- <th>ID</th> --}}
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Imagen</th>
@@ -47,10 +47,10 @@
         @foreach ($events as $event)
         @if (($event->status)==1)
         <tr>
-            <td>{{ $event->id }}</td>
+            {{-- <td>{{ $event->id }}</td> --}}
             <td>{{ $event->name }}</td>       
             <td>{{ $event->description }}</td>
-            <td><img src="{{ url('img/events/'.$event->photo->path) }}" width="300" height="200"  alt="Greenture"></td>
+            <td><img src="{{ url('img/eventos/'.$event->photo->path) }}" width="300" height="200"  alt="Greenture"></td>
             <td> <a href="{{ $event->url }}">URL externa</a>  </td>
             <td>
                 <a class="btn btn-primary" href="{{ route('events.edit',$event->id) }}">Editar</a>

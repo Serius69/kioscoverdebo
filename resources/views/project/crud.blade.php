@@ -17,7 +17,7 @@
     </div>
 <table class="table table-bordered">
         <tr>
-            <th>ID</th>
+            {{-- <th>ID</th> --}}
             <th>Nombre</th>
             <th>Informacion</th>
             <th>Descripcion</th>
@@ -28,7 +28,7 @@
         @foreach ($projects as $project)
         @if (($project->status)==1)
         <tr>
-            <td>{{ $project->id }}</td>
+            {{-- <td>{{ $project->id }}</td> --}}
             <td>{{ $project->name }}</td>
             <td>{{ $project->information }}</td>
             <td>{{ $project->description }}</td>

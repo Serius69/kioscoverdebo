@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('media')->nullable();
             $table->string('description')->nullable();
-            $table->string('date_publication')->nullable();
+            $table->string('date')->nullable();
             $table->string('url')->default('url')->nullable();
             $table->unsignedBigInteger('photo_id');
             $table->foreign('photo_id')->references('id')->on('photos');

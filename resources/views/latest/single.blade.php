@@ -20,7 +20,7 @@
                         <div class="column default-featured-column">
                             <article class="inner-box">
                                 <figure class="image-box">
-                                    <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/latest/'.$latest->photo->path)}}" width="600" height="600"  alt=""></a>
+                                    <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/noticias/'.$latest->photo->path)}}" width="600" height="600"  alt=""></a>
                                     <div class="post-tag">{{ $latest->type->type }}</div>
 
                                 </figure>
@@ -56,11 +56,11 @@
                                         
                                         {{date("d", strtotime($latest->date_publication))}}, {{date("Y", strtotime($latest->date_publication))}}
                                         </h2>
-                                </div>
+                                    </div>
                                 </ul>
                                 <div class="content-box padd-top-40">
                                     <div class="row detail-header clearfix">
-                                        <div class="col-md-8 col-sm-12">
+                                        <div class="col-md-12 col-sm-12">
                                             <h2>{{$latest->name}}</h2>
                                         </div>
                                         {{-- <div class="col-md-4 col-sm-12 pull-right text-right"><a href="#" class="theme-btn btn-style-two">DOnate NOW</a></div> --}}
@@ -95,11 +95,11 @@
                             <div class="column default-featured-column">
                                 <article class="inner-box">
                                     <figure class="image-box">
-                                        <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/latest/'.$latest->photo->path)}}" width="200" height="400" alt="image"></a>
+                                        <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/noticias/'.$latest->photo->path)}}" width="200" height="400" alt="image"></a>
                                     </figure>
                                     <div class="content-box">
                                         <h3><a href="{{ route('noticia.show',$latest->id) }}">{{$latest->name}}</a></h3>
-                                        <div class="column-info">{{$latest->description}}</div>
+                                        {{-- <div class="column-info">{{$latest->description}}</div> --}}
                                         <a href="{{ route('noticia.show',$latest->id) }}" class="theme-btn btn-style-three">Saber Mas</a>
                                     </div>
                                 </article>
@@ -147,11 +147,46 @@
                             <div class="sidebar-title"><h3>Ultimas noticias</h3></div>
 
                             @foreach ($latests as $latest)
+                            @if (($latest->status)==1)
                             <article class="post">
-                            	<figure class="post-thumb"><img src="{{ url('img/latest/'.$latest->photo->path)}}" width="80" height="80" alt=""></figure>
+                            	<a href="{{ route('noticia.show',$latest->id) }}">
+                                <figure class="post-thumb"><img src="{{ url('img/noticias/'.$latest->photo->path)}}" width="50px" height="60px" alt="">
+                                </figure>
+                                </a>
                                 <h4><a href="{{ route('noticia.show',$latest->id) }}">{{$latest->name}}</a></h4>
-                                <div class="post-info"><span class="icon flaticon-technology"></span>{{$latest->description}}</div>
+                                <div class="post-info"><span class="icon flaticon-nature"></span>{{$latest->author}}</div>
+                                    {{-- <li class="post-category"><span>{{$latest->type->type}}</span> </li> --}}
+                                    <div class="text"><h5>
+                                        <?php $mes = date("m", strtotime($latest->date_publication)); ?>
+                                        @if($mes == '01' ) Enero
+                                        @endif
+                                        @if($mes == '02' ) Febrero
+                                        @endif
+                                        @if($mes == '03' ) Marzo
+                                        @endif
+                                        @if($mes == '04' ) Abril
+                                        @endif
+                                        @if($mes == '05' ) Mayo
+                                        @endif
+                                        @if($mes == '06' ) Junio
+                                        @endif
+                                        @if($mes == '07' ) Julio
+                                        @endif
+                                        @if($mes == '08' ) Agosto
+                                        @endif
+                                        @if($mes == '09' ) Septiembre
+                                        @endif
+                                        @if($mes == '10' ) Octubre
+                                        @endif
+                                        @if($mes == '11' ) Noviembre
+                                        @endif
+                                        @if($mes == '12' ) Diciembre
+                                        @endif                                        
+                                        {{date("d", strtotime($latest->date_publication))}}, {{date("Y", strtotime($latest->date_publication))}}
+                                    </h5>
+                                    </div>
                             </article>
+                            @endif
                             @endforeach                         
                         </div>
                         

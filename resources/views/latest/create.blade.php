@@ -49,7 +49,9 @@
 
                                 <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                     <div class="field-label">Descripcion <span class="required">*</span></div>
-                                    <input type="text" name="description" value="" placeholder="Descripcion" required>
+                                    <textarea type="text" name="description" style="width:100%; height:200px;">
+                                        {{ $latest->description }}
+                                        </textarea>
                                     @error('description')
                                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                     @enderror

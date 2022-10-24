@@ -60,15 +60,23 @@
 
                             <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                 <div class="field-label">Descripcion <span class="required">*</span></div>
-                                <input type="text" name="description" value="{{ $event->description }}" placeholder="Descripcion" required>
+                                <textarea type="text" name="description" style="width:100%; height:200px;">
+                                    {{ $event->description }}
+                                    </textarea>
                                 @error('description')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror
                             </div>
 
+                            <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                <div class="field-label" value="{{ $event->date }}">Fecha del evento <span class="required">*</span></div>
+                                
+                                <input style="margin: 15px;" type="date" id="date_publication" min="2022-01-01" max="2089-12-31" name="date_publication" >
+                            </div>
+
                              <div class="form-group col-lg-12 col-md-12 col-xs-12">
                                 <div class="field-label">Url Externa <span class=""></span></div>
-                               <input type="text" name="url" value="{{ $event->event_photo }}" placeholder="Url Externa" required>
+                               <input type="text" name="url" value="{{ $event->url }}" placeholder="Url Externa" required>
                                 @error('url')
                                 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
                                 @enderror

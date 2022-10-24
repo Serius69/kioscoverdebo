@@ -26,9 +26,9 @@
     <section class="main-features">
     	<div class="auto-container">
         	<div class="title-box text-center">
-                    <h1>43+</h1>
-                    <h2>Industrias</h2>
-                    <div class="text">Reciclaron su residuos a traves del kioscoverde</div>
+                    <h1>1000+</h1>
+                    <h2>Residuos</h2>
+                    <div class="text">Reciclados a travez de KioscoVerde</div>
                 </div>
 
                 <div class="row clearfix">
@@ -255,7 +255,7 @@
                     <div class="column blog-news-column col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <article class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <figure class="image-box">
-                                <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/banners/'.$latest->photo->path) }}" width="300" height="250" alt="Greenture"></a>
+                                <a href="{{ route('noticia.show',$latest->id) }}"><img src="{{ url('img/noticias/'.$latest->photo->path) }}" width="300" height="250" alt="Imagen Noticia"></a>
                             
                                 {{-- date --}}
 

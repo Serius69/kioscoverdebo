@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id()->unique();
             $table->string('name')->nullable();
             $table->string('author')->nullable();
-            $table->string('description')->nullable();
+            $table->longText('description')->nullable();
             $table->string('date_publication')->nullable();
             $table->string('url')->nullable();
             $table->unsignedBigInteger('photo_id')->default(1);

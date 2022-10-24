@@ -89,17 +89,42 @@
     </header><!--End Main Header -->
 
 <!--Page Title-->
-<section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.webp') }});">
+{{-- <section class="page-title" style="background-image:url({{ asset('/images/background/page-title-bg.webp') }});">
     <div class="auto-container">
         <div class="sec-title">
             <h1>@yield('subtitle1')<span class="normal-font">@yield('subtitle2')</span></h1>
             <div class="bread-crumb"><a href="{{ url('/') }}">inicio</a> / <a href="#" class="current">@yield('subtitle1') @yield('subtitle2')</a></div>
         </div>
     </div>
-</section>
+</section> --}}
 
     @yield('body')
 
+
+    <!--Main Footer-->
+<footer class="main-footer" style="background-image:url(images/background/footer-bg.webp);">
+        
+    <!--Footer Bottom-->
+    <div class="footer-bottom">
+        <div class="container">
+            <!--Copyright--> 
+            <div class="col-lg-4 col-sm-7 col-xs-12 column">
+                <div class="copyright text-right">Copyright 2022 &copy; Pagina creada por <a href="https://www.cni.bo">CNI-SIS</a></div>
+            </div>
+            <!-- Privacy Policy -->
+            <div class="col-lg-4 col-sm-7 col-xs-12 column">
+                <div class="copyright text-center">  <a href="{{url('terms')}}">Terminos y condiciones</a></div>
+            </div>
+            <!-- Terms and Conditions -->
+            <div class="col-lg-4 col-sm-7 col-xs-12 column">
+                <div class="copyright text-left">  <a href="{{url('privacy')}}">Politicas de privacidad</a></div>
+            </div>
+        </div>
+        
+    </div>
+    
+</footer>
+<!-- End Main Footer -->
 
     <!--SignUp Popup-->
 <div class="modal fade pop-box" id="signup-popup" tabindex="-1" role="dialog" aria-labelledby="signup-popup" aria-hidden="true">
